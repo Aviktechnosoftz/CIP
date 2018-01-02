@@ -1,0 +1,10 @@
+[22-Aug-2017 14:20:16 UTC] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Couldn't create API/Uploads/test_vcard.vcf' in /home/xtrazero/public_html/checklist/vcard2/imcComponent.php:387
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/vcard2/test_vcard.php(38): imc\Component->writeFile('API/Uploads/tes...')
+#1 {main}
+  thrown in /home/xtrazero/public_html/checklist/vcard2/imcComponent.php on line 387
+[22-Aug-2017 14:20:40 UTC] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Couldn't create API/Uploads/test_vcard.vcf' in /home/xtrazero/public_html/checklist/vcard2/imcComponent.php:387
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/vcard2/test_vcard.php(38): imc\Component->writeFile('API/Uploads/tes...')
+#1 {main}
+  thrown in /home/xtrazero/public_html/checklist/vcard2/imcComponent.php on line 387

@@ -1,0 +1,9 @@
+Distribution List Name:	Demo List
+
+Categories:	Test
+
+Members:
+
+Jane Doe	test1@yahoo.com
+John Doe	test2@yahoo.org.uk
+Fred Bloggs (E-mail)	bloggsf@mac.com

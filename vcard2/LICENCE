@@ -1,0 +1,23 @@
+imc Objects Package, comprising:
+ imcComponent.php
+ imc_vCard.php
+ imc_iCal.php
+ imcProperty.php
+ imcPropertyADR.php
+ imcPropertyN.php
+ imcPropertyPhoto.php
+ imcPropertyRRULE.php
+ imcPropertydt.php
+ imc_ptm.php
+ evolution_maillist.php
+ outlook_ml.php
+ conv_maillist.php
+ test_vcard.php
+
+This package is hereby dedicated to the public domain by the author.
+
+(It is derived from a package by Andreas Haberstroh, who claimed that the licence
+was the "PHP" licence. Each file in the package claimed to be part of PHP4.
+In any case, the wording of the licence itself was clearly inapplicable to the
+package as compiled by Haberstroh, since the source files did not comply with
+the terms of the licence.)

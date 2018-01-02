@@ -1,0 +1,4 @@
+
+Fatal error: Call to a member function fetch_object() on a
+ non-object in /home/xtrazero/public_html/checklist/site_instruction_approved_form.php
+ on line 301

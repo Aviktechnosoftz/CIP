@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>IMC Objects manual</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+</head>
+
+<body>
+<h1>IMC Objects</h1>
+
+<h2 id="L1442">1. Contents</h2>
+
+<div class="toc">
+<ul>
+  <li><a href="#L1442">1. Contents</a></li>
+  <li><a href="#L485">2. Introduction</a></li>
+  <li><a href="#L491">3. Namespace</a></li>
+  <li><a href="#L495">4. What are IMC Components? Some terminology</a></li>
+  <li><a href="#L539">5. Object decomposition</a>
+    <ul>
+      <li><a href="#L616">5.1. ComponentSets</a></li>
+      <li><a href="#L623">5.2. Components</a></li>
+      <li><a href="#L632">5.3. Properties</a></li>
+      <li><a href="#L651">5.4. Parameters</a></li>
+    </ul>
+  </li>
+  <li><a href="#L1031">6. Files to include</a></li>
+  <li><a href="#L586">7. Extending</a>
+    <ul>
+      <li><a href="#L690">7.1. Factories</a></li>
+      <li><a href="#ExtendingProperties">7.2. Extending Properties</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h2 id="L485">2. Introduction</h2>
+
+<p>This package is intended to help working with IMC files, of which the two
+most noted instances are vCard files (.vcf) and iCalendar files (.icf).</p>
+
+<p>The purpose of this manual is not to reiterate the inline documentation -
+which is extensive - but to explain some of the conceptual background behind
+the class design and, in general terms, its current functionality. It also aims
+to point the reader at strategies for using the classes in the package to get
+to the desired results.</p>
+
+<p>It is well to note that much work is done by iterators. It will be helpful
+to understand the basic mechanism by which iterators are combined to traverse
+complex data structures and simplify datasets.</p>
+
+<p>It is intended that this documentation should support the <a
+href="index.html">inline documentation</a>. This has been designed to work with
+the <a href="http://docblox-project.org/">docblox system</a>, which is freely
+available via PEAR. Please do install docblox and study the class hierarchy
+diagram that it generates.</p>
+
+<h2 id="L491">3. Namespace</h2>
+
+<p>Class names in this document are often not qualified, for readability.
+However, all classes defined in this package should be understood as referring
+to the "imc" namespace. So, for example, ComponentSet, Component, Property,
+vCard and iCalendar should (when used in an appropriate context) be understood
+to be qualified as <code>imc\ComponentSet</code>, <code>imc\Component</code>,
+<code>imc\Property</code>, etc. This package does not expose anything to the
+global namespace.</p>
+
+<h2 id="L495">4. What are IMC Components? Some terminology</h2>
+
+<p>Both vCard and iCalendar files contain one or more vCard or iCalendar
+components. In the case of iCalendar components, they in turn contain other
+components, so as to produce a component tree. We may refer to these (for the
+purposes of this document) as "IMC Components". Clearly we cannot represent an
+iCalendar or vCard <em>file</em> as an iCalendar or vCard component: rather,
+they are simple collections of one or more such components. We refer to these
+as <dfn>ComponentSets</dfn>.</p>
+
+<p>So, a <dfn>Component</dfn> is a self-contained item represented in an IMC
+file, such as a vCard or an iCalendar.</p>
+
+<p>Let us consider what a single IMC Component may contain. Conceptually, a
+vCard component concerns itself with a single person, organization or
+mailing-list. In the case of a vCard, it will contain a name, maybe an address
+or two, a telephone number or three, and an e-mail address or sixty. Each of
+these sub-elements is called a <dfn>Property</dfn>. Properties have property
+names: in the case of vCard properties, names such as TEL, EMAIL, ADR and so
+on.</p>
+
+<p>But we have to dig deeper. Consider the case of a person's telephone numbers
+or addresses. These may relate to his or her work or home, or some hobby or
+other. the vCard specification allows these different attributes to be labelled
+according to the role they play. Remembering that these are Properties of
+Components, we have the additional (and final) layer of detail: Parameters.
+<dfn>Parameters</dfn> specify qualifying information about Properties.</p>
+
+<p>So we see four layers:</p>
+<ol>
+  <li>ComponentSets have Components</li>
+  <li>Components have Properties</li>
+  <li>Properties have Parameters</li>
+  <li>Parameters have Names and Values</li>
+</ol>
+
+<p>One trap for the unwary: PHP classes have "properties" too. We try to refer
+to these as "class properties" to avoid confusion as far as possible.</p>
+
+<p>Another: PHP functions have "parameters". We try to refer to IMC Properties
+with a capital 'P'.</p>
+
+<h2 id="L539">5. Object decomposition</h2>
+
+<p>We clearly have four kinds of things here. How do we represent them as PHP
+objects? Starting from the outermost layer:</p>
+
+<h3 id="L616">5.1. ComponentSets</h3>
+
+<p>ComponentSets are just glorified arrays. All they need to do is read in one
+or more Component objects. <code>imc\ComponentSet</code> thus derives from
+<code>\ArrayObject</code>. To iterate over the individual components, just do a
+foreach - each element will be a Component.</p>
+
+<h3 id="L623">5.2. Components</h3>
+
+<p>Because Components are somewhat recursive, tree-like entities, they have
+some ComponentSet attributes (including, for example, the ability to write
+themselves out as files). Thus, <code>imc\Component</code> inherits from
+<code>imc\ComponentSet</code>. Components also provide access to their
+Properties. Because Components can (at least, in the case of iCalendar
+Components) contain sub-Components, they, too, are ArrayObjects. But because
+they have an interesting structure, they are organized not as simple arrays but
+as associative arrays - with the added bonus that their array members can be
+accessed as object properties. So, for example, if a vCalendar object
+<var>$vc</var> contains a VEVENT, it can be accessed either as
+<code>$vc['VEVENT']</code> or as <code>$vc-&gt;VEVENT</code>. They have a
+number of methods to access their Properties.</p>
+
+<h3 id="L632">5.3. Properties</h3>
+
+<p>Properties are all subclasses of <code>imc\Property</code>. This base class
+is rather feature-rich. You should derive from it for one of two reasons:</p>
+<dl>
+  <dt>You need a specialized constructor:</dt>
+    <dd>look at class <code>imc\customProperty</code> and its derivatives.</dd>
+  <dt>The value is complex:</dt>
+    <dd>look at classes <code>imc\arrayProperty</code> and
+      <code>imc\PropertyRRULE</code>.</dd>
+</dl>
+
+<p>To get hold of a Component's Properties, look at the functions of the
+Component. Some of them will return Property iterators. For Properties you know
+to be unique, see <code>Component::getUniqueProperty()</code>.</p>
+
+<p>Properties keep their parameters quite private (protected actually). This is
+because a change to a parameter could involve changes to the value also.
+Therefore, if you need to access a property's parameters, see Customizing
+Properties below.</p>
+
+<h3 id="L651">5.4. Parameters</h3>
+
+<p>Finally, the Parameters of Properties are simple enough that we can treat
+them as strings. After all, they are represented that way in the IMC file. Yes,
+they could have been wrapped in objects. But they are no more than a name and a
+list of one or more values. The only thing that this package does to Parameters
+is to enforce upper case on their names. Parameter values, then, are stored as
+comma-separated strings (and if there is a comma in any of the values, it is
+escaped with a backslash).</p>
+
+<h2 id="L1031">6. Files to include</h2>
+
+<p>If you are working with vCards, you should <code>include</code> or
+<code>require</code> imc_vCard.php. If you are working with iCalendars, you
+should include imc_iCal.php. Optionally, if you are working with dates in
+iCalendar land, you can include imcPropertydt.php, which will cause DTSTART,
+DTEND and other date/time property values to be interpreted into DateTime
+objects that you can manipulate.</p>
+
+<p>If you want to mask out properties from a <code>getProperties()</code> or
+<code>getPropertiesOfType()</code> call on a component, you will need the
+<code>imc\propertyTypeMask</code> FilterIterator, and you should include
+imc_ptm.php to supply it. It is not needed by any of the standard classes and
+there is no risk of its inclusion without your knowing.</p>
+
+<h2 id="L586">7. Extending</h2>
+
+<p>If you are seeking to build IMC objects from non-IMC data, life may be made
+simpler by extending the existing Component and Property classes. The
+Outlook-to-Evolution example program will furnish an example. For further
+advice, see <a href="#ExtendingProperties">Extending Properties</a> below.</p>
+
+<p>If you are seeking to extract more valuable data from an IMC file, you may
+need to build more capable extensions of the classes in this package. In that
+case, you need to work with the factory mechanism.</p>
+
+<h3 id="L690">7.1. Factories</h3>
+
+<p>When reading IMC data files, <code>imc\ComponentSet</code> encounters
+Component names; for example, in an iCalendar file it will encounter
+"BEGIN:VCALENDAR". Rather than "knowing" what class to build, the ComponentSet
+factory method looks up "VCALENDAR" in its registry and, if found, it
+constructs an object of the appropriate class. If it doesn't find a match, it
+constructs instead a member of the base <code>imc\Component</code> class.
+Similarly, if it finds a property, e.g. "ADR", it invokes the
+<code>imc\Property</code> factory method, which either finds a specialized
+Property class and creates an instance of that, or else constructs a default
+<code>imc\Property</code> object.</p>
+
+<p>Both <code>imc\ComponentSet</code> and <code>imc\Property</code> employ a
+similar factory mechanism. They maintain a list of IMC Component or Property
+names coupled with the names of the related classes that best construct an
+object from the data. As an example, the vCard ADR property has seven fields
+that need special handling. The <code>imc\PropertyAdr</code> class thus
+registers itself to be invoked by the <code>imc\Property</code> factory
+function whenever a Property with name ADR is encountered. The factory method
+then calls the constructor of the registered class rather than the base
+Property class.</p>
+
+<p>Apart from calling the class registration method, the extending class needs
+to know the constructor arguments that the factory is using. The best place to
+start is the constructor of another class that is registered in the same
+factory.</p>
+
+<p>It is possible to override a previously-registered class for the same
+Property; when you do, the registration function will return the name of the
+class being overridden.</p>
+
+<h3 id="ExtendingProperties">7.2. Extending Properties</h3>
+
+<p>The base <code>imc\Property</code> class is designed to provide good
+functionality to its descendants (and if it blocks that, it needs changing!).
+Nevertheless, it keeps its value and parameters zealously protected, for the
+good reason that if the application changes a property parameter, it may
+require a corresponding change on the value, and <span xml:lang="la">vice
+versa</span>. If you need to make certain changes to the value at the
+application level, you should consider the implications for the parameters.
+Here is an example.</p>
+
+<p>In the case of the iCalendar DTSTART, DTEND and other date/time values, it
+may be desirable to change the time-zone. But when you change the time-zone,
+both the property value (the date/time string) and the property parameters (the
+TZID parameter) will need to change how they are represented in the IMC
+file.</p>
+
+<p>In more detail: if a time zone is GMT or UTC, there is no TZID parameter,
+but the time value proclaims itself as being a GMT value. But if the time zone
+is changed from GMT to, say, Europe/Athens, then the TZID must change and the
+time value must accommodate that change by representing itself appropriately.
+An examination of <code>imc\PropertyDT</code> will give an idea of the approach
+needed.</p>
+
+<p>For this reason, Property parameters must be protected, and functions
+supplied to the application layer if they need to change them. Likewise,
+although public methods are provided to set the property value, you can hook
+them, and should if you need to fix up the property parameters.</p>
+
+<p>Property values are typically strings; but sometimes not. Especially when
+their values are not strings (e.g. arrays of strings, as in the case of
+<code>imc\ProperyADR</code>), it is important to distinguish what they are
+being used for. Internally, the property value is held in the most generally
+useful way; and this might not precisely coincide with what you want to do with
+it now! If you want to get the property value to include in a report – an
+e-mail list, say – your requirements will be different from those you have
+when you are saving the property value to an IMC file. Therefore, when you
+extend a property class, you should be mindful of the following
+presumptions:</p>
+<dl>
+  <dt><code>imc\Property::getValue()</code></dt>
+    <dd>This returns the property value in a form presumed suitable for
+      handling at the application level. It should either be a string suitable
+      for display in a report, or an object with a <code>__toString()</code>
+      method that will enable it to comply with this requirement.</dd>
+  <dt><code>imc\Property::setValue</code></dt>
+    <dd>This must not only set the property value but adjust any property
+      parameters that need changing.</dd>
+  <dt><code>imc\Property::get_encodeable_value()</code></dt>
+    <dd>This must return the value in a form that, if there is no special
+      encoding used, will be valid in an IMC file.</dd>
+  <dt><code>imc\Property::setEncodedValue(string)</code></dt>
+    <dd>This function is the "hook" whereby a generic string format can be
+      converted to whatever your class needs to be useful. Here you should call
+      <code>imc\Property::setEncodedValue()</code> to get the perhaps encoded
+      value done; and then, taking <var>$this-&gt;value</var> as thus set,
+      provide any transformation your class needs in order to make the value
+      usable for your application. Class <code>imc\PropertyDT</code> and the
+      descendants of <code>imc\arrayProperty</code> are good examples to
+    follow.</dd>
+</dl>
+
+<p></p>
+</body>
+</html>

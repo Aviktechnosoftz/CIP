@@ -1,0 +1,1 @@
+[16-Aug-2017 13:28:29 UTC] PHP Fatal error:  Class 'Mail_mime' not found in /home/xtrazero/public_html/checklist/testmail/send-email-form.php on line 81

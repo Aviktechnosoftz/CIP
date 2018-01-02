@@ -1,0 +1,4 @@
+[15-Jun-2017 10:06:14 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/xtrazero/public_html/checklist/ITP/project_list.php on line 9
+[04-Aug-2017 10:05:20 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/ITP/sidebar_itp.php on line 76
+[04-Aug-2017 10:06:01 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/ITP/sidebar_itp.php on line 76
+[04-Aug-2017 10:09:43 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/ITP/sidebar_itp.php on line 76

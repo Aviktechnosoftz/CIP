@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>IMC Objects for PHP</title>
+  <parser>
+    <target>doc/parser</target>
+  </parser>
+  <transformer>
+    <target>doc</target>
+  </transformer>
+  <files>
+    <file>imcComponent.php</file>
+    <file>imc_vCard.php</file>
+    <file>imc_iCal.php</file>
+    <file>imcProperty.php</file>
+    <file>imcPropertyADR.php</file>
+    <file>imcPropertyN.php</file>
+    <file>imcPropertyPhoto.php</file>
+    <file>imcPropertyRRULE.php</file>
+    <file>imcPropertydt.php</file>
+    <file>imc_ptm.php</file>
+    <file>evolution_maillist.php</file>
+    <file>outlook_ml.php</file>
+  </files>
+  <transformations>
+    <template name="new-black"/>
+  </transformations>
+</phpdoc>

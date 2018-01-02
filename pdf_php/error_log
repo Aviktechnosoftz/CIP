@@ -1,0 +1,80 @@
+[03-May-2017 09:48:30 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output('doc', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:51:32 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output('doc', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:52:22 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output('doc', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:53:29 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output()
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:54:10 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output('example1.pdf', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:55:54 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(206): FPDF->Output('example1.pdf', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:56:41 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(55): FPDF->Output('example1.pdf', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:57:44 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(10): FPDF->Output()
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 09:58:19 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(10): FPDF->Output()
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 10:18:20 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(33): FPDF->Output('example1.pdf', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[03-May-2017 10:18:56 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php:1)' in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php:271
+Stack trace:
+#0 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(1052): FPDF->Error('Some data has a...')
+#1 /home/xtrazero/public_html/checklist/pdf_php/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/xtrazero/public_html/checklist/pdf_php/site_instruction_approved_pdf.php(33): FPDF->Output('example1.pdf', 'I')
+#3 {main}
+  thrown in /home/xtrazero/public_html/checklist/pdf_php/fpdf.php on line 271
+[10-Jun-2017 05:40:23 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/pdf_php/test_ok.php on line 20
+[10-Jun-2017 05:59:45 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/pdf_php/test_ok.php on line 20
+[10-Jun-2017 05:59:47 UTC] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/xtrazero/public_html/checklist/pdf_php/test_ok.php on line 20

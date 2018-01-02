@@ -1,0 +1,35 @@
+#main_graph_div
+	{
+		margin-left:50px;
+		margin-right:50px;
+	}
+#overview_heading 
+	{ 
+		font-size: 30px;
+    font-weight: 10px;
+    /* float: right; */
+    position: relative;
+	}
+#overview_heading_sup
+	{
+	font-size: 11px;
+    position: absolute;
+    top: 10px;
+    padding-left: 3px;
+		
+	}
+.div_side_text 
+	{
+		color:#D44635;
+	}
+.col_4_main_div 
+	{
+		background-color:#F5F5F5;
+	}
+	
+.arrow_sign_frwd 
+	{
+		position:absolute;
+		top:25px;
+	}
+		  
