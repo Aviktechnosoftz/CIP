@@ -1,8 +1,9 @@
 <?php
 error_reporting(0);
 session_start();
-include_once('connect.php');
 // print_r($_SESSION);
+include_once('connect.php');
+
 if(!isset($_SESSION['admin']))
 {
   header("location:logout.php");
@@ -53,16 +54,16 @@ $home=true;
 
 </div>
 
-<div style="background-color: red"  class="search_header">
+<div style="background-color: red" class="search_header">
 <div style="background: #303030;float: left; width: 27vw;  height: 8vh;"></div>
-<div>
+<div >
    
 <span style="float: left; 
 
-"><span style="position: absolute;z-index: 100;color: #EEEEEE;font-size: 1.6vh;
+"><span style="position: absolute;z-index:2;color: #EEEEEE;font-size: 1.6vh;
     padding-left: 1vw;
     padding-top: 2vh;
-">Project No. :<?=$project_number->number?></span><img src="image/header_new4.png" style="position: absolute;
+">Project No. :<?=$project_number->number?></span><img class="tablogo checklistwidth" src="image/header_new4.png" style="position: absolute;
     width: 15vw;z-index: 1;
    "> </span> 
 </div>

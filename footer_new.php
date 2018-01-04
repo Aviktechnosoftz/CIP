@@ -1,29 +1,33 @@
 <footer class="footer">
 
 <div class="">
-    <span class="footer_div" style="float: left;    padding-left: 30px;     padding-top: 5px;
-    ">
-    <img src="image/logo_foot_2.png" style="   width: 8.5vw;">
+    <span style="float: left;    padding-left: 0vw;   /*  padding-top: 5px;*/
+    padding-bottom: 6px;">
+    <img class="footerimage" src="image/logo_foot_2.png" style="   width:10vw;">
 </span>
-<span class="bottom_text footer_date" style="font-family: 'Avenirnext';">Date: &nbsp <?=date("d M Y ") ?></span>
+<span class="bottom_text1 footer_date" style="font-family: 'Avenirnext';text-align: right;"><span style="color: white;text-align: right">Doc. Code:
+    C - Q - MG - 001</span><br/>Issue Date: &nbsp <?=date("d M Y") ?><br/>Issue N0: 5</span>
 
 
-<span style="float: right;    margin-right: 8.3vw; 
-
-
-"> <img src="image/footer_new.png" style="position: absolute;  bottom: 3vh;
-    width: 6vw;
-    "> </span>
+<!-- <span style="float: right;    margin-right: 8.3vw; "> -->
+ <!-- <img src="image/footer_new.png" style="position: absolute;  bottom: 3vh;  width: 6vw; ">  -->
+<!-- </span> -->
 </div>
   
     
 </footer>
 
 <style>
+    .footer_date {
+         padding-left: 14.5vw !important;
+         padding-top: 3vh !important;
+        }
+
 	.footer {
-	    position: absolute;
+	  /*  position: absolute;*/
     right: 0;
-    height: 10vh;
+    height: 12vh;/* //--sangeeta--//*/
+    /*height: 10vh;*/
     bottom: 0;
     left: 0;
     /* padding: 1rem; */
@@ -32,12 +36,33 @@
     background-color: #3D3D3D;
     text-align: center;
 }
+@media (max-width: 1024px){
 
+.footer_date {
+    padding-left: 10vw !important;
+    font-size: 1.2vw !important;
+    padding-top: 2vh !important;
+}
+.footerimage{
+        width: 12vw !important;
+}
+}
 
+@media (max-width: 768px){
+
+.footer_date {
+    padding-left: 6vw !important;
+    font-size: 1.4vw !important;
+    padding-top: 2.5vh !important;
+}
+.footerimage{
+        width: 15.5vw !important;
+}
 
 </style>
 
 <script>
+    $('.bottom_text1').css('color','#AAAAAA');
     $('body').css('background-color','#3D3D3D');
     $('.Main_Form').css('max-height','76%');
     $('.Main_Form').css('min-height','76%');
