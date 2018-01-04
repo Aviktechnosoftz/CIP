@@ -1,5 +1,6 @@
 <?php
 include_once('connect.php');
+error_reporting(0);
 $someArray = [];
 $text1 = $_POST['text1'];
 $text2 = $_POST['text2'];
@@ -48,7 +49,7 @@ $result2=$conn->query("select * from tbl_project where project_name LIKE '".$pro
       {
         while ($row = mysqli_fetch_assoc($get_details)) {
         array_push($someArray, [
-      'number'   => $row['id'],
+      'number'   => $str2,
       'pin' => $row['pincode'],
       'project_id'=> $result2->id
     ]);
