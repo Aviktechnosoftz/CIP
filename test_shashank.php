@@ -1,3 +1,4 @@
+<? 
 
-echo "Hello This is shanky";
+echo "Hey Hello This is shanky";
 ?>
