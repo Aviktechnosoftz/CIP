@@ -145,7 +145,7 @@
             				  <div class="" style="margin-top: 10px">
               				  <label class="label_blue" style="color:#686868 !important">Action Required</label>
               				  <textarea type="text" class="mod_btn_modalbackground actioncomplete_pink" name="" id="actionRequired" style="height: 55px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 12px;"><?//if($row_get_data->checklist_action_comments == ''){echo $row_get_data->comments;}else{echo $row_get_data->checklist_action_comments;}?> <?=$row_get_data->action_required?></textarea>
-                        <label class="label_blue" style="margin-top: 10px;color:#686868 !important">Actual Comment</label>         
+                        <label class="label_blue" style="margin-top: 10px;color:#686868 !important">Action Complete</label>         
                         <textarea class="mod_btn_modalbackground actioncomplete_pink" id="actualComment_<?=$row_get_data->id?>" rows="4" style="height: 55px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 12px;" required></textarea> 
             				  </div>
             				  <div class="" style="margin-top: 10px">
