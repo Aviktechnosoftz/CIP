@@ -20,7 +20,7 @@ $project_name_query=$conn->query("select tbl_project.id as project_id,project_na
 $get_project_details=$conn->query("select * from tbl_project_detail where project_id='".$_SESSION['admin']."'")->fetch_object();
 $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object();
 // print_r($_SESSION);
-$home=true;
+// $home=true;
 
 
 
@@ -48,6 +48,12 @@ $home=true;
 <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js"></script>
 </header>
 
 
@@ -67,40 +73,531 @@ $home=true;
 
 <div class="nav_wrap" style=" background-color:#DF5430;">
 
-<? include('navigation.php'); ?>
+<? include('header.php'); ?>
 </div>
  <div class="" style="padding-left: 0 !important;">
-    <? if($home){include('siderbar_home.php');} ?>
-  </div>
-
-<div class="container-fluid" style="padding-left: 0 !important;background-color: #F2F2F6;">
- <CENTER>
-  <div class="col-xs-8 col-md-8 col-lg-9 col-sm-7" style="background-color: #F2F2F6">
-
-
-<iframe id="iframe_a" src="https://docs.google.com/gview?url=http://cipropertyapp.com/API/Uploads/Internal_plan.pdf&embedded=true" style="height: 81vh;
-    width: 75%;" frameborder="0"></iframe>
-
-        
-    
    
-
-     
-
-
   </div>
-  
-  </CENTER>
-  </div>
+ <div class="" style="height: 100%;
+    margin-left: 28.5%;
+    width: 71.5%;
+    position: absolute;
+    top: 16vh;
+    background-color: #F2F2F6;"> 
+<div class=" col-md-12 col-sm-12 canvasbackground" style="padding-right: 0px; padding-left: 0px">
+<div class="container-fluid" id="canvas-container" style="padding-left: 0 !important;background-color: #F2F2F6;padding: 0px;">
+<!-- <div class="col-md-12 col-sm-12 col-xs-12" > -->  
+  <div class="col-xs-9 col-md-9 col-lg-9 col-sm-9" style="background-color: #F2F2F6; height: 100%;padding: 0px;">
+<!-- <iframe id="iframe_a" src="https://docs.google.com/gview?url=http://cipropertyapp.com/API/Uploads/Internal_plan.pdf&embedded=true" style="height: 81vh;
+    width: 75%;" frameborder="0"></iframe> -->
 
+   <!--  <iframe src=""></iframe>     -->
+  <canvas id="canvas" >
+      
+    </canvas>  
+   </div>
+   <div class="col-xs-3 col-md-3 col-lg-3 col-sm-3" style="background-color: #F2F2F6;padding:0px;">
+    <ul class="list-unstyled" style="margin-top:10px;padding:0px;">
+      <div class="col-md-6 col-sm-6" style="">
+          <button id="drawing-mode" class="btn btn-info drawing_btn ">Free Draw</button>&nbsp;
+      </div>
+      <div class="col-md-6 col-sm-6" style="padding: 0px;">
+           <button id="other_btn" class="btn btn-info" >Lines Draw</button>
+      </div>
+          <div class="col-md-12" style="display: none;float: left; width: 100%;padding-top: 20px;" id="drawing-mode-options">
+            <label for="drawing-mode-selector" style="padding: 0px;">Mode:</label>
+            <select id="drawing-mode-selector" style="color: rgb(0, 0, 0);background-color: rgb(228, 228, 228);margin-left: 10px;width: 70%;border-radius: 2vh;outline: none; text-align-last: center;">
+              <option>Pencil</option>
+              <option>Circle</option>
+              <option>Spray</option>
+              <option>Pattern</option>
+
+              <option>hline</option>
+              <option>vline</option>
+              <option>square</option>
+              <option>diamond</option>
+              <option>texture</option>
+            </select><br>
+            <label for="drawing-line-width" style="padding: 0px;">Line width:</label>
+            <input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+            <label for="drawing-color" style="padding: 0px;">Line color:</label>
+            <input type="color" value="#005E7A" id="drawing-color"><br>
+            <label for="drawing-shadow-width" style="padding: 0px;">Line shadow width:</label>
+            <input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+            <div class=" col-md-12" style="margin-top:5px;font-size: 25px;">
+<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
+  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+    </div> 
 
  
+          </div>
+          <div id="other" style="display: none;">
+           <div class="col-md-12 col-sm-12" style=" margin-top:5%;padding: 0px;">  
+            <!-- <h3>Select from dropdown</h3> -->
+  <div class="col-md-12 col-sm-12" style="padding-bottom: 10px"> 
+  <label for="" style="padding: 0px;">Line Type:</label>         
+  <select name="" id="linetype" style="color: rgb(0, 0, 0); background-color: rgb(228, 228, 228); width: 100%; border-radius: 2vh; outline: none;
+    text-align-last: center;">
+  <option value="dashed">Dashed</option>
+  <option value="straight">Straight</option>
+</select></div>
+
+<div class="col-md-12 col-sm-12" style="">
+  <label for="" style="padding: 0px;">Line Color:</label>
+<select name="" id="linecolor" style="color: rgb(0, 0, 0); background-color: rgb(228, 228, 228); width: 100%; border-radius: 2vh; outline: none;
+    text-align-last: center;">
+  <option value="red" style="color: red">Red</option>
+  <option value="blue" style="color: blue">Blue</option>
+   <option value="black" style="color: black">Black</option>
+  <option value="yellow" style="color: #DFDF36;">Yellow</option>
+  <option value="green" style="color: green">Green</option>
+</select></div>
+<div class=" col-md-12" style="margin-top:15px;font-size: 25px;    margin-left: 15px;">
+<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
+  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+    </div>      </div>
+        </ul>
+   </div>
+ <!--  </div> -->
+  </div>
+  <div class="col-sm-12 col-md-12" id="images" style="height: 10%; margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 5px 1px black;
+    border: 5px solid transparent;background-color: #F2F2F6;">
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/1.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/2.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px;"><img style="height: 8vh;" draggable="true" src="map_images/3.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/4.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/5.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/6.png"   crossOrigin="Anonymous"></img></div>
+    <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;">Save as Image</button></div>
+
+</div>
+ <div class="col-sm-12 col-md-12" id="margin_set" style="margin-bottom: 5px;padding-left: 0px; padding-right: 0px; width: 104%;margin-left: -15px;"> 
+ <? include("Checklist_visit_footer/footer_new.php"); ?></div></div></div>
+</body>
+
+<!-- <script type="text/javascript"> 
+    $('#margin_set').css($(window).height());
+  </script> -->
+
+<!-- test canvas 3 script and css -->
+<script type="text/javascript">
+  /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
+
+var canvas = new fabric.Canvas('canvas');
+canvas.setHeight(360);
+canvas.setWidth(700);
+
+canvas.setBackgroundImage('map_images/rsz_new.png', canvas.renderAll.bind(canvas), {
+    backgroundImageOpacity: 0.5,
+   backgroundImageStretch: false
+});
+/* 
+NOTE: the start and end handlers are events for the <img> elements; the rest are bound to 
+the canvas container.
+*/
+canvas.on('object:modified',function(){
+  if(!isRedoing){
+    h = [];
+  }
+  isRedoing = false;
+});
+
+var isRedoing = false;
+var h = [];
+function undo(){
+  if(canvas._objects.length>0){
+   h.push(canvas._objects.pop());
+   canvas.renderAll();
+  }
+}
+function redo(){
+  
+  if(h.length>0){
+    isRedoing = true;
+   canvas.add(h.pop());
+  }
+}
+function handleDragStart(e) {
+    [].forEach.call(images, function (img) {
+        img.classList.remove('img_dragging');
+    });
+    this.classList.add('img_dragging');
+}
+
+function handleDragOver(e) {
+   doEven();
+    if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+    }
+
+    e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
+    // NOTE: comment above refers to the article (see top) -natchiketa
+
+    // return false;
+}
+
+function handleDragEnter(e) {
+    // this / e.target is the current hover target.
+    this.classList.add('over');
+    canvas.__eventListeners["mouse:down"] = [];
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('over'); // this / e.target is previous target element.
+}
+
+function handleDrop(e) {
+    // this / e.target is current target element.
+
+    if (e.stopPropagation) {
+        e.stopPropagation(); // stops the browser from redirecting.
+    }
+
+    var img = document.querySelector('#images img.img_dragging');
+
+    console.log('event: ', e);
+
+    var newImage = new fabric.Image(img, {
+        width: img.width,
+        height: img.height,
+        // Set the center of the new object based on the event coordinates relative
+        // to the canvas container.
+        left: e.layerX,
+        top: e.layerY
+    });
+    canvas.add(newImage);
+
+    return false;
+}
+
+function handleDragEnd(e) {
+    // this/e.target is the source node.
+    [].forEach.call(images, function (img) {
+        img.classList.remove('img_dragging');
+    });
+}
+
+if (Modernizr.draganddrop) {
+    // Browser supports HTML5 DnD.
+
+    // Bind the event listeners for the image elements
+    var images = document.querySelectorAll('#images img');
+    [].forEach.call(images, function (img) {
+        img.addEventListener('dragstart', handleDragStart, false);
+        img.addEventListener('dragend', handleDragEnd, false);
+    });
+    // Bind the event listeners for the canvas
+    var canvasContainer = document.getElementById('canvas-container');
+    canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+    canvasContainer.addEventListener('dragover', handleDragOver, false);
+    canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+    canvasContainer.addEventListener('drop', handleDrop, false);
+} else {
+    // Replace with a fallback to a library solution.
+    alert("This browser doesn't support the HTML5 Drag and Drop API.");
+}
+
+
+var drawingModeEl = document.getElementById('drawing-mode'),
+      drawingOptionsEl = document.getElementById('drawing-mode-options'),
+      drawingColorEl = document.getElementById('drawing-color'),
+      drawingLineWidthEl = document.getElementById('drawing-line-width'),
+      drawingShadowWidth = document.getElementById('drawing-shadow-width');
+
+  drawingModeEl.onclick = function() {
+    canvas.isDrawingMode = !canvas.isDrawingMode;
+    if (canvas.isDrawingMode) {
+      $('#other_btn').attr('disabled',true);
+      drawingModeEl.innerHTML = 'Cancel';
+      drawingOptionsEl.style.display = '';
+    }
+    else {
+      $('#other_btn').attr('disabled',false);
+      drawingModeEl.innerHTML = 'Free Draw';
+      drawingOptionsEl.style.display = 'none';
+    }
+  };
+
+  // canvas.on('path:created', function() {
+  //   updateComplexity();
+  // });
+
+  if (fabric.PatternBrush) {
+    var vLinePatternBrush = new fabric.PatternBrush(canvas);
+    vLinePatternBrush.getPatternSrc = function() {
+
+      var patternCanvas = fabric.document.createElement('canvas');
+      patternCanvas.width = patternCanvas.height = 10;
+      var ctx = patternCanvas.getContext('2d');
+
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(0, 5);
+      ctx.lineTo(10, 5);
+      ctx.closePath();
+      ctx.stroke();
+
+      return patternCanvas;
+    };
+
+    var hLinePatternBrush = new fabric.PatternBrush(canvas);
+    hLinePatternBrush.getPatternSrc = function() {
+
+      var patternCanvas = fabric.document.createElement('canvas');
+      patternCanvas.width = patternCanvas.height = 10;
+      var ctx = patternCanvas.getContext('2d');
+
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(5, 0);
+      ctx.lineTo(5, 10);
+      ctx.closePath();
+      ctx.stroke();
+
+      return patternCanvas;
+    };
+
+    var squarePatternBrush = new fabric.PatternBrush(canvas);
+    squarePatternBrush.getPatternSrc = function() {
+
+      var squareWidth = 10, squareDistance = 2;
+
+      var patternCanvas = fabric.document.createElement('canvas');
+      patternCanvas.width = patternCanvas.height = squareWidth + squareDistance;
+      var ctx = patternCanvas.getContext('2d');
+
+      ctx.fillStyle = this.color;
+      ctx.fillRect(0, 0, squareWidth, squareWidth);
+
+      return patternCanvas;
+    };
+
+    var diamondPatternBrush = new fabric.PatternBrush(canvas);
+    diamondPatternBrush.getPatternSrc = function() {
+
+      var squareWidth = 10, squareDistance = 5;
+      var patternCanvas = fabric.document.createElement('canvas');
+      var rect = new fabric.Rect({
+        width: squareWidth,
+        height: squareWidth,
+        angle: 45,
+        fill: this.color
+      });
+
+      var canvasWidth = rect.getBoundingRectWidth();
+
+      patternCanvas.width = patternCanvas.height = canvasWidth + squareDistance;
+      rect.set({ left: canvasWidth / 2, top: canvasWidth / 2 });
+
+      var ctx = patternCanvas.getContext('2d');
+      rect.render(ctx);
+
+      return patternCanvas;
+    };
+
+    var img = new Image();
+    img.src = '../assets/honey_im_subtle.png';
+
+    var texturePatternBrush = new fabric.PatternBrush(canvas);
+    texturePatternBrush.source = img;
+  }
+
+  document.getElementById('drawing-mode-selector').addEventListener('change', function() {
+
+    if (this.value === 'hline') {
+      canvas.freeDrawingBrush = vLinePatternBrush;
+    }
+    else if (this.value === 'vline') {
+      canvas.freeDrawingBrush = hLinePatternBrush;
+    }
+    else if (this.value === 'square') {
+      canvas.freeDrawingBrush = squarePatternBrush;
+    }
+    else if (this.value === 'diamond') {
+      canvas.freeDrawingBrush = diamondPatternBrush;
+    }
+    else if (this.value === 'texture') {
+      canvas.freeDrawingBrush = texturePatternBrush;
+    }
+    else {
+      canvas.freeDrawingBrush = new fabric[this.value + 'Brush'](canvas);
+    }
+
+    if (canvas.freeDrawingBrush) {
+      canvas.freeDrawingBrush.color = drawingColorEl.value;
+      canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+      canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
+    }
+  });
+
+  drawingColorEl.onchange = function() {
+    canvas.freeDrawingBrush.color = drawingColorEl.value;
+  };
+  drawingLineWidthEl.onchange = function() {
+    canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+  };
+  drawingShadowWidth.onchange = function() {
+    canvas.freeDrawingBrush.shadowBlur = parseInt(drawingShadowWidth.value, 10) || 0;
+  };
+
+  if (canvas.freeDrawingBrush) {
+    canvas.freeDrawingBrush.color = drawingColorEl.value;
+    canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+    canvas.freeDrawingBrush.shadowBlur = 0;
+  }
+
 
 
   
 
-</body>
 
+var even = false;
+
+$('#other_btn').click(function() {
+  
+    if(even) {
+
+        doEven();
+    } else {
+        doOdd();
+    }
+
+    even = !even;
+});
+
+
+
+$("#b").click(function(){
+  $("#canvas").get(0).toBlob(function(blob){
+    saveAs(blob, "image/myIMG.png");
+    canvas.clear();
+    canvas.setBackgroundImage('map_images/rsz_new.png', canvas.renderAll.bind(canvas), {
+    backgroundImageOpacity: 0.5,
+    backgroundImageStretch: false
+});
+    console.log(blob);
+  });
+});
+function doOdd() {
+    // first click, third click, fifth click, etc
+$('#other_btn').text("Cancel");
+    $(".drawing_btn").attr("disabled", true);
+        $('#other').show();
+        var line, isDown;
+
+        canvas.on('mouse:down', function(o){
+          isDown = true;
+          var pointer = canvas.getPointer(o.e);
+          var points = [ pointer.x, pointer.y, pointer.x, pointer.y ];
+          var color=$('#linecolor').val();
+          if(document.getElementById('linetype').value == "dashed") {
+            
+             line = new fabric.Line(points, {
+              strokeWidth: 5,
+              strokeDashArray: [15, 5],
+              fill: color,
+              stroke: color,
+              originX: 'center',
+              originY: 'center'
+            });
+          }
+          else {
+
+            line = new fabric.Line(points, {
+
+              strokeWidth: 5,
+              fill: color,
+              stroke: color,
+              originX: 'center',
+              originY: 'center'
+            });
+          }
+          
+          canvas.add(line);
+        });
+
+        canvas.on('mouse:move', function(o){
+          if (!isDown) return;
+          var pointer = canvas.getPointer(o.e);
+          line.set({ x2: pointer.x, y2: pointer.y });
+          canvas.renderAll();
+        });
+
+        canvas.on('mouse:up', function(o){
+          isDown = false;
+        });
+}
+
+function doEven() {
+    // second click, fourth click, sixth click, etc
+  $(".drawing_btn").attr("disabled", false);
+
+canvas.__eventListeners["mouse:down"] = [];
+    $('#other').hide();
+    $('#other_btn').text("Lines Draw");
+
+  
+}
+
+
+
+
+</script>
+
+<style type="text/css">
+.canvasbackground {
+  top: 6vh;
+  height: 100%;
+    margin-left: 1.5%;
+    width: 97%;
+    position: absolute;
+  background-color: #F2F2F6;
+}
+  #canvas-container {
+    position: relative;
+    width:100%;
+    height:55vh;
+    box-shadow: 0 0 5px 1px black;
+    border: 5px solid transparent;
+}
+.canvas-container{
+   width:100% !important;
+    height: 100% !important;
+}
+/*.lower-canvas{
+  width:100% !important;
+  height: 100% !important;
+}
+.upper-canvas{
+  width:100% !important;
+  height: 100% !important;
+}*/
+#canvas-container.over {
+    border: none;
+}
+#images img.img_dragging {
+    opacity: 0.4;
+}
+/* 
+Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/ 
+*/
+
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+    cursor: move;
+}
+</style>
+
+<!-- end -->
 <style>
 /*@font-face {
   font-family: 'Helvetica_Nue';
@@ -284,11 +781,11 @@ padding-left: 3.5vw;
     background-image: -webkit-linear-gradient(top, #DF5430 0%, #DF5430 100%);
   }
 
-  li:hover {
+  /*li:hover {
     background: #3C3C3C;
   
 
-  }
+  }*/
   li a img
   {
     margin-top: 2vh;
