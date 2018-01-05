@@ -486,7 +486,8 @@ $('#other_btn').click(function() {
 $("#b").click(function(){
   $("#canvas").get(0).toBlob(function(blob){
     saveAs(blob, "image/myIMG.png");
-    canvas.clear();
+	savetoserver();
+	canvas.clear();
     canvas.setBackgroundImage('map_images/rsz_new.png', canvas.renderAll.bind(canvas), {
     backgroundImageOpacity: 0.5,
     backgroundImageStretch: false
@@ -494,6 +495,23 @@ $("#b").click(function(){
     console.log(blob);
   });
 });
+
+function savetoserver() {
+
+var dataURL=canvas.toDataURL();
+
+$.ajax({
+  type: "POST",
+  url: "upload.php",
+  data: {image: dataURL}
+}).done(function( respond ) {
+ alert("Saved filename: "+respond);
+});
+
+
+}
+
+
 function doOdd() {
     // first click, third click, fifth click, etc
 $('#other_btn').text("Cancel");
