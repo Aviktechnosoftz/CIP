@@ -98,12 +98,20 @@ $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object(
    </div>
    <div class="col-xs-3 col-md-3 col-lg-3 col-sm-3" style="background-color: #F2F2F6;padding:0px;">
     <ul class="list-unstyled" style="margin-top:10px;padding:0px;">
+      <div class="col-md-12 col-sm-12" style="padding: 0px;">
       <div class="col-md-6 col-sm-6" style="">
           <button id="drawing-mode" class="btn btn-info drawing_btn ">Free Draw</button>&nbsp;
       </div>
       <div class="col-md-6 col-sm-6" style="padding: 0px;">
            <button id="other_btn" class="btn btn-info" >Lines Draw</button>
       </div>
+    </div>
+    <div class="col-md-12 col-sm-12" style="top: 35vh;box-shadow: 0 0 5px 1px black; border: 2px solid transparent;width: 70%;margin-left: 35px;">
+      <div class=" col-md-12" style="font-size: 25px;text-align-last: center; ">
+         <a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
+         <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+    </div>
+    </div>
           <div class="col-md-12" style="display: none;float: left; width: 100%;padding-top: 20px;" id="drawing-mode-options">
             <label for="drawing-mode-selector" style="padding: 0px;">Mode:</label>
             <select id="drawing-mode-selector" style="color: rgb(0, 0, 0);background-color: rgb(228, 228, 228);margin-left: 10px;width: 70%;border-radius: 2vh;outline: none; text-align-last: center;">
@@ -124,13 +132,15 @@ $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object(
             <input type="color" value="#005E7A" id="drawing-color"><br>
             <label for="drawing-shadow-width" style="padding: 0px;">Line shadow width:</label>
             <input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
-            <div class=" col-md-12" style="margin-top:5px;font-size: 25px;">
-<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
-  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
-    </div> 
+            
 
  
           </div>
+
+         <!--  <div class=" col-md-12" style="margin-top:5px;font-size: 25px;">
+<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
+  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+    </div>  -->
           <div id="other" style="display: none;">
            <div class="col-md-12 col-sm-12" style=" margin-top:5%;padding: 0px;">  
             <!-- <h3>Select from dropdown</h3> -->
@@ -152,14 +162,16 @@ $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object(
   <option value="yellow" style="color: #DFDF36;">Yellow</option>
   <option value="green" style="color: green">Green</option>
 </select></div>
-<div class=" col-md-12" style="margin-top:15px;font-size: 25px;    margin-left: 15px;">
+<!-- <div class=" col-md-12" style="margin-top:15px;font-size: 25px;    margin-left: 15px;">
 <a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
   <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
-    </div>      </div>
+    </div> -->      </div>
         </ul>
    </div>
  <!--  </div> -->
   </div>
+
+  
   <div class="col-sm-12 col-md-12" id="images" style="height: 10%; margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 5px 1px black;
     border: 5px solid transparent;background-color: #F2F2F6;">
     <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/1.png"   crossOrigin="Anonymous"></img></div>
@@ -225,7 +237,9 @@ function handleDragStart(e) {
 }
 
 function handleDragOver(e) {
-   doEven();
+  if(even == true)
+ $('#other_btn').click();
+   // even=true;
     if (e.preventDefault) {
         e.preventDefault(); // Necessary. Allows us to drop.
     }
@@ -456,7 +470,7 @@ var drawingModeEl = document.getElementById('drawing-mode'),
 var even = false;
 
 $('#other_btn').click(function() {
-  
+  // alert(even);
     if(even) {
 
         doEven();
@@ -566,14 +580,16 @@ canvas.__eventListeners["mouse:down"] = [];
    width:100% !important;
     height: 100% !important;
 }
-/*.lower-canvas{
+.lower-canvas{
   width:100% !important;
   height: 100% !important;
+  image-rendering: pixelated;
 }
 .upper-canvas{
   width:100% !important;
-  height: 100% !important;
-}*/
+  height: 100% !important;\
+  image-rendering: pixelated;
+}
 #canvas-container.over {
     border: none;
 }
