@@ -22,11 +22,11 @@ $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object(
 // print_r($_SESSION);
 // $home=true;
 
+$Map_ID=$conn->query("select MAX(ID)+1 as map_id from tbl_intenal_traffic_map where project_id='".$_SESSION['admin']."'")->fetch_object(); 
 
+$map=$Map_ID->map_id;
 
-
-
-
+if($map === NULL) {$map='1'	;}
 
 ?>
 
@@ -34,7 +34,6 @@ $get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object(
 <html>
 <header>
   <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"/>
-
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
      <script src="js/jquery.min.js"></script>
@@ -500,10 +499,26 @@ function savetoserver() {
 
 var dataURL=canvas.toDataURL();
 
+var project_id= <?php echo $_SESSION['admin'] ?>;
+
+var lastid= <?php echo $map ; ?>;
+
+
+var currentTime = new Date();
+
+var month = currentTime.getMonth()+1; 
+var day = currentTime.getDate()
+var year = currentTime.getFullYear()
+var currentdate =month + "/" + day + "/" + year;
+
+
+var imagename='img_'+project_id+'_'+lastid+'_'+currentdate;
+
 $.ajax({
   type: "POST",
   url: "upload.php",
-  data: {image: dataURL}
+  data: { image: dataURL,imagename: imagename,project_id: project_id}
+					
 }).done(function( respond ) {
  alert("Saved filename: "+respond);
 });
