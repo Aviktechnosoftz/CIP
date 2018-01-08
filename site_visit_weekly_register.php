@@ -13,7 +13,6 @@ else
   $user= $_SESSION['admin'];
 }
 
-
 $get_all_data= $conn->query("select tbl_sm_weekly_action.action,tbl_filled_sm_weekly.checklist_udid,date(tbl_filled_sm_weekly.created) as date,tbl_filled_sm_weekly.is_submitted as submitted from tbl_sm_weekly_action inner join tbl_filled_sm_weekly on tbl_filled_sm_weekly.checklist_udid = tbl_sm_weekly_action.checklist_udid where project_id='".$_SESSION['admin']."' group by tbl_sm_weekly_action.checklist_udid");
 
 ?>
@@ -211,28 +210,28 @@ language: {
             </thead>
             <tbody>
             <?
-          
-
-        
-           
-               
+                         
               $counter=0;
-              while($row=$get_all_data->fetch_object())
-                {
+			  
+              $get_all_dates= $conn->query("select *,date(created) as dates,checklist_udid  from tbl_sm_report_filled Where project_id ='".$_SESSION['admin']."'  AND is_deleted = '0' AND date(created)");
+while($row_all_dates = $get_all_dates->fetch_object())
+{
+        $get_udid= $conn->query("Select checklist_udid from tbl_sm_report_filled where date(created)= '".$row_all_dates->dates."'")->fetch_object();
+		
+        $check_action_required= $conn->query("
+select tbl_sm_report_action.action,tbl_sm_report_filled.checklist_udid from tbl_sm_report_action inner join tbl_sm_report_filled on tbl_sm_report_filled.checklist_udid = tbl_sm_report_action.checklist_udid where tbl_sm_report_action.checklist_udid='".$get_udid->checklist_udid."' and (tbl_sm_report_action.action ='2' OR tbl_sm_report_filled.is_submitted=0) group by tbl_sm_report_action.action
+")->num_rows;
+
                   $counter++;?>
               <tr class="content">
-                <? if($row->action==2 OR $row->submitted == 0)
+                <? if($check_action_required <= 0)
                 { ?>
-                <td><a style="color: red" href="site_manager_edit_checklist.php?udid=<?=$row->date?>"><?="Checklist&nbsp".$counter?></td>
                 <? }?>
-              <? if($row->action!=2 AND $row->submitted == 1) { ?>
-<td><a style="color: green" href="site_manager_checklist.php?site_manager_submitted_form=<?=$row->date?>"><?="Checklist&nbsp".$counter?></td>
+              <? if($check_action_required > 0) { ?>
 
               <? } ?>
-                
-                
-           
-                <td><?=$row->date ?></td>
+                           
+                <td><?=$row_all_dates->dates ?></td>
                   <? } ?>
               </tr>
              
