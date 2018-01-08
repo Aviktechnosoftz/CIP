@@ -226,8 +226,10 @@ select tbl_sm_report_action.action,tbl_sm_report_filled.checklist_udid from tbl_
               <tr class="content">
                 <? if($check_action_required <= 0)
                 { ?>
+                <td><a style="color: green" href="site_visit_complete_checklist.php?udid=<?=$row_all_dates->dates?>"><?="Checklist&nbsp".$counter?></td>
                 <? }?>
               <? if($check_action_required > 0) { ?>
+<td><a style="color: red" href="site_visit_edit_checklist.php?udid=<?=$row_all_dates->dates?>"><?="Checklist&nbsp".$counter?></td>
 
               <? } ?>
                            
