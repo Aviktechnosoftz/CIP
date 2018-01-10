@@ -18,15 +18,20 @@ else
 $project_name_query=$conn->query("select tbl_project.id as project_id,project_name as name,number from tbl_project_register left join tbl_project on tbl_project_register.project_id = tbl_project.id where tbl_project.id='".$_SESSION['admin']."'  group by project_id")->fetch_object();
 
 $get_project_details=$conn->query("select * from tbl_project_detail where project_id='".$_SESSION['admin']."'")->fetch_object();
-$get_policy=$conn->query("select * from tbl_policy where id='1'")->fetch_object();
+$get_main_maps=$conn->query("select * from tbl_maps where project_id='".$_SESSION['admin']."'");
+$get_main_maps_baclground=$conn->query("select * from tbl_maps where project_id='".$_SESSION['admin']."' and is_activated='1'")->fetch_object();
 // print_r($_SESSION);
 // $home=true;
 
-$Map_ID=$conn->query("select MAX(ID)+1 as map_id from tbl_intenal_traffic_map where project_id='".$_SESSION['admin']."'")->fetch_object(); 
+
+
+$Map_ID=$conn->query("select MAX(id)+1 as map_id from tbl_intenal_traffic_map where project_id='".$_SESSION['admin']."'")->fetch_object(); 
 
 $map=$Map_ID->map_id;
 
-if($map === NULL) {$map='1'	;}
+if($map === NULL) {$map='1' ;}
+
+
 
 ?>
 
@@ -34,6 +39,7 @@ if($map === NULL) {$map='1'	;}
 <html>
 <header>
   <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"/>
+
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
      <script src="js/jquery.min.js"></script>
@@ -179,12 +185,218 @@ if($map === NULL) {$map='1'	;}
     <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/4.png"   crossOrigin="Anonymous"></img></div>
     <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/5.png"   crossOrigin="Anonymous"></img></div>
     <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/6.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;">Save as Image</button></div>
+    <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="">Save as Image</button></div>
+ <!--     <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button onclick=" $('#imgupload').trigger('click');" class=" btn btn-info" id="b2" type="button" style="background-color:#5bc0de !important;outline: none;border: none;">Upload Map</button></div>
+     <input type="file" id="imgupload" style="display:none"/> -->
 
+<!-- Large modal -->
+
+<button class="btn btn-primary button_cls" data-toggle="modal" data-target=".bd-example">Large modal</button>
+
+
+<div class="modal fade bd-example" id="upload_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="close_modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-10 col-md-10" > <input type='file' id= "file_input" onchange="readURL(this);" /> </div>
+          <div class="col-sm-2 col-md-2" ><div id="remove"></div></div>
+          <div class="col-sm-6 col-md-6">   
+            <img id="blah" src="image/image_upload2.png" style="padding: 20px 0 20px 0" />
+          </div>
+          <div class="col-sm-1 col-md-1 selec_or">
+            <h4 class="modal-title">OR</h4>
+          </div> 
+          <div class="col-sm-4 col-md-4 selec">
+            <select class="selec" id="uploaded_select" onchange="update_map()">
+              <option value="">Please Select Maps</option>
+              <? while($row_main_map=$get_main_maps->fetch_object()){?>
+              <option value="<?=$row_main_map->id?>"><?=$row_main_map->map_name?></option>
+              <? } ?>
+            </select>
+          </div>
+          <div class="col-sm-1 col-md-1" id="remove2" style="display: none;" onclick="remove_selected_map()"><span class="glyphicon glyphicon-remove" id="remove_icon2" style="margin-top: 97px;"> </span></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <center>
+          <button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="map();">Save as Image</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div> 
+  </div>
 </div>
+</div>
+
  <div class="col-sm-12 col-md-12" id="margin_set" style="margin-bottom: 5px;padding-left: 0px; padding-right: 0px; width: 104%;margin-left: -15px;"> 
  <? include("Checklist_visit_footer/footer_new.php"); ?></div></div></div>
 </body>
+
+<script>
+  // $(function () {
+  //   $(document).on("hidden.bs.modal", "#modalTaskObserved", function () {
+  //     $(this).find('input').val('');  
+  //   });
+  // });
+
+
+
+
+var flag=0;
+var image_name='<?=$get_main_maps_baclground->map_name ?>';
+  function update_map()
+  {
+    if($('#uploaded_select').val() == '')
+    {
+      flag=0;
+    }
+
+    else
+    {
+      flag=1;
+      $('#remove2').show();$('#file_input').hide();
+    }
+    
+  }
+
+function select_refresh()
+{
+   $.ajax({
+          url : "ajax_internal_plan_sel_refresh.php",
+          type: "POST",
+          data: {flag:true}, 
+          
+            success: function(response){
+            // alert(response); 
+
+            //  image_name=response;
+            // flag=2;
+             $("#uploaded_select").html(response);
+          }     
+        });
+}
+
+function remove_selected_map()
+{
+  $('#file_input').show();
+  $('#remove2').hide();
+  $('#uploaded_select').val('');
+  $('#uploaded_select').prop('disabled',true);
+  flag=0;
+}
+
+function update_map_info()
+{
+  var val_map_sel=$('#uploaded_select').val();
+   $.ajax({
+          url : "ajax_internal_plan.php",
+          type: "POST",
+          data: {name:val_map_sel}, 
+          
+            success: function(response){
+            alert("Uploaded"); 
+
+             image_name=response;
+            // flag=2;
+          }     
+        });
+}
+
+
+    function uploadImg()
+  {
+    var fileInput = document.getElementById('file_input');
+      var filePath = fileInput.value; 
+      var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+      if( !allowedExtensions.exec(filePath))
+      {
+        alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+        fileInput.value = '';
+        return false;
+        flag=0;
+      }
+      else
+      {   
+        var formData = new FormData();
+        formData.append('file', $('#file_input')[0].files[0]);
+          $.ajax({
+          url : "ajax_internal_plan.php",
+          type: "POST",
+          data: formData, 
+          contentType: false,
+          cache: false,
+          processData:false,
+          async: false,
+            success: function(response){
+              alert('uploaded');
+            image_name=response;
+            
+          }     
+        });
+      }
+  }
+
+  function map()
+  {
+    if(flag==1)
+    {
+      update_map_info();
+      reset_modal();
+      canvas_background_change(image_name);
+    }
+
+    else if(flag==2)
+    {
+      uploadImg();
+      reset_modal();
+      canvas_background_change(image_name);
+    }
+    else
+      alert("Please Choose atleast one");
+  }
+
+  function reset_modal()
+  {
+
+    
+    flag=0;
+    $('#uploaded_select').val('');
+    $('#file_input').val('');
+    $('#blah').attr('src','image/image_upload2.png').width(175).height(175);
+    
+        // $(".modal-backdrop.in").hide();
+      // $('.modal-backdrop').remove();
+      $(".button_cls").click();
+      // $('#remove').click();
+      $('#remove2').click();
+        $('#remove').click();
+        select_refresh();
+       $('#uploaded_select').removeAttr("disabled");
+      // $('.modal-backdrop').removeClass();
+      //  $('#upload_modal').modal('hide');
+
+     // $('.modal.in').modal('hide');
+
+
+
+  }
+
+function canvas_background_change(name)
+{
+
+   canvas.setBackgroundImage('API/Uploads/'+name, canvas.renderAll.bind(canvas), {
+    backgroundImageOpacity: 0.5,
+    backgroundImageStretch: false
+});
+
+}
+  
+</script>
 
 <!-- <script type="text/javascript"> 
     $('#margin_set').css($(window).height());
@@ -198,7 +410,7 @@ var canvas = new fabric.Canvas('canvas');
 canvas.setHeight(360);
 canvas.setWidth(700);
 
-canvas.setBackgroundImage('map_images/rsz_new.png', canvas.renderAll.bind(canvas), {
+canvas.setBackgroundImage('API/Uploads/'+'<?=$get_main_maps_baclground->map_name ?>', canvas.renderAll.bind(canvas), {
     backgroundImageOpacity: 0.5,
    backgroundImageStretch: false
 });
@@ -485,15 +697,14 @@ $('#other_btn').click(function() {
 $("#b").click(function(){
   $("#canvas").get(0).toBlob(function(blob){
     saveAs(blob, "image/myIMG.png");
-	savetoserver();
-	canvas.clear();
-    canvas.setBackgroundImage('map_images/rsz_new.png', canvas.renderAll.bind(canvas), {
-    backgroundImageOpacity: 0.5,
-    backgroundImageStretch: false
-});
-    console.log(blob);
+    savetoserver();
+    canvas.clear();
+
+    canvas_background_change(image_name);
+    console.log(image_name);
   });
 });
+
 
 function savetoserver() {
 
@@ -505,27 +716,24 @@ var lastid= <?php echo $map ; ?>;
 
 
 var currentTime = new Date();
-
-var month = currentTime.getMonth()+1; 
-var day = currentTime.getDate()
-var year = currentTime.getFullYear()
-var currentdate =month + "/" + day + "/" + year;
+var n = currentTime.getTime();
 
 
-var imagename='img_'+project_id+'_'+lastid+'_'+currentdate;
+
+var imagename='img_'+project_id+'_'+lastid+'_'+n;
 
 $.ajax({
   type: "POST",
-  url: "upload.php",
+  url: "upload_internal_map.php",
   data: { image: dataURL,imagename: imagename,project_id: project_id}
-					
+          
 }).done(function( respond ) {
- alert("Saved filename: "+respond);
+ // alert("Saved filename: "+respond);
+ // console.log(respond);
 });
 
 
 }
-
 
 function doOdd() {
     // first click, third click, fifth click, etc
@@ -589,11 +797,48 @@ canvas.__eventListeners["mouse:down"] = [];
 }
 
 
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(175)
+                        .height(175);
+
+                        $('#uploaded_select').attr('disabled','true');
+                        $('#remove').html('<span class="glyphicon glyphicon-remove" id="remove_icon"></span>');
+                        flag=2;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+$("#remove").on('click', function() {
+   $('#blah').attr('src', 'image/image_upload2.png').width(175)
+                        .height(175);
+                        $('#file_input').val(''); 
+                        $("#remove_icon").hide();
+                         $('#uploaded_select').removeAttr("disabled");
+                         flag=0;
+});
+
 
 
 </script>
 
 <style type="text/css">
+.selec{
+  top: 95px!important;
+}
+
+.selec_or{
+  top: 92px!important;
+}
 .canvasbackground {
   top: 6vh;
   height: 100%;
@@ -1089,9 +1334,10 @@ height: 26vh;
     margin: auto;
     padding: 5px 10px;
     border: 1px solid #888;
-    width: 22vw;
-    top: 3vh;
-    left: 39vh;
+    /*width: 400px;*/
+    top: 25%;
+    left: 20%;
+    /*height: 300px;*/
 }
 .modal-header {
   padding: 5px;
