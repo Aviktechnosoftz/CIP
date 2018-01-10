@@ -85,7 +85,7 @@ function redirect(date)
                         url: "ajax_check_date.php",
                         data: {date: date},
                         success: function(data) {
-                                // alert(data);
+                               alert(data);
                             if(data=='2')
                             {
                               window.parent.location.href= "site_visit_edit_checklist.php?udid="+date;
@@ -96,7 +96,7 @@ function redirect(date)
                             {
                               // alert('Sorry !! No Checklist Available');
 
-                              $.notify("Sorry !! No Checklist Available", { position:"top-right" }
+                              $.notify("Sorry !! No Checklist Available", { position:"bottom-right" }
 );
                               
                               return false;
@@ -114,6 +114,9 @@ function redirect(date)
 }
 </script>
 <style>
+.hasDatepicker{
+  height: 100vh !important;
+ }
 .btn-default
 {
   border-radius: 20%;
@@ -151,14 +154,15 @@ function redirect(date)
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
      border:none;
   background: none;
-  font-size: 18px;
-  margin:20px 25px ;
+  font-size: 11px;
+  margin:20px 26px ;
+  overflow: hidden;
 }
 .hasDatepicker 
 {
 width: 100%;
-height:500px;
-display: block;
+/*height:500px;
+*/display: block;
 }
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
 width: 100%;
@@ -167,9 +171,9 @@ width: 100%;
   height:100%;
   border:none;
 }
-.ui-datepicker table{   
+/*.ui-datepicker table{   
 margin-left:-20px;
-}
+}*/
 .ui-datepicker .ui-datepicker-header {
     position: inherit;
    border:none;
@@ -186,12 +190,12 @@ margin-left:-20px;
 }
 
 th{
-    font-size: 14px;
+    font-size: 12px;
   color:grey;
 }
 body
 {
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 .ui-datepicker .ui-datepicker-title {
@@ -201,9 +205,7 @@ body
 .ui-icon.ui-icon-circle-triangle-w {
     background: url(image/arrows_left.png);
     width: 100%;
-
-  
-         background-size: 100%;
+    background-size: 100%;
     /* background-size: 158px 100px; */
     background-repeat: no-repeat;
     background-position: center;
@@ -225,5 +227,28 @@ body
  font-weight: 0px;
  color: #212121; 
 }
+.ui-datepicker .ui-datepicker-prev span {
+    left: 0% !important;
+    margin-left: 0px !important;
+}
+.ui-datepicker .ui-datepicker-next span{
+   margin-left: -23px !important;
+}
+ .ui-datepicker .ui-datepicker-next span{
+  left: 0% !important;
+    margin-left: 0px !important;
+ }
+ @media (min-width: 1030px){
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+     border:none;
+  background: none;
+  font-size: 15px !important;
+  margin:20px 26px ;
+  overflow: hidden;
+}
+.ui-datepicker th {   
+ font-size: 18px !important;
+  }
 
+ }
 </style>

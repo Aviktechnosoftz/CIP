@@ -11,9 +11,25 @@
     $user= $_SESSION['admin'];
   }
 
-  $get_data = $conn->query("select *,tbl_sm_weekly_main.id, tbl_sm_weekly_action.id as aid,tbl_sm_weekly_action.row_id as final_row_id, date(tbl_filled_sm_weekly.created) as created_filled FROM tbl_sm_weekly_main  join tbl_sm_weekly_action on tbl_sm_weekly_main.id = tbl_sm_weekly_action.row_id   join tbl_filled_sm_weekly on tbl_sm_weekly_action.checklist_udid  = tbl_filled_sm_weekly.checklist_udid  AND tbl_filled_sm_weekly.project_id ='3'  AND tbl_filled_sm_weekly.is_deleted = '0' AND tbl_filled_sm_weekly.is_submitted = '1' AND  (tbl_sm_weekly_action.actual_date  = '' or tbl_sm_weekly_action.actual_date IS  NULL) AND tbl_sm_weekly_action.action = '2' WHERE  tbl_sm_weekly_action.emp_id = '1'  order by  tbl_sm_weekly_main.task_number");
-  $get_count = $conn->query("select count(*) as count FROM tbl_sm_weekly_main  join tbl_sm_weekly_action on tbl_sm_weekly_main.id = tbl_sm_weekly_action.row_id   join tbl_filled_sm_weekly on tbl_sm_weekly_action.checklist_udid  = tbl_filled_sm_weekly.checklist_udid  AND tbl_filled_sm_weekly.project_id ='3'  AND tbl_filled_sm_weekly.is_deleted = '0' AND tbl_filled_sm_weekly.is_submitted = '1' AND  (tbl_sm_weekly_action.actual_date  = '' or tbl_sm_weekly_action.actual_date IS  NULL) AND tbl_sm_weekly_action.action = '2' WHERE  tbl_sm_weekly_action.emp_id = '1'  order by  tbl_sm_weekly_main.task_number")->fetch_object();
+  $get_data = $conn->query("select *,tbl_sm_weekly_main.id, tbl_sm_weekly_action.id as aid,tbl_sm_weekly_action.row_id as final_row_id, date(tbl_filled_sm_weekly.created) as created_filled FROM tbl_sm_weekly_main  join tbl_sm_weekly_action on tbl_sm_weekly_main.id = tbl_sm_weekly_action.row_id   join tbl_filled_sm_weekly on tbl_sm_weekly_action.checklist_udid  = tbl_filled_sm_weekly.checklist_udid  AND tbl_filled_sm_weekly.project_id ='3'  AND tbl_filled_sm_weekly.is_deleted = '0' AND tbl_filled_sm_weekly.is_submitted = '1' AND  (tbl_sm_weekly_action.actual_date  = '' or tbl_sm_weekly_action.actual_date IS  NULL) AND tbl_sm_weekly_action.action = '2' WHERE  tbl_sm_weekly_action.emp_id = '".$_SESSION["induction"]."'  order by  tbl_sm_weekly_main.task_number");
+  
+  $get_count = $conn->query("select count(*) as count FROM tbl_sm_weekly_main  join tbl_sm_weekly_action on tbl_sm_weekly_main.id = tbl_sm_weekly_action.row_id   join tbl_filled_sm_weekly on tbl_sm_weekly_action.checklist_udid  = tbl_filled_sm_weekly.checklist_udid  AND tbl_filled_sm_weekly.project_id ='3'  AND tbl_filled_sm_weekly.is_deleted = '0' AND tbl_filled_sm_weekly.is_submitted = '1' AND  (tbl_sm_weekly_action.actual_date  = '' or tbl_sm_weekly_action.actual_date IS  NULL) AND tbl_sm_weekly_action.action = '2' WHERE  tbl_sm_weekly_action.emp_id = '".$_SESSION["induction"]."'  order by  tbl_sm_weekly_main.task_number")->fetch_object();
 ?>
+<script src="js/jquery.min.js"></script>
+<div class="loader" style="position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('image/load.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;"></div>
+
+<script type="text/javascript">
+  $(window).load(function() {
+      $(".loader").fadeOut("slow");
+  });
+</script>
 <header>
   <? include('header.php'); ?>
   <? include('test_side_new.php');?>
@@ -169,6 +185,9 @@
     				</div>
     				<?}?>
     				<!--Modal Close-->
+            <div style="text-align: center;">
+              <button type="button" class="btn btn-default"  style="background-color:#f47821 ;margin-top:3rem;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;padding-left: 25px;padding-right: 25px" onclick="subMail()">Submit</button>
+            </div>
   				</div>
   			</div>
   		</fieldset>
@@ -177,11 +196,29 @@
   	<? include("footer_new.php"); ?>
 	</div>
 </div> 
+<div class="loadMail" style="position: fixed; left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;    background: url('image/email_loader.gif') 50% 50% no-repeat rgb(249,249,249);  opacity: .8; display: none;"></div>
 
-  <script type="text/javascript"> $('#margin_set').height($(window).height() - $('fieldset').height());
-            </script>
+  <script type="text/javascript"> 
+    $('#margin_set').height($(window).height() - $('fieldset').height());
+  </script>
 
 <script>
+
+  function subMail()
+  {
+    $(".loadMail").fadeIn("slow");
+    $.ajax({
+      type: "POST",
+      url: "ajax_site_manager_action_required_mail.php",           
+      success: function(data) {
+        //alert(data); 
+        $(".loadMail").fadeOut("slow");
+        alert("Checklist Saved Successfully !!");
+        window.location = "site_manager_new.php";
+      }
+    });
+  }
+
   function validate(date,comm)
   {
     //alert(date+" "+comm);
@@ -208,10 +245,10 @@
         url: "query_action_required.php",
         data: {id:id, date:date, action_comment: comm,empid:empid,row_id:row_id,checklist_date:checklist_date },
         success: function(data) {
-          alert(data);
+          //alert(data);
           if(data=='1')
           {
-            //location.reload();
+            location.reload();
 
           }
           else

@@ -1,0 +1,10 @@
+<?
+
+
+include("GrabzItClient.class.php");
+
+// Create the GrabzItClient class
+// Replace "APPLICATION KEY", "APPLICATION SECRET" with the values from your account!
+$grabzIt = new GrabzItClient("YjRkYzlmNDBiOGVlNGIzNjhjN2EwZmRiNDFhMmQ2ZTc=", "YWsKBT8/Gz9HPwM/DT8/P14yP2s/Pz8/bXRVPz8/Pz8=");
+
+?>

@@ -1,0 +1,11 @@
+var _=_||{};(function(_){var window=this;
+try{
+var ni=function(){var a=(0,_.L)("q",void 0);return a&&(0,window.decodeURIComponent)(a.replace(/\+/g," "))};var oi=function(a,b,c){a.timeOfStartCall=(new Date).getTime();var d=c||_.q;d.GOOGLE_FEEDBACK_START_ARGUMENTS=arguments;var e=a.serverUri||"//www.google.com/tools/feedback",f=d.GOOGLE_FEEDBACK_START;f?f.apply(d,arguments):(d=d.document,f=d.createElement("script"),f.src=e+"/load.js",d.body.appendChild(f))};
+var pi=function(a,b,c){var d=a.ved,e=a.bucket,f="true"===a.preserveuseridentity;d?window.google.log("gf","&ved="+(0,window.encodeURIComponent)(d)):window.google.log("gf","");d={productId:qi,locale:window.google.kHL,authuser:window.google.authuser,https:window.google.https(),enableAnonymousFeedback:!f};f={ei:window.google.kEI,expi:window.google.kEXPI,si:ri,internal:si};e&&(d.bucket=e);c?(f.q=ni(),f.tier=1,d.enableRating=!0):f.query=ni();b&&(d.flow="help",d.anchor=window.document.getElementById("abar_button_opt"),
+d.helpCenterPath="websearch",d.helpCenterContext=a.context,d.showHelpCenterLink=!0,e&&(d.contactBucket=e));oi(d,f)};var ti=function(a,b){pi(b,!1,!1)};var ui=function(a,b){ti(0,b);return!0};var vi=function(a,b){pi(b,!1,!0)};var wi=function(a,b){pi(b,!0,!1);return!0};(0,_.N)("gf");
+var qi=196,ri=!1,si=!1;(0,_.Jd)("gf",{init:function(a){qi=a.pid;ri=Boolean(a.si);si=Boolean(a["int"]);(0,_.Ff)("gf",{sf:ti,sfd:ui,sh:wi,smf:vi})},dispose:function(){var a=window.GOOGLE_FEEDBACK_DESTROY_FUNCTION;a&&a()}});
+(0,_.M)("gf");(0,_.Pe)();
+}catch(e){_._DumpException(e)}
+})(_);
+
+// Copyright 2002-2013 Google Inc.

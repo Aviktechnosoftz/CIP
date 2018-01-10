@@ -10,31 +10,37 @@
   {
     $user= $_SESSION['admin'];
   }
+
   $id = $_REQUEST['id'];
   $empid = $_REQUEST['empid'];
   $date = $_REQUEST['date'];
-
-
   $comment = $_REQUEST['comment'];
-
   $row_id= $_REQUEST['row_id'];
 
-  
+  $get_resp = $conn->query("select * from tbl_employee where id=".$empid)->fetch_object();
+  $name = $get_resp->given_name." ".$get_resp->surname;
+  $resp = $name."(".$get_resp->email_add.")";
 
-$get_previous_checklist_update=$conn->query("select * FROM tbl_filled_sm_weekly join tbl_sm_weekly_action on tbl_filled_sm_weekly.checklist_udid = tbl_sm_weekly_action.checklist_udid AND tbl_sm_weekly_action.action = '2' AND tbl_sm_weekly_action.row_id = '".$row_id."'  WHERE  tbl_filled_sm_weekly.project_id = '".$_SESSION['admin']."' AND date(tbl_filled_sm_weekly.created)<=date('".$_POST['checklist_date']."')")->num_rows;
-$counter=0;
-if($get_previous_checklist_update > 0)
-{
-  $get_previous_checklist_update2=$conn->query("select * FROM tbl_filled_sm_weekly join tbl_sm_weekly_action on tbl_filled_sm_weekly.checklist_udid = tbl_sm_weekly_action.checklist_udid AND tbl_sm_weekly_action.action = '2' AND tbl_sm_weekly_action.row_id = '".$row_id."'  WHERE  tbl_filled_sm_weekly.project_id = '".$_SESSION['admin']."' AND date(tbl_filled_sm_weekly.created)<=date('".$_POST['checklist_date']."')");
+  $get_previous_checklist_update=$conn->query("select * FROM tbl_filled_sm_weekly join tbl_sm_weekly_action on tbl_filled_sm_weekly.checklist_udid = tbl_sm_weekly_action.checklist_udid AND tbl_sm_weekly_action.action = '2' AND tbl_sm_weekly_action.row_id = '".$row_id."'  WHERE  tbl_filled_sm_weekly.project_id = '".$_SESSION['admin']."' AND date(tbl_filled_sm_weekly.created)<=date('".$_POST['checklist_date']."')")->num_rows;
+  $counter=0;
+  if($get_previous_checklist_update > 0)
+  {
+    $get_previous_checklist_update2=$conn->query("select * FROM tbl_filled_sm_weekly join tbl_sm_weekly_action on tbl_filled_sm_weekly.checklist_udid = tbl_sm_weekly_action.checklist_udid AND tbl_sm_weekly_action.action = '2' AND tbl_sm_weekly_action.row_id = '".$row_id."'  WHERE  tbl_filled_sm_weekly.project_id = '".$_SESSION['admin']."' AND date(tbl_filled_sm_weekly.created)<=date('".$_POST['checklist_date']."')");
 
-  while ($row_get_previous_checklist_update= $get_previous_checklist_update2->fetch_object()) {
+    while ($row_get_previous_checklist_update= $get_previous_checklist_update2->fetch_object()) 
+    {
       $counter++;
-    $update_action_checklist=$conn->query("update tbl_sm_weekly_action SET actual_date ='".$row_get_previous_checklist_update->actual_date."', action = '1',is_uploaded ='0' WHERE checklist_udid = '".$row_get_previous_checklist_update->checklist_udid."' AND row_id = '".$row_id."'");
+      $update_action_checklist=$conn->query("update tbl_sm_weekly_action SET actual_date ='".$row_get_previous_checklist_update->actual_date."', action = '1',is_uploaded ='0',
+                  resp_dd = '".$get_resp->email_add."',
+                  resp_name = '".$name."',
+                  resp = '".$resp."' WHERE checklist_udid = '".$row_get_previous_checklist_update->checklist_udid."' AND row_id = '".$row_id."'");
+    }
   }
-}
 
-
-$update_checklist = $conn->query("update tbl_sm_weekly_action set action=1, updated=now(), emp_id=".$empid.", actual_date='".$date."', action_complete='".$comment."' where id='".$id."'");
+  $update_checklist = $conn->query("update tbl_sm_weekly_action set action=1, updated=now(), emp_id=".$empid.", actual_date='".$date."', action_complete='".$comment."',
+                  resp_dd = '".$get_resp->email_add."',
+                  resp_name = '".$name."',
+                  resp = '".$resp."' where id='".$id."'");
 
   if($update_checklist)
   {

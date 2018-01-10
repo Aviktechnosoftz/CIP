@@ -210,10 +210,12 @@
                       ?>
                    <div style="padding:3px 0px 3px 18px;font-size: 16px !important;top: -18px !important;"><span class="glyphicon1 glyphicon-edit glyphicon-edit1" ></span>&nbsp;<?=$comm?></div>
                    <div style="padding:3px 0px 3px 0px">Subcontractor Name:&nbsp<?=$get_emp_task->email_add_all;?></div>
+                   <? if($get_action_status_task->actual_date !="") {?>
                     <div>
                       <div style="width: 60%;float: left;">Target Date: <?=$get_action_status_task->target_date; ?></div>
                       <div style="width: 40%;float: right;">Actual Date: <?=$get_action_status_task->actual_date; ?></div>
                     </div>
+                    <? } ?>
                     </td>
                     <td class="col-md-2  col-sm-2" style="text-align: center;vertical-align: middle;">
                     <?

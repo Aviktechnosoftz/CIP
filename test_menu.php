@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <ul>
+    <li>Abc</li>
+    <li>Def</li>
+    <li>Ghi</li>
+    <li>Jkl</li>
+    <li class="parent">Mno >
+      <div class="wrapper">
+        <ul>
+          <li>Abc</li>
+          <li>Def</li>
+          <li>Ghi</li>
+          <li>Jkl</li>
+          
+          <li>Pqr</li>
+          <li>Stu</li>
+          <li>Vw</li>
+          <li>Xyz</li>
+        </ul>
+      </div>
+    </li>
+    <li>Pqr</li>
+    <li>Stu</li>
+    <li>Vw</li>
+    <li>Xyz</li>
+    <li class="parent">Abc >
+      <div class="wrapper">
+        <ul>
+          <li>Abc</li>
+          <li>Def</li>
+          <li>Ghi</li>
+          <li>Jkl</li>
+          <li>Mno</li>
+          <li>Pqr</li>
+          <li>Stu</li>
+          <li>Vw</li>
+          <li>Xyz</li>
+        </ul>
+      </div>
+    </li>
+    <li>Def</li>
+    <li>Ghi</li>
+    <li>Jkl</li>
+    <li>Mno</li>
+    <li>Pqr</li>
+    <li>Stu</li>
+    <li>Vw</li>
+    <li>Xyz</li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+  // whenever we hover over a menu item that has a submenu
+  $('li.parent').on('mouseover', function() {
+    var $menuItem = $(this),
+        $submenuWrapper = $('> .wrapper', $menuItem);
+    
+    // grab the menu item's position relative to its positioned parent
+    var menuItemPos = $menuItem.position();
+    
+    // place the submenu in the correct position relevant to the menu item
+    $submenuWrapper.css({
+      top: menuItemPos.top,
+      left: menuItemPos.left + Math.round($menuItem.outerWidth() * 0.75)
+    });
+  });
+});
+</script>
+
+<style type="text/css">
+	.wrapper {
+  /*position: relative;*/
+}
+
+ul {
+  width: 200px;
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+li {
+  position: static;
+}
+li .wrapper {
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+li:hover > .wrapper {
+  display: block;
+}
+
+ul {
+  margin: 1em;
+  color: white;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+li {
+  padding: 1em;
+}
+li ul {
+  margin: 0;
+}
+li .wrapper {
+  cursor: auto;
+}
+li .wrapper li {
+  padding: 0.5em;
+}
+li:nth-child(2n) {
+  background: #0E8CE0;
+}
+li:nth-child(2n + 1) {
+  background: #0064B3;
+}
+li.parent {
+  background: #00B99B;
+  cursor: pointer;
+}
+
+</style>

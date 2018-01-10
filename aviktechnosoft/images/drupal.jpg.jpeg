@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The Drupal CMS | CPS-VO</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="prev" href="/node/6740" />
+<link rel="up" href="/node/6743" />
+<link rel="next" href="/node/6767" />
+<link rel="shortcut icon" href="/sites/all/themes/redux/favicon.ico" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Open Sans:300,300italic,600,600italic,700,700,700italic,800,800italic,800italic,italic,italic,regular|Open Sans Condensed:300,300,300italic,700,700|PT Sans:700,700italic,italic,regular|PT Sans Caption:700,regular|PT Sans Narrow:700,regular&subset=latin,cyrillic" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/default/files/css/css_2f5cfab371507fb957b9eac161cbc2da.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/grid16-960.css?g"/>
+  <!--[if IE 8]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie8-fixes.css?g" />
+  <![endif]-->
+  <!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie7-fixes.css?g" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/redux/css/ie7-fixes.css?g" />
+  <![endif]-->
+  <!--[if lte IE 6]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie6-fixes.css?g"/>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/redux/css/ie6-fixes.css?g"/>
+  <![endif]-->
+    <script type="text/javascript" src="/sites/default/files/js/js_8666e15bb30f3b70dfe209a13aa71bda.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "jquerymenu": { "hover": 0, "animate": 0, "edit_link": 0, "click_to_expand": 0 }, "shadowbox": { "animate": 1, "animateFade": 1, "animSequence": "wh", "auto_enable_all_images": 0, "auto_gallery": 0, "autoplayMovies": true, "continuous": 1, "counterLimit": "10", "counterType": "default", "displayCounter": 1, "displayNav": 1, "enableKeys": 1, "fadeDuration": "0.35", "handleOversize": "resize", "handleUnsupported": "link", "initialHeight": 160, "initialWidth": 320, "language": "en", "modal": false, "overlayColor": "#000", "overlayOpacity": "0.85", "resizeDuration": "0.35", "showMovieControls": 1, "slideshowDelay": "0", "viewportPadding": 20, "useSizzle": 0 }, "cpsvo": { "cpsvo_current_environment": "production", "cpsvo_user_og_groups": [  ], "cpsvo_uid_being_viewed": null, "cpsvo_user_profile_menus": "" }, "extlink": { "extTarget": "_blank", "extClass": "ext", "extSubdomains": 1, "extExclude": "", "extInclude": "", "extAlert": 0, "extAlertText": "This link will take you to an external web site. We are not responsible for their content.", "mailtoClass": "mailto" } });
+//--><!]]>
+</script>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/redux/css/og_themes/default/og_theme.css"/></head>
+
+<body id="pid-node-6742" class="not-front not-logged-in page-node node-type-page no-sidebars full-node layout-first-main sidebars-split font-size-12 grid-type-960 grid-width-16">
+  <div id="page" class="page">
+    <div id="page-inner" class="page-inner">
+      <div id="skip">
+        <a href="#main-content-area">Skip to Main Content Area</a>
+      </div>
+
+      <!-- Global services -->
+      <div id="global-services-wrapper" class="global-services-wrapper full-width">
+        <div id="global-services" class="global-services row grid16-16">
+          <div id="primary-menu" class="primary-menu">
+            <div id="primary-menu-inner" class="primary-menu-inner">
+                            <ul class="menu sf-menu primary-nav"><li class="home"><a href="/">CPS-VO</a><ul>
+  <li><a href="/contact">Contact Support</a></li>
+  </ul></li><li><a href="/">Browse</a><ul>
+    <li><a href="/calendar">Calendar</a></li>
+    <li><a href="/browse-announcements">Announcements</a></li>
+    <li><a href="/file_browser">Repositories</a></li>
+    <li><a href="/og">Groups</a></li>
+    </ul></li><li><a href="/faceted_search">Search</a><ul>
+    <li><a href="/faceted_search">Search for Content</a></li>
+    <li><a href="/group_search">Search for a Group</a></li>
+    <li><a href="/people_search">Search for People</a></li>
+    <li><a href="/project_search">Search for a Project</a></li>
+    <li><a href="/tagadelic">Tagcloud</a></li>
+    </ul></li><li><a href="/og/my">My Groups</a><ul class="menu my-groups"><li class="first" style="background-color:grey;"><a href="/og">Join a Group</a></li></ul></li></ul>            </div>
+          </div>
+          <div id="simplifiedLogin"><div class="scriptsAllowed">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tutorial"><img src="/sites/default/files/question.png" alt=""/></a>&nbsp;&nbsp;<form action="https://cps-vo.org/?q=user&amp;destination=node/6742" accept-charset="UTF-8" method="post" id="user-login-form" name="userLoginForm"><input maxlength="60" value="username" name="name" id="edit-name" size="10" value="" class="defaultContent" type="text"/>&nbsp;<input name="pass" id="edit-pass" maxlength="60" value="password" size="10" class="defaultContent" type="password" /> <input type="submit" title="Log in to CPS-VO" value="Log in" class="login_submit"/><input name="form_id" id="edit-form-id" value="user_login" type="hidden"><input name="openid.return_to" id="edit-openid.return-to" value="$redirect" type="hidden"><input name="form_build_id" id="" value="" type="hidden"></form></div><noscript><div class="noScripts"><a href="/?q=user" class="login_submit" title="Go to login screen">› Go to login screen</a></div></noscript><div id='registerHere_wrapper'><div id='registerHere'><div class='notAMemberLabel'>Not a member?</div><a href="/user/register?destination=node/6742">Click here to register!</a><br /><a href="/user/password?destination=node/6742">Forgot username or password?</a></div>&nbsp;</div></div>          <div id="search-box" class="search-box block">
+    <div id="search-box-inner" class="search-box-inner inner clearfix">
+      <form action="/faceted_search/select" accept-charset="UTF-8" method="post">
+        <div>
+          <div id="search" class="container-inline">
+            <input class="search-input form-text" type="text" maxlength="128" name="keywords" size="15" value="" title="Enter search terms" />
+            <input id="search_header" class="search_submit" type="submit" name="op" value="Search" />
+              
+              <input type="hidden" name="stage" id="edit-stage" value="results" />
+              <input type="hidden" name="style" id="edit-style" value="extract" />
+              <input type="hidden" name="sort" id="edit-sort" value="relevance" />
+              <input type="hidden" name="facet-key" id="edit-facet-key" value="" />
+              <input type="hidden" name="facet-id" id="edit-facet-id" value="" />
+              <input type="hidden" name="facet-sort" id="edit-facet-sort" value="" />
+              <input type="hidden" name="form_token" id="edit-faceted-search-ui-form-form-token" value="f82344e602ffe0cfa118f262e170f51e" />
+              <input type="hidden" name="form_id" id="edit-faceted-search-ui-form" value="faceted_search_ui_form_1" />
+          </div>
+        </div>
+      </form>
+    </div><!-- /search-box-inner -->
+  </div><!-- /search-box -->    		</div>
+      </div>
+
+      <!-- //Global services -->
+      <!-- header-wrapper -->
+      <div id="header-wrapper" class="header-wrapper full-width">
+        <div id="site-header" class="site-header row grid16-16" style="">
+          <div id="site-logo"><a href="/" title="Home"><img src="/sites/all/themes/redux/css/images/cps-vo.org.png" alt="Home"/></a></div>
+          <div id="sponsor-logo"><a href="http://www.nsf.gov" title="National Science Foundation" target="_blank"><img src="/sites/all/themes/redux/css/images/nsf_logo.png" alt="National Science Foundation" /></a></div>
+            
+                          <div id="site-name" class="">
+                                  <h2 id="slogan">Cyber-Physical Systems Virtual Organization</h2>
+                  <h3 id="mission">Fostering collaboration among CPS professionals in academia, government, and industry</h3>
+                                              </div>
+            
+                    </div><!-- /site-header -->
+      </div><!-- /header-wrapper -->
+
+      <!-- preface-top row: width = grid_width -->
+      
+      <!-- main row: width = grid_width -->
+      <div id="main-wrapper" class="main-wrapper full-width">
+        <div id="main" class="main row grid16-16">
+          <div id="main-inner" class="main-inner inner clearfix">
+           <!-- SEARCH USED TO LIVE HERE!!! -->
+            <div id="sidebar-first" class="sidebar-first row nested grid16-3">
+<div id="sidebar-first-inner" class="sidebar-first-inner inner clearfix">
+
+<div id="block-advancedbookblocks-0" class="block block-advancedbookblocks odd first last grid16-3">
+  <div class="inner clearfix">
+            <h2 class="title block-title">Tutorial ToC</h2>
+        <div class="content clearfix">
+      <!--[if IE]><div class="ie"><![endif]--><ul class="menu jquerymenu"><li class="parent open active-trail"><span class="parent open active-trail"></span><a href="/tutorial" title="Tutorial">Tutorial</a><ul><li><a href="/tutorial/welcome" title="Navigate this Tutorial">Navigate this Tutorial</a></li><li><a href="/tutorial/get-an-account" title="Create an Account">Create an Account</a></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/groups" title="Participate in Groups">Participate in Groups</a><ul><li><a href="/tutorial/groups/look-for-groups" title="Look for Groups">Look for Groups</a></li><li><a href="/tutorial/groups/join-a-group" title="Join a Group">Join a Group</a></li><li><a href="/tutorial/groups/leave-a-group" title="Leave a Group">Leave a Group</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/exploring-my-account" title="Explore &#039;My Account&#039;">Explore &#039;My Account&#039;</a><ul><li><a href="/tutorial/exploring-my-account/edit-profile" title="Edit Your Profile">Edit Your Profile</a></li><li><a href="/tutorial/exploring-my-account/types-of-users" title="User Roles">User Roles</a></li><li><a href="/tutorial/exploring-my-account/my-contacts" title="My Contacts">My Contacts</a></li><li><a href="/tutorial/exploring-my-account/contacts-activity" title="Contacts Activity Stream">Contacts Activity Stream</a></li><li><a href="/tutorial/exploring-my-account/group-activity" title="Groups Activity Stream">Groups Activity Stream</a></li><li><a href="/tutorial/exploring-my-account/subscriptions" title="My Subscriptions">My Subscriptions</a></li><li><a href="/tutorial/exploring-my-account/notifications" title="My Messages">My Messages</a></li><li><a href="/tutorial/exploring-my-account/my-invitations" title="My Invitations">My Invitations</a></li><li><a href="/tutorial/exploring-my-account/bookmarks" title="My Bookmarks">My Bookmarks</a></li><li><a href="/tutorial/exploring-my-account/history" title="My History">My History</a></li><li><a href="/tutorial/exploring-my-account/my-chats" title="My Chats">My Chats</a></li><li><a href="/tutorial/exploring-my-account/my-files" title="My Files">My Files</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/find-posts-and-publications" title="Find Posts and Publications">Find Posts and Publications</a><ul><li><a href="/tutorial/find-posts-and-publications/browse-repositories" title="Browse Documents">Browse Documents</a></li><li><a href="/tutorial/find-posts-and-publications/tags-terms-labels" title="Tags, Terms and Labels">Tags, Terms and Labels</a></li><li><a href="/tutorial/find-posts-and-publications/search-material" title="Taxonomic Search">Taxonomic Search</a></li><li><a href="/tutorial/find-posts-and-publications/utilize-popular-terms" title="Search Popular Terms">Search Popular Terms</a></li><li><a href="/tutorial/find-posts-and-publications/browse-calendar" title="View Events">View Events</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/collaborate-with-colleagues" title="Collaborate with Colleagues">Collaborate with Colleagues</a><ul><li><a href="/tutorial/collaborate-with-colleagues/seek-out-colleagues" title="Seek out Colleagues">Seek out Colleagues</a></li><li><a href="/tutorial/collaborate-with-colleagues/add-to-discussions" title="Contribute to Forum Discussions">Contribute to Forum Discussions</a></li><li><a href="/tutorial/collaborate-with-colleagues/forum-announcement" title="Create a Global Forum Announcement">Create a Global Forum Announcement</a></li><li><a href="/tutorial/collaborate/schedule-event" title="Create a Calendar Event">Create a Calendar Event</a></li><li><a href="/tutorial/collaborate/create-invitations" title="Create Event Invitations">Create Event Invitations</a></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/online-presentations" title="Online Meetings">Online Meetings</a><ul><li><a href="/tutorial/participate-in-meeting" title="Attend a Meeting">Attend a Meeting</a></li><li><a href="/tutorial/start-meeting" title="Host A Meeting">Host A Meeting</a></li></ul></li><li><a href="/tutorial/collaborate/provide-literature" title="Upload a File">Upload a File</a></li><li><a href="/tutorial/collaborate-with-colleagues/attach-notes" title="Comment on Files and Events">Comment on Files and Events</a></li><li><a href="/tutorial/collaborate-with-colleagues/activity-messaging" title="Activity Messaging">Activity Messaging</a></li><li><a href="/tutorial/collaborate-with-colleagues/using-chat" title="Use the Chat Feature">Use the Chat Feature</a></li><li><a href="/tutorial/collaborate-with-colleagues/create-news-item" title="Create a News Item">Create a News Item</a></li><li><a href="/tutorial/collaborate-with-colleagues/create-project" title="Create a Group Project">Create a Group Project</a></li><li><a href="/tutorial/collaborate-with-colleagues/create-video" title="Post a Video">Post a Video</a></li><li><a href="/tutorial/collaborate-with-colleagues/create-wiki" title="Create and Edit Wiki Pages">Create and Edit Wiki Pages</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/form-manage-groups" title="Form and Manage Groups">Form and Manage Groups</a><ul><li><a href="/tutorial/form-manage-group/participation-levels" title="Participation Levels">Participation Levels</a></li><li><a href="/tutorial/form-manage-group/SIG-request" title="Request to Form a Group">Request to Form a Group</a></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/configuring_groups" title="Configure a Group">Configure a Group</a><ul><li><a href="/tutorial/configuring_groups/branding" title="Group Settings &amp; Branding">Group Settings &amp; Branding</a></li><li><a href="/tutorial/form-manage-groups/create-webpage" title="Create a Basic Web Page">Create a Basic Web Page</a></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/configuring_groups/advanced/custom-pages" title="Create Panel Pages">Create Panel Pages</a><ul><li><a href="/tutorial/configuring_groups/advanced/custom-pages/layout" title="Change the Layout of your Page">Change the Layout of your Page</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-pages/widgets" title="Add Widgets to Panel Pages">Add Widgets to Panel Pages</a></li><li><a href="/tutorial/configuring_groups/spotlight/widget-content" title="Add Content to Widgets">Add Content to Widgets</a></li><li><a href="/tutorial/configuring_groups/widgets-table" title="Widget Reference Table">Widget Reference Table</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-pages/custom-content" title="Add Custom Content">Add Custom Content</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-pages/edit-embedded-content" title="Edit Embedded Custom Content">Edit Embedded Custom Content</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/configuring_groups/advanced/custom-page-kinds" title="Kinds of Panel Pages">Kinds of Panel Pages</a><ul><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/configuring_groups/custom-pages/kinds-of-pages/home-page" title="Creating a Home Page">Creating a Home Page</a><ul><li><a href="/tutorial/configuring_groups/custom-home" title="Creating a Basic Home Page">Creating a Basic Home Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/dashboard-style-home-page" title="Creating a Dashboard-Style Home Page">Creating a Dashboard-Style Home Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/spotlight-slideshow" title="Adding A Spotlight Slideshow">Adding A Spotlight Slideshow</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/add-spotlight-content" title="Adding Content to the Spotlight Slideshow">Adding Content to the Spotlight Slideshow</a></li></ul></li><li><a href="/tutorial/configuring_groups/projects-page" title="Creating a Projects Page">Creating a Projects Page</a></li><li><a href="/tutorial/configuring_groups/search-page" title="Creating a Search Page">Creating a Search Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/about-page" title="Creating an About Page">Creating an About Page</a></li><li><a href="/tutorial/configuring_groups/tags-page" title="Creating a Tag Page">Creating a Tag Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/members-page" title="Creating a Members Page">Creating a Members Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/calendar-page" title="Creating a Calendar Page">Creating a Calendar Page</a></li><li><a href="/tutorial/configuring_groups/custom-page-kinds/activity-page" title="Creating an Activity Stream Page">Creating an Activity Stream Page</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-page-kinds/wiki" title="Creating a Wiki">Creating a Wiki</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-page-kinds/popular-content-page" title="Creating a Popular Content Page">Creating a Popular Content Page</a></li><li><a href="/tutorial/configuring_groups/advanced/custom-page-kinds/videos-page" title="Creating a Videos Page">Creating a Videos Page</a></li><li><a href="/tutorial/configuring_groups/custom-pages/meeting-minutes" title="Creating an Agenda and Meeting Minutes Page">Creating an Agenda and Meeting Minutes Page</a></li></ul></li><li><a href="/node/8589" title="Create a Webform">Create a Webform</a></li></ul></li><li class="parent closed"><span class="parent closed"></span><a href="/tutorial/form-manage-group" title="Manage a Group">Manage a Group</a><ul><li><a href="/tutorial/form-manage-group/role-definitions" title="Group Role Definitions">Group Role Definitions</a></li><li><a href="/tutorial/form-manage-group/administer-members" title="Administer Members">Administer Members</a></li><li><a href="/tutorial/form-manage-group/send-out-messages" title="Send Out Messages">Send Out Messages</a></li><li><a href="/tutorial/form-manage-group/set-up-group-vocabularies" title="Set Up Group Vocabularies">Set Up Group Vocabularies</a></li></ul></li></ul></li><li class="parent open active-trail"><span class="parent open active-trail"></span><a href="/node/6743" title="Appendix: The VO Architecture">Appendix: The VO Architecture</a><ul><li><a href="/node/6739" title="Virtualization and the VO ">Virtualization and the VO </a></li><li><a href="/node/6740" title="The LAMP Stack">The LAMP Stack</a></li><li class="active"><a href="/node/6742" title="The Drupal CMS" class="active">The Drupal CMS</a></li><li><a href="/node/6767" title="Support Staff and Roles">Support Staff and Roles</a></li><li><a href="/node/6766" title="Deploying a VO">Deploying a VO</a></li></ul></li><li><a href="/tutorial/email-support" title="Contact Support">Contact Support</a></li></ul></li></ul><!--[if IE]></div><![endif]-->    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+</div><!-- /sidebar-first-inner -->
+</div><!-- /sidebar-first -->
+
+            <!-- main group: width = grid_width - sidebar_first_width -->
+            <div id="main-group" class="main-group row nested grid16-13">
+              <div id="main-group-inner" class="main-group-inner inner">
+                
+                <div id="main-content" class="main-content row nested">
+                  <div id="main-content-inner" class="main-content-inner inner">
+                    <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+                    <div id="content-group" class="content-group row nested grid16-13">
+                      <div id="content-group-inner" class="content-group-inner inner">
+	                      <div id="breadcrumbs-wrapper">
+							<div id="breadcrumbs" class="breadcrumbs block">
+<div id="breadcrumbs-inner" class="breadcrumbs-inner inner clearfix">
+<div class="breadcrumb"><a href="/">CPS-VO</a> » <a href="/tutorial">Tutorial</a> » <a href="/node/6743">Appendix: The VO Architecture</a></div></div><!-- /breadcrumbs-inner -->
+</div><!-- /breadcrumbs -->
+                          </div>
+    	                  <div id="content-region" class="content-region row nested">
+                          <div id="content-region-inner" class="content-region-inner inner">
+                            <a name="main-content-area" id="main-content-area"></a>
+                            <div id="content-inner" class="content-inner block">
+                                                              <div id="content-inner-inner" class="content-inner-inner inner">
+								<!-- title -->
+                                                                <div class="titleWrapper">
+	                                <h1 class="title"><img src="/sites/all/themes/redux/css/images/public_icon.png" alt="Visible to the public" title="Visible to the public" width="16" height="14" class="privacy-icon-public" />&nbsp;The Drupal CMS</h1>
+                                                                        <ul id="service-menu" class="tabs service-menu"><li class="active" ><a href="/node/6742" class="active">View</a></li>
+</ul>                                </div>
+                                                                								<!-- /title -->
+                                <!-- content-top -->
+								
+                                                                <div id="content-content" class="content-content">
+                                  <div id="node-6742" class="node odd full-node node-type-page">
+   <div class="inner">
+    
+            <div class="meta">
+      <span class="submitted">Submitted by <a href="http://cps-vo.org/users/admin" title="View user profile.">admin</a> on Wed, 01/16/2013 - 4:40pm</span>
+    </div>
+        
+        <div class="content clearfix">
+      <p>The VO collaboration platform is built on top of the open-source <a href="http://drupal.org/">Drupal</a> content management platform, which powers millions of websites and applications. It’s built, used, and supported by an active and diverse community of people around the world (including a dedicated <em>Drupal Security Team</em>, which is 40 strong).  Presently, we use version 6 of the Drupal CMS.  </p>
+<div> </div>
+<div><img alt="" src="/sites/default/files/u1301/drupalCMS_0.jpg" style="width:500px;height:253px;" /></div>
+<div> </div>
+<div>Within any Drupal installation, there are three primary catagories of information that defines the look, feel, and features provided by the site.  These categories are <em>code</em>,<em> site configuration, </em>&amp; <em>data</em>.    </div>
+<div> </div>
+<h2>Code</h2>
+<div>The code of your installation defines the fundamental behavior and feature sets provided by the site.</div>
+<div> </div>
+<div><img alt="" src="/sites/default/files/u1301/code.jpg" style="width:600px;height:303px;" /></div>
+<div> </div>
+<p>The architecture, installation, configuration and maintenance of Drupal-based content management systems is well documented at <a href="http://drupal.org/documentation">http://drupal.org</a>, but we summarize the essential ideas here.  The Drupal architecture is defined by a series of abstraction layers, along with an extensive and well documented <a href="http://api.drupal.org/api/drupal/6">API</a> for extending and modifying default behaviors.  </p>
+<p> </p>
+<address style="border:0px;font-size:13px;margin:0px 0px 1.385em 80px;padding:0px;vertical-align:baseline;font-family:'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;line-height:18px;text-align:justify;">"Effective Web design is driven by the need to balance flexibility and simplicity. If a system is too simple, it can only be used for a single purpose - but if it is too flexible, it may be too difficult for new users to learn.</address>
+<address style="border:0px;font-size:13px;margin:0px 0px 1.385em 80px;padding:0px;vertical-align:baseline;font-family:'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;line-height:18px;text-align:justify;">Drupal strives to reconcile these conflicting goals by providing its users with the tools they need to make their own content management solution, while still providing some pre-built components to help them get started. Thus, it can be described both as a content management system (CMS) and a content management framework (CMF) - one system which strives to have the strengths of both, without their deficiencies.</address>
+<address style="border:0px;font-size:13px;margin:0px 0px 1.385em 80px;padding:0px;vertical-align:baseline;font-family:'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;line-height:18px;text-align:justify;">Most CMS's are like a toy boat or truck - specific assumptions have been made about their use, assumptions that would be hard for you to override. Frameworks, on the other hand, provide you with raw materials only - you need to know a programming language and have a clear design vision to put them together.</address>
+<address style="border:0px;font-size:13px;margin:0px 0px 1.385em 80px;padding:0px;vertical-align:baseline;font-family:'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;line-height:18px;text-align:justify;">Drupal is like a Lego kit. Skilled developers have already made the building blocks - in the form of contributed modules - that you need to create a site that suits your needs, whether that is a news site, an online store, a social network, blog, wiki, or something else altogether."<sup><a href="#footnote_drupal_overview">1</a></sup></address>
+<p style="text-align:center;"><img src="/sites/default/files/u5/drupal_flow_0.gif" alt="drupal_flow_0.gif" /></p>
+<h3>Modules</h3>
+<div>A fundamental component of the Drupal Framework is the <em>Modules</em> system.  Modules are Drupals term for it's plug-n-play extensibility architecture.  By writing PHP code that conforms to Drupal's documented API, one may easily extend the core Drupal feature set.  At the time of this writing, there are approximately 20,000 freely available, <a href="http://drupal.org/download">open-source Drupal modules</a>, of which the VO infrastructure relies on approximately 400 modules<a href="#footnote_modules_list"><sup>2</sup></a> that were implemented by the open-source community.  Additionally, there are custom modules implemented by the CPS-VO development team to specifically support the CPS-VO project.   As dictated by Drupal's open-source contribution policies, customized installation instructions for each individual module are provided in an included <em>readme.txt</em> file.  </div>
+<div> </div>
+<h3>Themes</h3>
+<div>Similarly, themes are a mechanism for customizing the <em>user interface</em> related behaviors of a Drupal-based website.  The VO collaboration framework includes a single, highly customized theme designed specifically to support the CPS-VO community.  </div>
+<div> </div>
+<h3>Views</h3>
+<div>Finally, in addition to writing customized PHP code, Drupal includes the concept of <em>Views</em> which provide a graphical user interface to system administrators for defining highly complex SQL queries that implement custom report types.  The VO software infrastructure includes several custom views for generating common, re-usable [typically paramaterized] reports<a href="#footnote_views_list"><sup>3</sup></a>.  </div>
+<div> </div>
+<div> </div>
+<h2>Configuration</h2>
+<div>In addition to code, which is typically stored within the CPS-VO <a href="http://subversion.apache.org/"><em>Subversion</em></a> open-source version control and configuration management system,  any Drupal installation has custom configuration data that is stored within the site's database tables.  </div>
+<div> </div>
+<div><img alt="" src="/sites/default/files/u1301/config.jpg" style="width:600px;height:303px;" /></div>
+<div> </div>
+<div> </div>
+<h3>Content Types</h3>
+<div>The first major category of configuration data defines a type system for information that may be posted on the website.  As of this writing, the defined content types at <a href="http://cps-vo.org" title="http://cps-vo.org">http://cps-vo.org</a> are:</div>
+<div style="text-align:left;"> </div>
+<div style="text-align:left;"> </div>
+<table border="1" cellpadding="0" cellspacing="0"><thead><tr><th width="80">
+				<p style="text-align:left;">Type</p>
+			</th>
+			<th>
+				<p style="text-align:left;">Description</p>
+			</th>
+		</tr></thead><tbody><tr><td>
+				<p style="text-align:left;">Event</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Events are special because they have a start date/time and an optional end date/time as a first-class concept.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">File</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Files allow uploads of documents and other pre-existing content.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Forum topic</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">A <em>forum topic</em> is the initial post to a new discussion thread within a forum.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Group</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">The basic unit of organization for adding new virtual communities to the VO.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Group Project</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Used for documenting research projects relevant to some Special Interest Group.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">NSF CPS Project</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Used to build the catalog of NSF CPS research projects.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">News Item</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;"><em>News</em> items are more ephemeral forms of information than <em>Pages</em>. They are ideal for creating and displaying content that informs or engages website visitors. Press releases, site announcements, and informal blog-like entries may all be created with a <em>news item</em> entry. <em>News</em> entries may be automatically featured on the site's or on a group's home page.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Online Meeting</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">A virtual teleconference/desktop sharing session.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Page</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">A simple web page for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site's initial home page.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Panel</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">A panel layout broken up into rows and columns. Used for building <em>Dashboards</em> with various content embedded within the rows and columns at specified locations.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Story</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Deprecated</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">User Profile</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Used to track basic data and meta-data for individual users (<em>e.g.</em> place of employment).</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Video</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Used for embedding videos hosted at sites such as youtube or vimeo.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Webform</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.</p>
+			</td>
+		</tr><tr><td>
+				<p style="text-align:left;">Wiki page</p>
+			</td>
+			<td style="width:523px;">
+				<p style="text-align:left;">A version of <em>web pages</em> that supports hyperlinking by symbolic names, rather than explicit URLs.</p>
+			</td>
+		</tr></tbody></table><p style="text-align:left;"> </p>
+<h3>Permissions</h3>
+<div>For each feature implemented on the VO, there is a role-based mapping between capabilities and classes of users that are allowed access to those capabilities.  Presently the defined roles are: </div>
+<ul><li>anonymous users</li>
+	<li>authenticated users</li>
+	<li>trusted users</li>
+	<li>group moderators</li>
+	<li>group managers</li>
+	<li>site moderators</li>
+	<li>site administrators</li>
+</ul><p> </p>
+<h2>Data</h2>
+<p>Finally, the last component of an instance of a VO is it's data.  This includes, for example all of the web pages belonging to a site, as well as the list of validated users that may log onto the site.  As with configuration settings, the data within an instance of a Drupal website is stored in a series of database tables.  </p>
+<div><img alt="" src="/sites/default/files/u1301/data.jpg" style="width:600px;height:303px;" /></div>
+<h3> </h3>
+<h3>Users</h3>
+<div>Every visitor to your site, whether they have an account and log in or visit the site anonymously, is considered a user to Drupal. Each user has a numeric user ID, and non-anonymous users also have a user name and an email address. Other information can also be associated with users.  </div>
+<div> </div>
+<h3>Taxonomies</h3>
+<div>Taxonomies are Drupal's mechanism for providing meta-data that classifies site content along categories defined by <em>Vocabularies</em>. </div>
+<div> </div>
+<div style="text-align:center;"><img alt="" src="/sites/default/files/u5/topics_taxonomy.png" style="width:245px;height:319px;" /></div>
+<div> </div>
+<div>Vocabularies may be either structured and defined by administrative personnel, or free-form and defined dynamically by users. </div>
+<div> </div>
+<h3>Nodes</h3>
+<div>A <em>node</em> in Drupal is the generic term for a piece of content on your web site.  A node consists of several fields.  The simplest node type is a web page, which contains a <em>title</em> field and a <em>body </em>field.  Drupal allows site administrators to build a type system for content, which extends the web page with other, customized fields.  For example <em>Event</em> nodes contain <em>from, to, &amp; URL</em> fields in addition to their title and body.<em> </em>  Some other examples of nodes are:</div>
+<div> </div>
+<ul><li>Pages in books</li>
+	<li>Discussion topics in forums</li>
+	<li>Entries in blogs</li>
+	<li>News article stories</li>
+</ul><div> </div>
+<h3>Comments</h3>
+<div>Comments are another type of content you can have on your site (if you have enabled the core Comment module). Each comment is a typically small piece of content that a user submits, attached to a particular node. For example, each piece of discussion attached to a particular forum topic node is a comment.</div>
+<div> </div>
+<h3>Panels</h3>
+<div>One rather unique content type defined at the VO is what is termed <em>Panels</em>.  Panels provide a drag-n-drop interface for laying out custom homepages or <em>dashboards</em>.  Consult <a href="http://cps-vo.org/tutorial/appendix_a">Appendix A </a>of The VO User's Manual for an explanation of Panels.  </div>
+<div> </div>
+<div> </div>
+<div> </div>
+<div>
+	<hr /><p> </p>
+	<p><a>1</a>. Quoted from <a href="http://drupal.org/getting-started/before/overview">http://drupal.org/getting-started/before/overview</a></p>
+	<p><a>2</a>. <a href="http://cps-vo.org/node/6643">List</a> of module pre-requisites for the VO collaboration framework</p>
+	<p><a>3</a>. <a href="http://cps-vo.org/node/6645">List</a> of some of the Views defined by the VO collaboration framework </p>
+</div>
+<div> </div>
+  <div id="book-navigation-876" class="book-navigation">
+    
+        <div class="page-links clear-block">
+              <a href="/node/6740" class="page-previous" title="Go to previous page">‹ The LAMP Stack</a>
+                    <a href="/node/6743" class="page-up" title="Go to parent page">up</a>
+                    <a href="/node/6767" class="page-next" title="Go to next page">Support Staff and Roles ›</a>
+          </div>
+    
+  </div>
+    </div>
+		
+      </div><!-- /inner -->
+
+        <div class="terms">
+      <ul class="links"><li class="taxonomy_term_829 first last"><a href="/taxonomy/term/829" rel="tag" title="">Documentation</a></li>
+</ul>    </div>
+      </div><!-- /node-6742 -->
+                                                                  </div><!-- /content-content -->
+                                                              </div><!-- /content-inner-inner -->
+                            </div><!-- /content-inner -->
+                          </div><!-- /content-region-inner -->
+                        </div><!-- /content-region -->
+
+                                              </div><!-- /content-group-inner -->
+                    </div><!-- /content-group -->
+
+                                     </div><!-- /main-content-inner -->
+                </div><!-- /main-content -->
+
+                              </div><!-- /main-group-inner -->
+            </div><!-- /main-group -->
+          </div><!-- /main-inner -->
+        </div><!-- /main -->
+      </div><!-- /main-wrapper -->
+      <!-- postscript-bottom row: width = grid_width -->
+      
+      <!-- footer row: width = grid_width -->
+      
+      <!-- footer-message row: width = grid_width -->
+      <div id="footer-message-wrapper" class="footer-message-wrapper full-width">
+        <div id="footer-message" class="footer-message row grid16-16">
+          <div id="footer-message-inner" class="footer-message-inner inner clearfix">
+            <div id="footer-message-text" class="footer-message-text block">
+<div id="footer-message-text-inner" class="footer-message-text-inner inner clearfix">
+<p><a href='/legal'>Terms of Use</a>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="Apple-style-span">&copy;</span> 2013. CPS-VO</p></div><!-- /footer-message-text-inner -->
+</div><!-- /footer-message-text -->
+          </div><!-- /footer-message-inner -->
+        </div><!-- /footer-message -->
+      </div><!-- /footer-message-wrapper -->
+
+    </div><!-- /page-inner -->
+  </div><!-- /page -->
+  <script type="text/javascript" src="/sites/default/files/js/js_44c88f262b805b01776ee8ee0228d7fa.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      Shadowbox.path = "/sites/all/libraries/shadowbox/";
+      Shadowbox.init(Drupal.settings.shadowbox);
+    
+//--><!]]>
+</script>
+</body>
+</html>

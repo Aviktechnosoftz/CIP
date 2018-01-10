@@ -1,4 +1,3 @@
-
 <?
 error_reporting(0);
 session_start();
@@ -533,9 +532,9 @@ $get_sub_head= $conn->query("select * from drawing_sub_heading where is_deleted=
                            </ul>
                         </li>
                         <li class="first_item">
-                           <a class="with_arrow temp_color" title="">Senior Management Site Visit Report</a>
+                           <a class="with_arrow " title="">Senior Management Site Visit Report</a>
                            <ul class="gradient_menu gradient108" style="">
-                              <li class="first_item"><a title="" class="temp_color" >New Senior Management Site Visit Report</a></li>
+                              <li class="first_item"><a title="" class="" href="site_visit_new.php">New Senior Management Site Visit Report</a></li>
                               <li><a title="" class="temp_color" >Approved  Senior Management Site Visit Report</a></li>
                               <li class="last_item"><a title="" class="temp_color" >Senior Management Site Visit Report Register</a></li>
                            </ul>
@@ -551,7 +550,7 @@ $get_sub_head= $conn->query("select * from drawing_sub_heading where is_deleted=
                         <li class="first_item">
                            <a class="with_arrow temp_color" title="">Project Managers Monthly</a>
                            <ul class="gradient_menu gradient108" style="">
-                              <li class="first_item"><a title="" class="temp_color">New Project Managers Monthly</a></li>
+                              <li class="first_item"><a title="" class="">New Project Managers Monthly</a></li>
                               <li><a title="" class="temp_color" >Approved Project Managers Monthly</a></li>
                               <li class="last_item"><a title="" class="temp_color" >Project Managers Monthly Register</a></li>
                            </ul>

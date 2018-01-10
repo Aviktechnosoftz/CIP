@@ -29,6 +29,21 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
 
 
 ?>
+<script src="js/jquery.min.js"></script>
+<div class="loader" style="position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('image/load.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;"></div>
+
+<script type="text/javascript">
+  $(window).load(function() {
+      $(".loader").fadeOut("slow");
+  });
+</script>
 <header>
   <? include('header.php'); ?>
   <? include('test_side_new.php');?>
@@ -143,7 +158,7 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
           $(document).on("click", "#mod_btn_3", function () {
 
             var Id = $(this).attr('taskDesc');
-            alert(Id);return false;
+            //alert(Id);return false;
             var task_name= $(this).data('task');
             $(".modal-body #action_comment_temp2").css('color','#CD510A');
             $(".modal-body #action_comment_temp2").val(Id);
@@ -196,7 +211,7 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
             </div>
 
             <label class="label_blue" style="margin-top: 10px">Actual Comment</label>         
-            <textarea id="actualComment_<?=$row_get_comment->id?>" rows="4" style="height: 70px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 25px 6px 12px;" required></textarea>
+            <textarea id="actualComment_<?=$row_action_required_detail->id?>" rows="4" style="height: 70px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 25px 6px 12px;" required></textarea>
 
             <div class="" style="margin-top: 10px">
               <label class="label_blue">Resp Person</label>           
@@ -222,7 +237,8 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
             
             <div class="" style="margin-top: 10px">
               <label class="label_blue">Actual Date</label>
-              <input type="text" class="form-control form-control-left-radius actualDate" name="" id="actualDate_<?=$row_get_comment->id?>">
+              <input type="text" class="form-control form-control-left-radius actualDate" name="" id="actualDate_<?=
+              $row_action_required_detail->id?>">
             </div>
             <input type="hidden" value="<?=$row_action_required_detail->aid?>" id="hide_<?=$row_action_required_detail->aid?>">
             <script>
@@ -239,7 +255,7 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
             </script>
           </div>
           <div class="modal-footer" style="border-top: none;">
-            <button type="button" class="btn btn-default"  style="background-color:#f47821 ;margin-top:3rem;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;padding-left: 25px;padding-right: 25px;" onclick="update_action_response($('#hide_<?=$row_action_required_detail->aid?>').val(),$('#select_id_<?=$row_action_required_detail->id?>').val(),$('#actualDate_<?=$row_get_comment->id?>').val(),$('#actualComment_<?=$row_get_comment->id?>').val(), <?=$row_action_required_detail->row_id ?>,'<?=$_REQUEST['udid']?>')">Save</button>
+            <button type="button" class="btn btn-default"  style="background-color:#f47821 ;margin-top:3rem;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;padding-left: 25px;padding-right: 25px;" onclick="update_action_response($('#hide_<?=$row_action_required_detail->aid?>').val(),$('#select_id_<?=$row_action_required_detail->id?>').val(),$('#actualDate_<?=$row_action_required_detail->id?>').val(),$('#actualComment_<?=$row_action_required_detail->id?>').val(), <?=$row_action_required_detail->row_id ?>,'<?=$_REQUEST['udid']?>')">Save</button>
             <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#f47821 ;margin-top:3rem;outline: none;border-radius:6vh;outline: none;border:none;float: left;color: #fff;padding-left: 25px;padding-right: 25px;">Cancel</button>
           </div>
         </div>
@@ -252,7 +268,7 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
 
     <!--Save Buttons-->
     <div class="form-group" style="width: 140px;margin-left: 370px;">
-      <input type="button" id="submit_later" name="save_later" value="Save/Back" class="btn btn-warning form_submit_button" onclick="backSave()">
+      <input type="button" id="submit_later" name="save_later" value="Save/Back" class="btn btn-warning form_submit_button" onclick="backSave('<? echo $tbl_udid;?>')">
     </div>
   </fieldset>
 </form>
@@ -261,13 +277,23 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
 </div>
 <span id="hidden_option" style="display: none;"></span>
 </div> 
-
+<div class="loadMail" style="position: fixed; left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;    background: url('image/email_loader.gif') 50% 50% no-repeat rgb(249,249,249);  opacity: .8; display: none;"></div>
 
 
 <script>
-  function backSave()
-  {
-    window.location.href= "site_manager_new.php";
+  function backSave(udid)
+  {  $(".loadMail").fadeIn("slow");
+      $.ajax({
+        type: "POST",
+        url: "ajax_site_manager_edit.php",
+        data:{udid:udid},                   
+        success: function(data) {
+          //alert(data); 
+          $(".loadMail").fadeOut("slow");
+          alert("Checklist Saved Successfully !!");
+          location.reload();
+        }
+      });
   }
 
   function openCity(evt, cityName) 
@@ -319,7 +345,7 @@ $get_action_required_content= $conn->query("select *,tbl_sm_weekly_main.id FROM 
   }
   function update_action_response(id,empid,date,comment,row_id,checklist_date)
   {
-    /*alert(id+" "+ empid + " " +date+" "+comment);
+   /* alert(date+" "+comment);
     return false;*/
     var valid = validation(date,comment);
     //alert(valid);

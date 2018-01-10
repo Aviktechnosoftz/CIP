@@ -19,13 +19,23 @@ FROM tbl_sm_report_filled
 ")->fetch_object();
 
 
- $count_action = $conn->query("select count(*) as count FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id)  WHERE  ((tbl_sm_report_action.action = '2' or ( (tbl_sm_report_action.actual_date  = '' AND tbl_sm_report_action.actual_date IS NULL))) AND (tbl_sm_report_action.checklist_udid = '".$_SESSION['udid_report']."') )")->fetch_object();
-$act_count= $count_action->count;
+ $count_action = $conn->query("select count(*) as count FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id) inner join tbl_sm_report_filled on tbl_sm_report_action.checklist_udid=tbl_sm_report_filled.checklist_udid  WHERE  ((tbl_sm_report_action.action = '2' or ( (tbl_sm_report_action.actual_date  = '' AND tbl_sm_report_action.actual_date IS NULL)))  AND tbl_sm_report_action.emp_id = '".$_SESSION['induction']."' and tbl_sm_report_filled.is_submitted='1' and tbl_sm_report_filled.project_id='".$_SESSION['admin']."')")->fetch_object();
+
+$act_count=$count_action->count;
+
+$check_session_open= $conn->query("select checklist_udid from tbl_sm_report_filled where is_submitted=0")->fetch_object();
+$count = $check_session_open->checklist_udid;
+if($count != "" OR $count != NULL OR $count != 0)
+{
+   $_SESSION['udid_report']= $count;
+   header('location:site_visit_checklist.php');
+}
+
  
 ?>
 <header>
   <? include('header.php'); ?>
-  <? //include('test_side_new.php');?>
+  <? include('test_side_new.php');?>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -117,7 +127,7 @@ $act_count= $count_action->count;
     <div class="form-group"> -->
       <div class="col-sm-3" style="padding: 0px" >
         <div class="col-sm-12" style="border-right: 1px solid #ddd">
-        <input type="button"  class="bg3" id="submit_3" value=""  onclick=" create_checklist()"  /></div>
+        <input type="button"  class="bg3" id="submit_3" value=""  onclick="create_checklist()"  /></div>
         <div class="col-sm-12">
         <label class="label_blue" id="start_audit" style="margin-top: 10px;padding-left: 0px;">Start Audit</label>
       </div>
@@ -138,8 +148,8 @@ $act_count= $count_action->count;
   </div>
 </div>
 
-   <? include("Checklist_visit_footer/footer_new.php"); ?>
-
+  <? //include("Checklist_visit_footer/footer_new.php"); ?>
+  <? include("Checklist_visit_footer/footer_new.php"); ?>
 </div>
 </div>
 <div class="modal fade modal-open_1 modal_1" id="myModal_date" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

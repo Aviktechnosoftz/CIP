@@ -12,21 +12,22 @@
     $user= $_SESSION['admin'];
   }
 
-  $udid_edit_date=$_REQUEST['udid'];
+  $udid_edit_date = $_REQUEST['udid'];
 
-  $get_udid_date=$conn->query("Select checklist_udid from tbl_sm_report_filled where date(created)='".$udid_edit_date."'")->fetch_object();
+  $_SESSION['udid_report_get_date'] = $_REQUEST['udid'];
+
+  $get_udid_date = $conn->query("Select checklist_udid from tbl_sm_report_filled where date(created)='".$udid_edit_date."'")->fetch_object();
   //echo "Select checklist_udid from tbl_sm_report_filled where date(created)='".$udid_edit_date."'";
-  $udid_edit=$get_udid_date->checklist_udid;
-  $get_main_detail=$conn->query("select * from tbl_sm_report_main where project_id='".$_SESSION['admin']."' order by task_number");
+  $udid_edit = $get_udid_date->checklist_udid;
+  $get_main_detail = $conn->query("select * from tbl_sm_report_main where project_id='".$_SESSION['admin']."' order by task_number");
 
-  $get_task_observed=$conn->query("select *,tbl_sm_report_task_obs.id,tbl_sm_report_task_obs.udid as checklist_udid,tbl_sm_report_task_obs.emp_id as employees_id FROM tbl_sm_report_task_obs INNER JOIN tbl_sm_report_action on tbl_sm_report_task_obs.id = tbl_sm_report_action.row_id AND tbl_sm_report_action.is_task_obs = '1' WHERE  tbl_sm_report_task_obs.udid ='".$udid_edit."' order by  tbl_sm_report_task_obs.task_number");
-
-  $get_action_required_content= $conn->query("select *,tbl_sm_report_action.row_id,tbl_sm_report_action.id as main_id,tbl_sm_report_main.task_number as main_tasknumber,tbl_sm_report_action.emp_id as action_emp,tbl_sm_report_main.task_desc as main_taskdesc  FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id)  WHERE  ((tbl_sm_report_action.action = '2') AND (tbl_sm_report_action.checklist_udid = '".$udid_edit."'  OR tbl_sm_report_action.checklist_udid is null )  )");
+  $get_task_observed = $conn->query("select *,tbl_sm_report_task_obs.id,tbl_sm_report_task_obs.udid as checklist_udid,tbl_sm_report_task_obs.emp_id as employees_id FROM tbl_sm_report_task_obs INNER JOIN tbl_sm_report_action on tbl_sm_report_task_obs.id = tbl_sm_report_action.row_id AND tbl_sm_report_action.is_task_obs = '1' WHERE  tbl_sm_report_task_obs.udid ='".$udid_edit."' order by  tbl_sm_report_task_obs.task_number");
 
 
-  $get_max_task_number=$conn->query("select max(task_number) as max_number from tbl_sm_report_task_obs where udid='".$udid_edit."'")->fetch_object();
 
- $count_action = $conn->query("select count(*) as count,tbl_sm_report_action.row_id,tbl_sm_report_main.task_number as main_tasknumber,tbl_sm_report_action.emp_id as action_emp,tbl_sm_report_main.task_desc as main_taskdesc  FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id)  WHERE  ((tbl_sm_report_action.action = '2') AND (tbl_sm_report_action.checklist_udid = '".$udid_edit."'  OR tbl_sm_report_action.checklist_udid is null )  )")->fetch_object();
+  $get_max_task_number = $conn->query("select max(task_number) as max_number from tbl_sm_report_task_obs where udid='".$udid_edit."'")->fetch_object();
+
+  $count_action = $conn->query("select count(*) as count,tbl_sm_report_action.row_id,tbl_sm_report_main.task_number as main_tasknumber,tbl_sm_report_action.emp_id as action_emp,tbl_sm_report_main.task_desc as main_taskdesc  FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id)  WHERE  ((tbl_sm_report_action.action = '2') AND (tbl_sm_report_action.checklist_udid = '".$udid_edit."'  OR tbl_sm_report_action.checklist_udid is null )  )")->fetch_object();
    $act_count= $count_action->count;
 ?>
 <script src="js/jquery.min.js"></script>
@@ -190,9 +191,7 @@
             <div id="leftTab" class="tabcontent" style="padding: 0px;">
                <?  if($get_max_task_number->max_number == NULL) $t_no=0; else $t_no=$get_max_task_number->max_number;$t_no++;
                 while($row_main_detail_task=$get_task_observed->fetch_object())
-                {  
-                  
-                  // echo "helo";
+                { 
                   $string = $row_main_detail_task->employees_id;
                   $parts = explode(',', $string);
                   $d = array();
@@ -214,20 +213,20 @@
                     <td style="vertical-align: middle;padding-left: 5.3%;" class="col-md-2  col-sm-2"><?=$row_main_detail_task->task_number ?></td> 
                     <td style="vertical-align: middle;" class="col-md-8  col-sm-8">
                     <div style="padding:3px 0px 3px 0px"><?=$row_main_detail_task->task_desc ?></div>
-                    <? $comm=""; 
-                        if($get_action_status_task->action =='2') 
-                        {
+                    <? 
+                      $comm=""; 
+                      if($get_action_status_task->action =='2') 
+                      {
+                        $comm= $get_action_status_task->action_required;
+                      }
+                      else
+                      {
+                        if($get_action_status_task->actual_date!="")
                           $comm= $get_action_status_task->action_required;
-                        }
-                        else
-                        {
-                          if($get_action_status_task->actual_date!="")
-                          $comm= $get_action_status_task->action_required;
-                          if($get_action_status_task->actual_date =="")
+                        if($get_action_status_task->actual_date =="")
                           $comm= $get_action_status_task->checklist_action_comments;
-
-                        }
-                      ?>
+                      }
+                    ?>
                     <div style="padding:3px 0px 3px 18px;font-size: 16px !important;top: -18px !important;"><span class="glyphicon1 glyphicon-edit glyphicon-edit1"></span>&nbsp;<?=$comm?></div>
                     <div style="word-break: break-word; padding: 3px 0px 3px 0px"><?="Subcontractor Name : ".$get_emp_task->email_add_all;?></div>
                       <br><!-- <div style="width: 60%;float: left;">Target Date: <?=$get_action_status_task->target_date; ?></div>
@@ -254,8 +253,9 @@
 
                       ?>
                    
-                      <span  class="glyphicon glyphicon-ok not-selected1 glyphicontab-ok" id="gif_ok"></span>  
-                       <span  class="glyphicon glyphicon-remove not-selected2 not-selectedtick2 glyphicontab-remove" id="gif_remove"></span>   
+                     
+                       <span  class="glyphicon glyphicon-remove not-selected2 not-selectedtick2 glyphicontab-remove" id="gif_remove"></span>  
+                        <span  class="glyphicon glyphicon-ok not-selected1 glyphicontab-ok" id="gif_ok"></span>   
                       <?
                         }
                       ?>
@@ -635,7 +635,9 @@
             </div>
             <!--End of modal box-->
             <div id="London" class="tabcontent" style="padding: 0px;">
-              <?
+            
+<?
+
                 while($row_main_detail=$get_main_detail->fetch_object())
                 {
                   $get_action_status=$conn->query("select * from tbl_sm_report_action where row_id='".$row_main_detail->id."' and checklist_udid = '".$udid_edit."'")->fetch_object();
@@ -740,8 +742,9 @@
                         if ($get_action_status->action == "1"  AND $get_action_status->actual_date !="" AND $get_action_status->action_complete !="") 
                         {
                       ?>
-                      <span  class="glyphicon glyphicon-ok not-selected1 glyphicontab-ok" id="gif_ok"></span>  
+                      
                       <span  class="glyphicon glyphicon-remove not-selected2 not-selectedtick2  glyphicontab-remove  id="gif_remove"></span>  
+                      <span  class="glyphicon glyphicon-ok not-selected1 glyphicontab-ok" id="gif_ok"></span>  
                       <?
                         }
                       ?>
@@ -1048,94 +1051,10 @@
 
 
     <div id="Paris" class="tabcontent" style="padding: 0px;">
-        <?
-          while ($row_action_required_detail = $get_action_required_content->fetch_object()) 
-          {
-            $get_resp_email = $conn->query("select id,email_add from tbl_employee where  id='".$row_action_required_detail->action_emp."'")->fetch_object();
-        ?>
-      <table id="mytable" class="table table-bordred " style="background-color: #283A50; color: #fff;">
-      
-        <tbody>
-       
-          <tr class="content_tr" id="mod_btn_3" data-toggle="modal" data-target="#myModal2_action_<?= $row_action_required_detail->main_id ?>"  data-temp="<?echo $row_action_required_detail->action_required;?>" data-task="<?if($row_action_required_detail->is_task_obs == '1') {echo $row_action_required_detail->task_desc;} else echo $row_action_required_detail->main_taskdesc;  ?>">
-            <td style="vertical-align: middle;padding-left: 5.3%" class="col-sm-2"><? if($row_action_required_detail->is_task_obs == '1') {echo $row_action_required_detail->task_number;} else echo $row_action_required_detail->main_tasknumber; ?></td> 
-            <td style="text-align: left;" class="col-sm-8"><p><?if($row_action_required_detail->is_task_obs == '1') {echo $row_action_required_detail->task_desc;} else echo $row_action_required_detail->main_taskdesc;  ?></p>
-              <div id="span2" class="t r" style="text-align: left;">
-                <p><b>Action Required : </b><? echo $row_action_required_detail->action_required;?></p>
-                <p><b>Action Complete : </b><?= $row_action_required_detail->action_complete; ?></p>
-                <p><b>Resp : </b><?= $get_resp_email->email_add; ?></p>
-                 <div style="word-break: break-word; padding: 3px 0px 3px 0px"><?="Subcontractor Name : ".$get_emp_task->email_add_all;?></div>
-                <p><b>Target Date : </b><?= $row_action_required_detail->target_date?></p>
-              </div>
-              <div>
-                
-              
-              </div>
-            </td>    
-            <td style="text-align: center;vertical-align: middle;" class="col-sm-2"><span  class="glyphicon glyphicon-remove not-selected2 not-selectedtick2  glyphicontab-remove" id="gif_ok"></span></td>
-          </tr>
-          <div class="modal fade mymodalbottom" id="myModal2_action_<?= $row_action_required_detail->main_id ?>" role="dialog" data-direction='bottom' data-backdrop="static" >
-            <div class="modal-dialog" style="height: 150px">
-              <div class="modal-content" style="border-radius: 25px;background-color:#F5F5F5;text-align: center;font-size: 12px;">
-                <div class="modal-header" style="border-bottom: none;padding: 0px">
-                  <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:50%;float: right;margin-top: -15px;margin-right: 20px;outline: none;border: none;width: 40px;height: 40px;">&#x2715;</button>
-        </div>
-                
-                <div class="modal-body" style="padding-bottom: 0px;padding-top: 0px;">
-                  <label class="label_blue" style="color:#686868 !important">Task Observed</label>
-                  <textarea class="mod_btn_3_modalbackground" id="task_name2"   rows="4" style="height: 47px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 2vh; padding: 6px 12px;text-align: center;" readonly></textarea>
-                
-                <div class="" style="margin-top: 10px">
-                  <label class="label_blue" style="color:#686868 !important">Action Required</label>
-                  <div class="" style="padding-top: 0px;">
-                  <textarea class="form-control form-control-left-radius " name="" id="action_comment_temp2" 
-                  value="" style="height:55px;border-radius: 2vh !important;text-align: center;background-color:#fff !important;resize:none;padding: 6px 12px;padding-top: 10px" readonly><? echo $row_action_required_detail->action_required;?></textarea> </div>
-                </div>
+        <? include("site_visit_edit_action_required_tab.php") ?>
+  
 
-                <div class="" style="margin-top: 10px">
-                  <label class="label_blue" style="color:#686868 !important">Action Complete</label>
-                  <textarea type="text" class="form-control form-control-left-radius actioncomplete_pink" name="" id="action_complete_<?= $row_action_required_detail->main_id ?>" style="height: 55px;border-radius: 2vh !important;text-align: center;resize: none;"></textarea> 
-                </div>
-                <script >
-                 
-                </script>
-                <div class="" style="margin-top: 10px">
-                  <label class="label_blue" style="color:#686868 !important">Resp Person</label>  
-                  <input type="text" class="form-control form-control-left-radius " name="" id="respPser" value="<?= $get_resp_email->email_add; ?>" style="height: 45px;text-align: center;" readonly>
-                </div>
-                <div class="" style="margin-top: 10px">
-                  <label class="label_blue" style="color:#686868 !important">Target Date</label>
-                  <input style="text-align: center;font-size: 12px;" type="text" class=" form-control form-control-left-radius datepicker_<?= $row_action_required_detail->id ?>" name="" id="target_date_<?= $row_action_required_detail->id ?>" value="<?=$row_action_required_detail->target_date?>" readonly>
-                </div>
-                <div class="" style="margin-top: 10px">
-                  <label class="label_blue" style="color:#686868 !important">Actual Date</label>
-                  <input style="text-align: center;font-size: 12px;" type="text" class=" form-control form-control-left-radius datepickerAcDate_<?=$row_action_required_detail->main_id ?>" name="" id="actual_date_<?= $row_action_required_detail->main_id ?>">
-                </div>
-                <script>
-                  $('.datepickerAcDate_<?=$row_action_required_detail->main_id ?>').datepicker({
-                    minDate: new Date(),
-                    dateFormat: "yy-mm-dd",
-                    duration: "fast",
-                    showAnim: "slide",
-                    onSelect: function(dateText, inst) { 
-                      $('.datepicker').val(dateText);
-                    },
-                    showOptions: {direction: "down"} 
-                  });
-                  $('.datepickerAcDate_<?= $row_action_required_detail->main_id ?>').datepicker('setDate',new Date() );
-                </script>  
-                </div>
-                <div class="modal-footer" style="border-top: none;">
-                  <button type="button" class="btn btn-default"  style="background-color:#EE621A ;;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;margin-right: 39.5%;width: 17%;height: 25%;" onclick="if($('#actual_date_<?=$row_action_required_detail->main_id ?>').val() == '' || $('#action_complete_<?= $row_action_required_detail->main_id ?>').val() == ''){alert('Please Fill Form Complete...');}else{update_action_required_edit('<?=$row_action_required_detail->main_id ?>', $('#action_complete_<?= $row_action_required_detail->main_id ?>').val(), $('#actual_date_<?= $row_action_required_detail->main_id?>').val())}">Save</button>
-                 <!--  <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#f47821 ;margin-top:3rem;outline: none;border-radius:6vh;outline: none;border:none;float: left;color: #fff">Cancel</button> -->
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-          <?}?>
-        </tbody>
-      </table>
+
     <div class="col-md-12 detailpadding" style="padding-left:6vh;padding-top: 5px" >
     <?
       $get_person_details = $conn->query("select id,email_add ,job_title,concat_ws(' ',given_name,surname) as name from tbl_employee where  id='" . $_SESSION['induction'] . "'")->fetch_object();
@@ -1164,7 +1083,7 @@
         </div>
       </fieldset>
     </form>
-    <div id="margin_set"></div>    
+    <div id="margin_set"></div>   
     <? include("Checklist_visit_footer/footer_new.php"); ?>
     <? //include("footer_new.php"); ?>
   </div>
@@ -1506,7 +1425,9 @@
        // alert(data);
         if(data=='1')
         {
-          location.reload();
+          $('.modal-backdrop').removeClass();
+          $('#Paris').load('site_visit_edit_action_required_tab.php');
+          //$('#Paris').html('site_visit_edit_action_required_tab.php');
         }
         else
         {
@@ -1593,41 +1514,41 @@
 </script>
 
 <style>
-/*.modal.fade:not(.in).bottom .modal-dialog {
+  /*.modal.fade:not(.in).bottom .modal-dialog {
   alert(123);
   -webkit-transform: translate3d(0, 25%, 0);
   transform: translate3d(0, 25%, 0);
-} */
-.datefont {
+  } */
+  .datefont {
     margin-left: 75px !important;
-}
-.modal-open .modal {
+  }
+  .modal-open .modal {
     overflow-x: hidden;
     overflow-y: hidden;
-}
-.modal-backdrop.in {
+  }
+  .modal-backdrop.in {
     opacity: 0.8;
-}
-.modal.fade .modal-dialog {
-  transform: translate3d(0, 100vh, 0);
-}
+  }
+  .modal.fade .modal-dialog {
+    transform: translate3d(0, 100vh, 0);
+  }
 
-.modal.in .modal-dialog {
-  transform: translate3d(0, 0, 0);
-   transition: 0.5s;
-}
-.form-control-left-radius{
-  background-color: white !important;
-}
-.bluebackground {
+  .modal.in .modal-dialog {
+    transform: translate3d(0, 0, 0);
+     transition: 0.5s;
+  }
+  .form-control-left-radius{
+    background-color: white !important;
+  }
+  .bluebackground {
  
     /*background-image: url(./image/bg@2x.png);*/
           /* background-image: url(./image/bg@2x.png);*/
-background: -webkit-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
-background: -o-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
-background: -ms-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
-background: -moz-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
-background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
+    background: -webkit-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
+    background: -o-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
+    background: -ms-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
+    background: -moz-linear-gradient(left, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
+    background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%);
     background-repeat: no-repeat;
     height: 100%;
     margin-left: 27.5%;
@@ -1636,7 +1557,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
     top: 16vh;
     background-size: 100%;
     background-position: center;
-}
+  }
   .glyphicon_gif_flip
   {
     float: right;
@@ -1656,7 +1577,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
     width: 20px !important;
     height: 20px !important;
     background-color: #d15462 !important;
-}
+  }
   .not-selected1 {
     background-color:green;
   width: 30px;
@@ -1688,7 +1609,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
     padding: 0px 0px !important;
     margin-bottom: 80px !important;
     box-shadow: none !important;
-}
+  }
   .body_checklist 
   {
     padding: 0px 0px;
@@ -1973,7 +1894,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
     width: 20px !important;
     height: 20px !important;
     font-size: 9px !important;
-}
+  }
   .glyphicon-remove:before 
   {
     font-size: 20px;
@@ -2039,14 +1960,14 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
   width: 100%!important;
    overflow-x: none!important;
     overflow-y: none!important;
-}
+  }
   .mdatebtn{
     z-index: 15;
   }
   .rightpadding {
     padding-right: 15px !important;
     padding-left: 5px !important;
-}
+  }
   .main_title_container{
         padding-left: 0px !important;
       }
@@ -2068,7 +1989,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
   width: 100%!important;
    overflow-x: none!important;
     overflow-y: none!important;
-}
+  }
     .detailpadding{
       padding-left: 22px !important;
     }
@@ -2102,7 +2023,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
   .body_checklist {
     top: 31.6vh !important;
     max-height: 57% !important;
-}
+  }
     }
     @media (max-width: 768px){
        iframe{
@@ -2110,7 +2031,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
   width: 100%!important;
    overflow-x: none!important;
     overflow-y: none!important;
-}
+  }
        .detailpadding{
       padding-left: 12px !important;
     }
@@ -2197,16 +2118,14 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
      width: 100%!important;
   }
 
-@media (max-width: 1440px){
-iframe{
-  height:76% !important;
-  width: 100%;
-   overflow-x: none!important;
-    overflow-y: none!important;
-}
- }
+  @media (max-width: 1440px){
+  iframe{
+    height:76% !important;
+    width: 100%;
+     overflow-x: none!important;
+      overflow-y: none!important;
+  }
+   }
 
 
 </style>
-
-

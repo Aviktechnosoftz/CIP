@@ -1,0 +1,20 @@
+[
+    {
+        "lati": 28.4,
+        "longi": 72.6,
+         "speed": 23,
+         "atlitude": 43
+    },
+    {
+         "lati": 28.4,
+        "longi": 72.6,
+         "speed": 23,
+         "atlitude": 43
+    },
+    {
+        "lati": 28.4,
+        "longi": 72.6,
+         "speed": 23,
+         "atlitude": 43
+    }
+]

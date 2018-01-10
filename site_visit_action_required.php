@@ -12,19 +12,12 @@
     $user= $_SESSION['admin'];
   }
 
-  $get_data = $conn->query("select *,tbl_sm_report_action.id as aid, tbl_sm_report_action.row_id as arowid,tbl_sm_report_main.task_number as main_tasknumber,tbl_sm_report_action.emp_id as action_emp,tbl_sm_report_main.task_desc as main_taskdesc, date(tbl_sm_report_action.created) as created_filled,tbl_sm_report_task_obs.task_number as obstask, tbl_sm_report_task_obs.emp_id as employeeid  FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id)  WHERE  ((tbl_sm_report_action.action = '2' or ( (tbl_sm_report_action.actual_date  = '' AND tbl_sm_report_action.actual_date IS NULL))) AND (tbl_sm_report_action.checklist_udid = '".$_SESSION['udid_report']."'))");
+  $get_data = $conn->query("select *,tbl_sm_report_action.id as aid, tbl_sm_report_action.row_id as arowid,tbl_sm_report_main.task_number as main_tasknumber,tbl_sm_report_action.emp_id as action_emp,tbl_sm_report_main.task_desc as main_taskdesc, date(tbl_sm_report_action.created) as created_filled,tbl_sm_report_task_obs.task_number as obstask, tbl_sm_report_task_obs.emp_id as employeeid FROM tbl_sm_report_action left join tbl_sm_report_main on (tbl_sm_report_main.id = tbl_sm_report_action.row_id) left join tbl_sm_report_task_obs on (tbl_sm_report_action.row_id=tbl_sm_report_task_obs.id) join tbl_sm_report_filled on tbl_sm_report_action.checklist_udid=tbl_sm_report_filled.checklist_udid  WHERE  tbl_sm_report_action.action = '2' or  (tbl_sm_report_action.actual_date  = '' AND tbl_sm_report_action.actual_date IS NULL)  AND tbl_sm_report_action.emp_id = '".$_SESSION["induction"]."' and tbl_sm_report_filled.is_submitted='1' and tbl_sm_report_filled.project_id='".$_SESSION['admin']."'");
 
   // $get_count = $conn->query("select count(*) as count FROM tbl_sm_weekly_main  join tbl_sm_weekly_action on tbl_sm_weekly_main.id = tbl_sm_weekly_action.row_id   join tbl_filled_sm_weekly on tbl_sm_weekly_action.checklist_udid  = tbl_filled_sm_weekly.checklist_udid  AND tbl_filled_sm_weekly.project_id ='3'  AND tbl_filled_sm_weekly.is_deleted = '0' AND tbl_filled_sm_weekly.is_submitted = '1' AND  (tbl_sm_weekly_action.actual_date  = '' or tbl_sm_weekly_action.actual_date IS  NULL) AND tbl_sm_weekly_action.action = '2' WHERE  tbl_sm_weekly_action.emp_id = '1'  order by  tbl_sm_weekly_main.task_number")->fetch_object();
 ?>
   <script src="js/jquery.min.js"></script>
-<div class="loader" style="position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('image/load.gif') 50% 50% no-repeat rgb(249,249,249);
-    opacity: .8;"></div>
+<div class="loader" style="position: fixed; left: 0px;  top: 0px;  width: 100%; height: 100%;  z-index: 9999; background: url('image/load.gif') 50% 50% no-repeat rgb(249,249,249); opacity: .8;"></div>
 
 <script type="text/javascript">
   $(window).load(function() {
@@ -146,7 +139,7 @@
               				  <label class="label_blue" style="color:#686868 !important">Action Required</label>
               				  <textarea type="text" class="mod_btn_modalbackground actioncomplete_pink" name="" id="actionRequired" style="height: 55px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 12px;"><?//if($row_get_data->checklist_action_comments == ''){echo $row_get_data->comments;}else{echo $row_get_data->checklist_action_comments;}?> <?=$row_get_data->action_required?></textarea>
                         <label class="label_blue" style="margin-top: 10px;color:#686868 !important">Action Complete</label>         
-                        <textarea class="mod_btn_modalbackground actioncomplete_pink" id="actualComment_<?=$row_get_data->id?>" rows="4" style="height: 55px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 12px;" required></textarea> 
+                        <textarea class="mod_btn_modalbackground actioncomplete_pink" id="actualComment_<?=$row_get_data->aid?>" rows="4" style="height: 55px; width: 100% ; border:none; outline: none;resize: none;background-color:#fff !important;border-radius: 10px; padding: 6px 12px;" required></textarea> 
             				  </div>
             				  <div class="" style="margin-top: 10px">
               				  <label class="label_blue" style="color:#686868 !important;">Resp Person</label>
@@ -187,7 +180,7 @@
             				  </script>
           				  </div>
           				  <div class="modal-footer" style="border-top: none;">
-              				<button type="button" class="btn btn-default"  style="background-color:#EE621A ;;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;margin-right: 39.5%;width: 17%;height: 25%;" onclick="update_action_required($('#tbl_id_<?=$row_get_data->aid?>').val(),$('#actualDate_<?=$row_get_data->id?>').val(),$('#actualComment_<?=$row_get_data->id?>').val(),$('#empid').val(),'<?=$row_get_data->arowid ?>','<?=$row_get_data->created_filled ?>','<?=$row_get_data->obstask?>')">Save</button>
+              				<button type="button" class="btn btn-default"  style="background-color:#EE621A ;;outline: none;border-radius:6vh;outline: none;border:none;color: #fff;margin-right: 39.5%;width: 17%;height: 25%;" onclick="update_action_required($('#tbl_id_<?=$row_get_data->aid?>').val(),$('#actualDate_<?=$row_get_data->id?>').val(),$('#actualComment_<?=$row_get_data->aid?>').val(),$('#empid').val(),'<?=$row_get_data->arowid ?>','<?=$row_get_data->created_filled ?>','<?=$row_get_data->obstask?>')">Save</button>
               				
             				</div>
         				  </div>
@@ -196,7 +189,7 @@
     				  <?}?>
     				  <!--Modal Close-->
   				  </div>
-            <div class="col-sm-12 col-md-12"> 
+           <div class="col-sm-12 col-md-12" style="    margin-top: 25px;"> 
               <div class="form-group" style="margin-bottom: 0px !important">
         <!-- <label class="col-md-1 control-label"></label> -->
             <div class="col-md-4 col-sm-4">
@@ -212,7 +205,8 @@
   		  </fieldset>
 		  </form>
   	  <div id="margin_set"></div>    
-  	  <? include("footer_new.php"); ?>
+      <? include("Checklist_visit_footer/footer_new.php"); ?>
+  	  <? //include("footer_new.php"); ?>
        </div>
       <div class="loadMail" style="position: fixed; left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;    background: url('image/email_loader.gif') 50% 50% no-repeat rgb(249,249,249);  opacity: .8; display: none;"></div>
 	 
@@ -235,9 +229,9 @@
       $(".loadMail").fadeIn("slow");
       $.ajax({
         type: "POST",
-        url: "ajax_visit_edit_checklist_email.php",
+        url: "ajax_site_visit_action_required_mail.php",
         success: function(data) {
-          //alert(data);
+          //console.log(data);return false;
           $(".loadMail").fadeOut("slow");
           $.post("logout_udid_sm.php", {}, function(){
             alert("Checklist Saved Successfully !!");
@@ -263,7 +257,7 @@
 
 	  function update_action_required(id,date,comm,empid,row_id,checklist_date,obstask)
 	  {
-      alert(id+", "+date+", "+comm+", "+empid+", "+row_id+", "+checklist_date+", "+obstask);
+      // alert(id+", "+date+", "+comm+", "+empid+", "+row_id+", "+checklist_date+", "+obstask);
        // return false;
       var valid = validate(date,comm);
       //alert(valid);
@@ -447,7 +441,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
     width: 18vw !important;
     }
   }
- 
+
   .p 
   {
     text-align: center;
@@ -565,7 +559,7 @@ background: linear-gradient(to right, rgb(30, 45, 68) 0%, rgb(62, 80, 104) 100%)
   }
 
   /* Change background color of buttons on hover */
- 
+
 
   /* Create an active/current tablink class */
   div.tab button.active 

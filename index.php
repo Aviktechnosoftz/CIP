@@ -1,15 +1,9 @@
 <?php
-if (! isset($_SERVER['HTTPS']) or $_SERVER['HTTPS'] == 'off' ) {
-    $redirect_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    header("Location: $redirect_url");
-    exit();
-}
 error_reporting(0);
 session_start();
 include_once('connect.php');
 if(isset($_SESSION['admin']))
 {
-
 
 header('Location:header_home.php');
 // unset($_SESSION['admin']); 
@@ -53,15 +47,6 @@ $sql_project =$conn->query("select tbl_project.id as project_id,project_name as 
     <input type="checkbox" class="username_label">
     <label style="font-size: 13px;">Keep me signed in</label><br><br>
     <input type="button" value="OK" name = "login_btn" id="myBtn" onclick="validate();" style="float: right;margin-bottom: 2vh">
-
-    <script type="text/javascript">
-      $(document).keypress(function(e) {
-    if(e.which == 13) {
-      e.preventDefault();
-        $('#myBtn').click();
-    }
-});
-    </script>
   </div>
   <div id="loading" style="
     margin-top: 2vh;  " ></div>
@@ -418,7 +403,7 @@ $('#loading').show();
                             
                      // alert(data);
                            var json = JSON.parse(data);
-                            // alert(json);
+                             
                             if(json == "")
                             {
                              $("#error").css("display", "block");

@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+
+	<title>Microsoft + Open Source | InfoAxon</title>
+        <meta name="google-site-verification" content="3tBB0fRVU6O_-tq4Wah_lADh5cL6YXhruF2-xu4WpVI" /> 
+        <meta name="google-site-verification" content="sckPvNJ8acRWcigDoAe41YzT9Zany-xUzQGpg8tv7lY" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+
+	<meta name="generator" content="WordPress 3.3.1" /> <!-- leave this for stats please -->
+
+<meta name="msvalidate.01" content="33B6495F09FDBF1966CEDFFB0EB18E94" />
+<meta name="alexaVerifyID" content="KuQm_acKPI_CuQf_ybC-lED9QXw" />
+<META name="y_key" content="18b540f534685b6c">
+	<link rel="stylesheet" href="http://www.infoaxon.com/wp-content/themes/infoaxon/style.css" type="text/css" media="screen" />
+
+	<!--[if IE 6]>
+
+	<link rel="stylesheet" type="text/css" href="http://www.infoaxon.com/wp-content/themes/infoaxon/ie6.css" />
+
+	<![endif]-->
+
+	<link rel="stylesheet" href="http://www.infoaxon.com/wp-content/themes/infoaxon/superfish.css" type="text/css" media="screen" />
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.infoaxon.com/feed/" />
+
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.infoaxon.com/feed/rss/" />
+
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.infoaxon.com/feed/atom/" />
+
+	<link rel="pingback" href="http://www.infoaxon.com/xmlrpc.php" />
+
+	
+	
+
+
+	<link rel="alternate" type="application/rss+xml" title="InfoAxon &raquo; Microsoft + Open Source Comments Feed" href="http://www.infoaxon.com/services/microsoft-open-source/feed/" />
+<link rel="stylesheet" type="text/css" href="http://www.infoaxon.com/wp-content/plugins/slidedeck-lite-for-wordpress/skins/default/skin.css?v=1.1" media="screen" /><link rel='stylesheet' id='prettyphoto-css'  href='http://www.infoaxon.com/wp-content/plugins/prettyphoto-media/css/prettyPhoto.css?ver=3.1.4' type='text/css' media='screen' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.infoaxon.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='gllrStylesheet-css'  href='http://www.infoaxon.com/wp-content/plugins/gallery-plugin/css/stylesheet.css?ver=3.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='gllrFancyboxStylesheet-css'  href='http://www.infoaxon.com/wp-content/plugins/gallery-plugin/fancybox/jquery.fancybox-1.3.4.css?ver=3.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pull-this-css'  href='http://www.infoaxon.com/wp-content/plugins/pull-this/pull-this.css?ver=3.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-postratings-css'  href='http://www.infoaxon.com/wp-content/plugins/wp-postratings/postratings-css.css?ver=1.63' type='text/css' media='all' />
+<link rel='stylesheet' id='wp_dlmp_styles-css'  href='http://www.infoaxon.com/wp-content/plugins/download-monitor/page-addon/styles.css?ver=3.3.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.infoaxon.com/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/gallery-plugin/fancybox/jquery.mousewheel-3.0.4.pack.js?ver=3.3.1'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/gallery-plugin/fancybox/jquery.fancybox-1.3.4.pack.js?ver=3.3.1'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/pull-this/pull-this.js?ver=3.3.1'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/content-slide/js/coin-slider.js?ver=3.3.1'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/slidedeck-lite-for-wordpress/lib/jquery-mousewheel/jquery.mousewheel.min.js?ver=1.4.5'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/slidedeck-lite-for-wordpress/lib/slidedeck.jquery.lite.pack.js?ver=1.4.5'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.infoaxon.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.infoaxon.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Workflow Based Knowledge Management' href='http://www.infoaxon.com/solutions/knowledge-management/workflow-based-knowledge-management/' />
+<link rel='next' title='Privacy Policy' href='http://www.infoaxon.com/explore/media/privacy-policy/' />
+<meta name="generator" content="WordPress 3.3.1" />
+
+<!-- All in One SEO Pack 1.6.11 by Michael Torbert of Semper Fi Web Design[218,268] -->
+<meta name="keywords" content="alfresco,liferay,microsoft" />
+<link rel="canonical" href="http://www.infoaxon.com/services/microsoft-open-source/" />
+<!-- /all in one seo pack -->
+<meta name="msvalidate.01" content="51358BF67C951423D6A9873EB21995AA" />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-17137478-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+<link rel="stylesheet" href="http://www.infoaxon.com/wp-content/plugins/category-page-icons/css/menu.css" type="text/css" media="all" />      <link rel="stylesheet" href="http://www.infoaxon.com/wp-content/plugins/category-page-icons/css/client.css" type="text/css" media="all" />
+<!-- Start Of Script Generated By cforms v11.4 [Oliver Seidel | www.deliciousdays.com] -->
+<link rel="stylesheet" type="text/css" href="http://www.infoaxon.com/wp-content/plugins/cforms/styling/cforms_info.css" />
+<script type="text/javascript" src="http://www.infoaxon.com/wp-content/plugins/cforms/js/cforms.js"></script>
+<!-- End Of Script Generated By cforms -->
+
+<!-- call Collapsible Elements Javascript in HEAD -->
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/collapsible-elements/xcelements.js?ver=3.3'></script>
+<!-- done Collapsible Elements Javascript in HEAD -->
+<script type="text/javascript">
+	var $jquery = jQuery.noConflict(); 
+	$jquery(document).ready(function() 
+	{
+		$jquery('#wpcontent_slider').coinslider(
+	{ 
+	width: 500, 
+	height: 300, 
+	spw: 7, 
+	sph: 5, 
+	delay: 3000, 
+	sDelay: 30, 
+	opacity: 0.7, 
+	titleSpeed: 500, 
+	effect: 'random', 
+	navigation: true, 
+	links : true, 
+	hoverPause: true });
+		});
+	</script>
+<style type="text/css" media="screen">
+		
+#wpcontent_slider_container
+{
+	overflow: hidden; position: relative; padding:0px;margin:0px; text-align:center; width:510px !important;
+	height:310px !important;
+}
+#wpcontent_slider 
+{ overflow: hidden; position: relative; font-family:Arial,Georgia,Verdana;border:5px solid #ffffff; text-align:left;}
+#wpcontent_slider a,#wpcontent_slider a img { border: none; text-decoration: none; outline: none; }
+#wpcontent_slider h4,#wpcontent_slider h4 a 
+{margin: 0px;padding: 0px; font-family: Arial,Georgia,Verdana;
+text-decoration:none;font-size: 18px; color:#ffffff;}
+#wpcontent_slider .cs-title {width: 100%;padding: 10px; background: #ffffff; color: #000000; font-family: Arial,Georgia,Verdana; font-size: 12px; letter-spacing: normal;line-height: normal;}
+#wpcontent_slider_container .cs-prev,#wpcontent_slider_container .cs-next {font-weight: bold;background: #000000;
+font-size: 28px; font-family: "Courier New", Courier, monospace; color: #ffffff !important;
+padding: 0px 10px;-moz-border-radius: 5px;-khtml-border-radius: 5px;-webkit-border-radius: 5px;}
+#wpcontent_slider_container .cs-buttons { font-size: 0px; padding: 10px 0px 10px 0px;
+margin:0px auto; float:left;clear:left;
+}
+#wpcontent_slider_container .cs-buttons a { outline:none; margin-left: 5px; height: 10px; width: 10px; float: left; border: 1px solid #000000; color: #000000; text-indent: -1000px; 
+}
+#wpcontent_slider_container .cs-active { background-color: #000000; color: #FFFFFF; }
+#wpcs_link_love,#wpcs_link_love a{display:none;}
+</style>
+<!-- End Content Slider Settings -->
+
+	<style type='text/css'>
+	.download-info .download-button {
+		background-image: url(http://www.infoaxon.com/wp-content/plugins/download-monitor/page-addon/downloadbutton.gif);
+	}
+	.download-info .more-button {
+		background-image: url(http://www.infoaxon.com/wp-content/plugins/download-monitor/page-addon/morebutton.gif);
+	}
+	</style>
+    
+    <!-- WP-Cufon Plugin 1.6.10 START  -->
+    <script type="text/javascript" src="http://www.infoaxon.com/wp-content/plugins/wp-cufon/js/cufon-yui.js"></script>
+            
+                    
+   
+            
+	 <!-- WP-Cufon Plugin Replacements --> 
+	<script type="text/javascript">
+        Cufon.set('fontFamily', 'Vegur').replace('h1')('h2'); 
+    </script>            
+	<!-- WP-Cufon END  -->	
+	<style type="text/css" media="all">
+/* <![CDATA[ */
+@import url("http://www.infoaxon.com/wp-content/plugins/wp-table-reloaded/css/plugin.css?ver=1.7");
+@import url("http://www.infoaxon.com/wp-content/plugins/wp-table-reloaded/css/datatables.css?ver=1.7");
+table a,
+table a:link,
+table a:visited {
+	border:none;
+	}							
+	
+img {
+	border:0;
+	margin-top:.5em;
+	}	
+table {
+	width:90%;
+	border-top:1px solid #e5eff8;
+	border-right:1px solid #e5eff8;
+	margin:1em auto;
+		border-collapse:collapse;
+	}
+caption {
+	color: #9ba9b4;
+	font-size:.94em;
+		letter-spacing:.1em;
+		margin:1em 0 0 0;
+		padding:0;
+		caption-side:top;
+		text-align:center;
+	}	
+tr.odd td	{
+	background:#f7fbff
+	}
+tr.odd .column1	{
+	background:#f4f9fe;
+	}	
+.column1	{
+	background:#f9fcfe;
+	}
+td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	text-align:center;
+	}				
+th {
+	font-weight:normal;
+	color: #678197;
+	text-align:left;
+	border-bottom: 1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	}							
+thead th {
+	background:#f4f9fe;
+	text-align:center;
+	font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	color:#66a3d3
+	}	
+tfoot th {
+	text-align:center;
+	background:#f4f9fe;
+	}	
+tfoot th strong {
+	font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	margin:.5em .5em .5em 0;
+	color:#66a3d3;
+		}		
+tfoot th em {
+	color:#f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+	}	
+/* ]]> */
+</style>		<style type="text/css">
+		.better-tag-cloud-shortcode li,
+		.better-tag-cloud-shortcode li a,
+		li#better-tag-cloud ul.wp-tag-cloud li,
+		li#better-tag-cloud ul.wp-tag-cloud li a {
+			display:	inline;
+					}
+		</style> 	
+        
+	<script type="text/javascript" src="http://www.infoaxon.com/wp-content/themes/infoaxon/js/tabs.js"></script>
+	<script type="text/javascript" src="http://www.infoaxon.com/wp-content/themes/infoaxon/js/filterable.pack.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17137478-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div id="header">
+                                  
+		<div class="hleft">
+                     <div id="tollfree">
+		      <span class="ind">+91 9810580114</span> <span class="ind">+91 9810425760</span> <span class="uk">+441344668000</span>
+			</div>
+                        <br/>
+			<h1><a href="http://www.infoaxon.com"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/logo.gif" alt="InfoAxon" /></a></h1>
+
+			<div class="blogdesc">
+
+				<img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/blogdescription.gif" alt="India&#039;s FIRST global open source integration company" />
+
+			</div>
+
+		</div>
+
+		<div class="hright">
+
+			<div class="topmenu">
+
+		<ul>    <li><a href="http://blog.infoaxon.com" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/social_balloon-21.png" alt="InfoAxon Blog" /></a></li>
+			<li><a href="http://www.linkedin.com/companies/144284" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/in.gif" alt="InfoAxon Linkedin" /></a></li>
+			<li><a href="http://www.facebook.com/pages/InfoAxon-Technologies-Limited/174976172516904" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/facebook.gif" alt="InfoAxon Facebook"/></a></li>
+			<li><a href="http://twitter.com/infoaxon" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/twitter.gif" alt="InfoAxon Twitter"/></a></li>
+<li><a href="http://www.slideshare.net/infoaxon" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/slideshare_logo.png" alt="InfoAxon Slideshare"/></a></li>
+<li><a href="http://www.youtube.com/infoaxonmedia" target="_blank"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/youtube.png" alt="InfoAxon Youtube"/></a></li>
+
+		</ul>	
+
+			</div>
+
+			<ul class="toplinks">
+
+				<li class="page_item page-item-71"><a href="http://www.infoaxon.com/explore/clients/">Clients</a></li>
+<li class="page_item page-item-73"><a href="http://www.infoaxon.com/explore/partners/">Partners</a></li>
+<li class="page_item page-item-75"><a href="http://www.infoaxon.com/explore/media/">Media</a></li>
+<li class="page_item page-item-77"><a href="http://www.infoaxon.com/explore/careers/">Careers</a></li>
+<li class="page_item page-item-15"><a href="http://www.infoaxon.com/explore/contact-us/">Contact Us</a></li>
+
+			</ul>
+
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="menu">
+
+		<ul class="sf-menu">
+
+			<li class="page_item page-item-8"><a href="http://www.infoaxon.com/">Home</a></li>
+<li class="page_item page-item-9"><a href="http://www.infoaxon.com/solutions/">Solutions</a>
+<ul class='children'>
+	<li class="page_item page-item-1229"><a href="http://www.infoaxon.com/solutions/liferay-portal-consulting/">Liferay Integration</a></li>
+	<li class="page_item page-item-18"><a href="http://www.infoaxon.com/solutions/knowledge-management/">Knowledge Management</a></li>
+	<li class="page_item page-item-1415"><a href="http://www.infoaxon.com/solutions/alfresco-integration-consulting/">Alfresco Integration</a></li>
+	<li class="page_item page-item-20"><a href="http://www.infoaxon.com/solutions/business-intelligence/">Pentaho BI Integration</a></li>
+	<li class="page_item page-item-1262"><a href="http://www.infoaxon.com/solutions/mobility/">Mobile Messaging</a></li>
+	<li class="page_item page-item-2243"><a href="http://www.infoaxon.com/solutions/addons/">Add ons</a></li>
+</ul>
+</li>
+<li class="page_item page-item-10 current_page_ancestor current_page_parent"><a href="http://www.infoaxon.com/services/">Services</a>
+<ul class='children'>
+	<li class="page_item page-item-41"><a href="http://www.infoaxon.com/services/open-source-development/">Enhanced Open Source</a></li>
+	<li class="page_item page-item-34"><a href="http://www.infoaxon.com/services/custom-open-source-integration/">Open Source Integration</a></li>
+	<li class="page_item page-item-45"><a href="http://www.infoaxon.com/services/open-source-support/">Open Source Support</a></li>
+	<li class="page_item page-item-43"><a href="http://www.infoaxon.com/services/consulting/">Open Source Training &#038; Consulting</a></li>
+	<li class="page_item page-item-1050 current_page_item"><a href="http://www.infoaxon.com/services/microsoft-open-source/">Microsoft + Open Source</a></li>
+</ul>
+</li>
+<li class="page_item page-item-30"><a href="http://www.infoaxon.com/verticals/">Verticals</a>
+<ul class='children'>
+	<li class="page_item page-item-47"><a href="http://www.infoaxon.com/verticals/knowledge-intensive-industries/">Knowledge Intensive Industries</a></li>
+	<li class="page_item page-item-49"><a href="http://www.infoaxon.com/verticals/government/">Government</a></li>
+	<li class="page_item page-item-51"><a href="http://www.infoaxon.com/verticals/international-development/">International Development</a></li>
+	<li class="page_item page-item-736"><a href="http://www.infoaxon.com/verticals/retail/">Retail</a></li>
+	<li class="page_item page-item-1834"><a href="http://www.infoaxon.com/verticals/insurance/">Insurance</a></li>
+</ul>
+</li>
+<li class="page_item page-item-11"><a href="http://www.infoaxon.com/platforms/">Pre-Integrated Platforms</a>
+<ul class='children'>
+	<li class="page_item page-item-55"><a href="http://www.infoaxon.com/platforms/fusionkm/">fusionKM</a></li>
+	<li class="page_item page-item-57"><a href="http://www.infoaxon.com/platforms/fusionbi/">fusionBI</a></li>
+	<li class="page_item page-item-850"><a href="http://www.infoaxon.com/platforms/axonshare-a-collaborative-document-management-solution/">AxonShare</a></li>
+	<li class="page_item page-item-59"><a href="http://www.infoaxon.com/platforms/white-label-platforms/">White Label SaaS</a></li>
+	<li class="page_item page-item-810"><a href="http://www.infoaxon.com/platforms/ossexpert-tool-kit/">OSSExpert Tool Kit</a></li>
+</ul>
+</li>
+<li class="page_item page-item-13"><a href="http://www.infoaxon.com/company/">Company</a>
+<ul class='children'>
+	<li class="page_item page-item-61"><a href="http://www.infoaxon.com/company/meet-the-team/">Management Team</a></li>
+	<li class="page_item page-item-63"><a href="http://www.infoaxon.com/company/our-journey/">Our Journey</a></li>
+	<li class="page_item page-item-65"><a href="http://www.infoaxon.com/company/vision-values/">Vision  &amp; DNA</a></li>
+	<li class="page_item page-item-170"><a href="http://www.infoaxon.com/company/our-differentiators/">Our Differentiators</a></li>
+</ul>
+</li>
+
+		</ul>
+
+		<div id="search">
+
+			<form method="get" id="searchform" action="http://www.infoaxon.com/">
+<div>
+	<input class="search" type="text" value="search..." name="s" id="s" onfocus="if(this.value == this.defaultValue) this.value = '';" onblur="if(this.value == '') this.value = this.defaultValue;" /><input class="btn_search" type="submit" id="searchsubmit" value="" />
+	<div class="clear"></div>
+</div>
+</form>
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="clear"></div>
+
+	<script>
+  jQuery(document).ready(function($){
+	$('#contents').find('.slidedeck').slidedeck();
+  });
+</script>
+<div id="contents">
+	<div class="container">
+		<div class="inner-banner">
+			<img src="http://www.infoaxon.com/wp-content/uploads/2010/06/microsoft.png" align="absmiddle" />		</div>
+		<div id="crumbs"><a href="http://www.infoaxon.com">Home</a> &raquo; <a href="http://www.infoaxon.com/services/">Services</a> &raquo; <span class="current">Microsoft + Open Source</span></div>					<div class="post">
+				<h2><a href="http://www.infoaxon.com/services/microsoft-open-source/">Microsoft + Open Source</a></h2>
+				
+				<div class="entry">
+                 <p>At InfoAxon, we believe in Open Source Softwares and Frameworks.<br />
+In today&#8217;s days Open Source is not limited only to Java, PHP and Linux. Microsoft and .NET frameworks are actively participating in building Open Source Solutions.</p>
+<p>We implement software and business solutions for customers in several domains using Microsoft technologies such as .NET Framework 2.0 and 3.5, Silverlight, WWF, WCF, WPF, LINQ, ADO.NET to name a few. Our .NET based development stack includes various .NET Open Source libraries such as</p>
+<ul>
+<li>.NET Application Frameworks</li>
+<li>DotNetNuke</li>
+<li>NUnit</li>
+<li>NAnt</li>
+<li>Cruise Control .NET</li>
+<li>Exception and Auditing Framework</li>
+<li>FxCop</li>
+</ul>
+<div class="slidedeck_frame skin-default"><dl id="SlideDeck_558_2030" class="slidedeck slidedeck_2030" style="width:100%;height:260px"><dt>.NET Technologies</dt><dd><p><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/net-logo.jpg"><img class="alignnone size-full wp-image-1065" title="net-logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/net-logo.jpg" alt="" width="184" height="82" /></a> <a href="http://www.infoaxon.com/wp-content/uploads/2010/06/silverlight.png"><img class="alignnone size-full wp-image-1066" title="silverlight" src="http://www.infoaxon.com/wp-content/uploads/2010/06/silverlight.png" alt="" width="173" height="65" /></a> <a href="http://www.infoaxon.com/wp-content/uploads/2010/06/framework3_1.jpg"><img class="alignnone size-medium wp-image-1076" title="framework3_1" src="http://www.infoaxon.com/wp-content/uploads/2010/06/framework3_1-262x300.jpg" alt="" width="180" height="180" /></a></p>
+</dd><dt>Open Source Frameworks</dt><dd><p><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/DotNetNuke-Logo.gif"><img class="alignnone size-medium wp-image-1067" title="DotNetNuke-Logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/DotNetNuke-Logo-300x81.gif" alt="" width="216" height="81" /></a> <a href="http://www.infoaxon.com/wp-content/uploads/2010/06/nunit-logo.gif"><img class="alignnone size-full wp-image-1069" title="nunit-logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/nunit-logo.gif" alt="" width="133" height="58" /></a> <a href="http://www.infoaxon.com/wp-content/uploads/2010/06/ccnet-logo.gif"><img class="alignnone size-full wp-image-1070" title="ccnet-logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/ccnet-logo.gif" alt="" width="195" height="42" /></a><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/nant-logo.gif"><img class="alignnone size-full wp-image-1075" title="nant-logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/nant-logo.gif" alt="" width="163" height="62" /></a><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/ls-logo.jpg"><img class="alignnone size-medium wp-image-1083" title="Log4net" src="http://www.infoaxon.com/wp-content/uploads/2010/06/ls-logo-300x70.jpg" alt="" width="183" height="70" /></a><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/ncover-logo.png"><img class="alignnone size-full wp-image-1084" title="ncover-logo" src="http://www.infoaxon.com/wp-content/uploads/2010/06/ncover-logo.png" alt="" width="140" height="35" /></a><a href="http://www.infoaxon.com/wp-content/uploads/2010/06/Rainbow-2.jpg"><img class="alignnone size-full wp-image-1085" title="Rainbow" src="http://www.infoaxon.com/wp-content/uploads/2010/06/Rainbow-2.jpg" alt="" width="197" height="60" /> </a></p>
+</dd></dl></div>
+                                 <div class="clear"></div>
+				 				 				 
+              </div>
+			<!-- <div class="comments-template">
+									</div> -->
+				<div class="clear"></div>
+          	</div>
+             			      
+                        </div>
+		<div class="sidebar">
+	<ul>
+	
+	<li id="cforms-19" class="widget widgetcform"><h2 class="widgettitle">Contact Us</h2>
+		<div id="usermessage2a" class="cf_info "></div>
+		<form enctype="multipart/form-data" action="/services/microsoft-open-source/#usermessage2a" method="post" class="cform" id="cforms2form">
+		<ol class="cf-ol">
+			<li id="li-2-1" class=""><label for="cf2_field_1"><span>Name</span></label><input type="text" name="cf2_field_1" id="cf2_field_1" class="single fldrequired" value="" onfocus="clearField(this)" onblur="setField(this)"/><span class="reqtxt">(required)</span></li>
+			<li id="li-2-2" class=""><label for="cf2_field_2"><span>Email</span></label><input type="text" name="cf2_field_2" id="cf2_field_2" class="single fldemail fldrequired" value=""/><span class="emailreqtxt">(valid email required)</span></li>
+			<li id="li-2-3" class=""><label for="cf2_field_3"><span>Message</span></label><textarea cols="30" rows="8" name="cf2_field_3" id="cf2_field_3" class="area fldrequired"></textarea><span class="reqtxt">(required)</span></li>
+		</ol>
+		<fieldset class="cf_hidden">
+			<legend>&nbsp;</legend>
+			<input type="hidden" name="cf_working2" id="cf_working2" value="One%20moment%20please..."/>
+			<input type="hidden" name="cf_failure2" id="cf_failure2" value="Please%20fill%20in%20all%20the%20required%20fields."/>
+			<input type="hidden" name="cf_codeerr2" id="cf_codeerr2" value="Please%20double-check%20your%20verification%20code."/>
+			<input type="hidden" name="cf_customerr2" id="cf_customerr2" value="yyy"/>
+			<input type="hidden" name="cf_popup2" id="cf_popup2" value="nn"/>
+		</fieldset>
+		<p class="cf-sb"><input type="submit" name="sendbutton2" id="sendbutton2" class="sendbutton" value="Submit" onclick="return cforms_validate('2', false)"/></p></form><p class="linklove" id="ll2"><a href="http://www.deliciousdays.com/cforms-plugin"><em>cforms</em> contact form by delicious:days</a></p></li><li id="text-10" class="widget widget_text"><h2 class="widgettitle">Spotlight Case Studies</h2>			<div class="textwidget"><img src="/wp-content/uploads/2010/06/CR.jpeg" class="center" style="margin-right: 8px;" alt="Corporate Performance Platform" width="150"><br><a href="http://www.infoaxon.com/wp-content/plugins/download-monitor/download.php?id=12" target="_blank"><img alt="pdf" title="pdf" class="download-icon" src="http://www.infoaxon.com/wp-content/plugins/download-monitor/img/filetype_icons/document-pdf.png" />Learn more about BI SaaS platform to automate analysis and reporting of customer & staff surveys for public sector organizations.</a><br><br>
+<img src="/wp-content/uploads/2010/06/socialhousing-bi-150x150.jpg" class="center" style="margin-right: 8px;" alt="Corporate Performance Platform" width="150"><br><a href="http://www.infoaxon.com/wp-content/plugins/download-monitor/download.php?id=13" target="_blank"><img alt="pdf" title="pdf" class="download-icon" src="http://www.infoaxon.com/wp-content/plugins/download-monitor/img/filetype_icons/document-pdf.png" />Choice Based Letting Analysis and Reporting Solution for Social Housing in the UK</a><br>
+</div>
+		</li>	</ul>
+</div><div class="clear"></div>
+</div>
+<div id="footer">
+	<div class="fleft">
+		<div class="footermsg">Copyright &copy; 2001-2012, All rights reserved to InfoAxon</div>
+		<ul class="flink">
+			<li><a href="/explore/media/terms-of-use/">Terms of Use</a></li>
+			<li><a href="/explore/media/privacy-policy/">Privacy Policy</a></li>
+		</ul>
+	</div>
+         
+	<!--<div class="fright">
+		<h3>find us on</h3>
+		<ul>
+			<li><a href="#"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/blogspot.gif" /></a></li>
+			<li><a href="#"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/in.gif" /></a></li>
+			<li><a href="#"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/twitter.gif" /></a></li>
+			<li><a href="#"><img src="http://www.infoaxon.com/wp-content/themes/infoaxon/images/facebook.gif" /></a></li>
+		</ul>
+	</div>-->
+</div>
+<script src="http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">clicky.init(66377988);</script>
+	    <!-- WP-Cufon Plugin (ie6/7 compatibility tag)  -->    
+        
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/prettyphoto-media/js/jquery.prettyPhoto.min.js?ver=3.1.4'></script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.infoaxon.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"http:\/\/www.infoaxon.com\/wp-content\/plugins\/wp-postratings","ajax_url":"http:\/\/www.infoaxon.com\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 post at a time.","image":"stars_crystal","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.infoaxon.com/wp-content/plugins/wp-postratings/postratings-js.js?ver=1.63'></script>
+<script type="text/javascript">jQuery( '#SlideDeck_558_2030' ).slidedeck( { autoPlayInterval: 5000, speed: 500, start: 1, autoPlay: 0, cycle: false, hideSpines: false } );</script><script>
+jQuery(function($) {
+$('a[rel^="prettyPhoto"]').prettyPhoto();
+});
+</script>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="http://www.actonsoftware.com/acton/bn/5644/visitor.gif?ts='+
+    new Date().getTime()+
+    '&ref='+escape(document.referrer) + '">'
+  );
+  var aoAccountId = '5644';
+  var aoCookieMode = 'STANDARD';
+  var aoCookieDomain = 'actonsoftware.com';
+  var aoServerContext = 'http://www.actonsoftware.com/acton';
+  /* ]]> */
+</script>
+<script type="text/javascript">
+var __lc = {};
+__lc.license = 2727082;
+
+(function() {
+	var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+	lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+</script><div class="clear"></div>
+</div>
+<!-- Start of HubSpot Logging Code  -->
+<script type="text/javascript" language="javascript">
+var hs_portalid=65063; 
+var hs_salog_version = "2.00";
+var hs_ppa = "infoaxon.app6.hubspot.com";
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//" + hs_ppa + "/salog.js.aspx' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- End of HubSpot Logging Code -->
+
+</body>
+
+</html>

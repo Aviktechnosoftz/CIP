@@ -59,6 +59,7 @@ if($map === NULL) {$map='1' ;}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script type="text/javascript" src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js"></script>
+
 </header>
 
 
@@ -79,6 +80,7 @@ if($map === NULL) {$map='1' ;}
 <div class="nav_wrap" style=" background-color:#DF5430;">
 
 <? include('header.php'); ?>
+  <? //include('test_side_new.php');?>
 </div>
  <div class="" style="padding-left: 0 !important;">
    
@@ -92,32 +94,130 @@ if($map === NULL) {$map='1' ;}
 <div class=" col-md-12 col-sm-12 canvasbackground" style="padding-right: 0px; padding-left: 0px">
 <div class="container-fluid" id="canvas-container" style="padding-left: 0 !important;background-color: #F2F2F6;padding: 0px;">
 <!-- <div class="col-md-12 col-sm-12 col-xs-12" > -->  
+  <!-- <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerleftdiv"  id="images">
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/safety_helmet.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding" ><img class="image_canvas" draggable="true" src="map_images/safety_footwear.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/danger.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/flash_light.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/pedestrains.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/caution_vehicle.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous"></div>
+    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/give_way.png"   crossOrigin="Anonymous"></div>
+</div>  -->
+
+      <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerleftdiv" id="images">
+            <div class="carousel thin" id="c_test2" style="height: 300px;">
+                <a class="prev"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                <div class="window">
+                    <ul class="clr">     
+                        <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                       
+                        
+                    </ul>
+                </div> <!-- .window -->
+                <a class="next"><span class="glyphicon glyphicon-chevron-down"></span></a>
+            </div> <!-- .carousel -->
+        </div>
+
+
+
   <div class="col-xs-9 col-md-9 col-lg-9 col-sm-9" style="background-color: #F2F2F6; height: 100%;padding: 0px;">
 <!-- <iframe id="iframe_a" src="https://docs.google.com/gview?url=http://cipropertyapp.com/API/Uploads/Internal_plan.pdf&embedded=true" style="height: 81vh;
     width: 75%;" frameborder="0"></iframe> -->
-
+  
    <!--  <iframe src=""></iframe>     -->
   <canvas id="canvas" >
       
     </canvas>  
    </div>
-   <div class="col-xs-3 col-md-3 col-lg-3 col-sm-3" style="background-color: #F2F2F6;padding:0px;">
+   <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerrightdiv"  id="images" >
+        <div class="carousel thin" id="c_test" style="height: 300px;">
+                <a class="prev"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                <div class="window">
+                    <ul class="clr">     
+                        <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                       
+                        
+                    </ul>
+                </div> <!-- .window -->
+                <a class="next"><span class="glyphicon glyphicon-chevron-down"></span></a>
+            </div> <!-- .carousel -->
+</div>
+  
+  </div>
+<div class="col-sm-12 col-md-12" id="images" style="height: 21%; margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 5px 1px black;
+    border: 5px solid transparent;background-color: #F2F2F6;">
+    <div class="col-xs-8 col-md-8 col-lg-8 col-sm-8" style="background-color: #F2F2F6;padding:0px;">
     <ul class="list-unstyled" style="margin-top:10px;padding:0px;">
-      <div class="col-md-12 col-sm-12" style="padding: 0px;">
-      <div class="col-md-6 col-sm-6" style="">
+      <div class="col-md-12 col-sm-12" style="">
+     
+      <div class="col-md-3 col-sm-3" style="">
           <button id="drawing-mode" class="btn btn-info drawing_btn ">Free Draw</button>&nbsp;
       </div>
-      <div class="col-md-6 col-sm-6" style="padding: 0px;">
+      <div class="col-md-3 col-sm-3">
            <button id="other_btn" class="btn btn-info" >Lines Draw</button>
       </div>
-    </div>
-    <div class="col-md-12 col-sm-12" style="top: 35vh;box-shadow: 0 0 5px 1px black; border: 2px solid transparent;width: 70%;margin-left: 35px;">
-      <div class=" col-md-12" style="font-size: 25px;text-align-last: center; ">
-         <a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
-         <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
-    </div>
-    </div>
-          <div class="col-md-12" style="display: none;float: left; width: 100%;padding-top: 20px;" id="drawing-mode-options">
+<div class="col-md-3 col-sm-3">
+         <button class="btn btn-primary button_cls" data-toggle="modal" data-target=".bd-example">Large modal</button>
+</div>
+<div class="col-sm-3 col-md-3" style="float: right;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="">Save as Image</button></div>
+</div>
+
+          <div class="col-md-8" style="display: none;float: left;" id="drawing-mode-options">
             <label for="drawing-mode-selector" style="padding: 0px;">Mode:</label>
             <select id="drawing-mode-selector" style="color: rgb(0, 0, 0);background-color: rgb(228, 228, 228);margin-left: 10px;width: 70%;border-radius: 2vh;outline: none; text-align-last: center;">
               <option>Pencil</option>
@@ -131,8 +231,8 @@ if($map === NULL) {$map='1' ;}
               <option>diamond</option>
               <option>texture</option>
             </select><br>
-            <label for="drawing-line-width" style="padding: 0px;">Line width:</label>
-            <input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+            <label for="drawing-line-width" style="padding: 0px;">Line width:</label><input type="range" value="30" min="0" max="150" id="drawing-line-width">
+            <br>
             <label for="drawing-color" style="padding: 0px;">Line color:</label>
             <input type="color" value="#005E7A" id="drawing-color"><br>
             <label for="drawing-shadow-width" style="padding: 0px;">Line shadow width:</label>
@@ -141,14 +241,9 @@ if($map === NULL) {$map='1' ;}
 
  
           </div>
-
-         <!--  <div class=" col-md-12" style="margin-top:5px;font-size: 25px;">
-<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
-  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
-    </div>  -->
           <div id="other" style="display: none;">
-           <div class="col-md-12 col-sm-12" style=" margin-top:5%;padding: 0px;">  
-            <!-- <h3>Select from dropdown</h3> -->
+           <div class="col-md-8 col-sm-8" style=" margin-top:5%;padding: 0px;">  
+  
   <div class="col-md-12 col-sm-12" style="padding-bottom: 10px"> 
   <label for="" style="padding: 0px;">Line Type:</label>         
   <select name="" id="linetype" style="color: rgb(0, 0, 0); background-color: rgb(228, 228, 228); width: 100%; border-radius: 2vh; outline: none;
@@ -167,31 +262,12 @@ if($map === NULL) {$map='1' ;}
   <option value="yellow" style="color: #DFDF36;">Yellow</option>
   <option value="green" style="color: green">Green</option>
 </select></div>
-<!-- <div class=" col-md-12" style="margin-top:15px;font-size: 25px;    margin-left: 15px;">
-<a href="javascript:undo();" style="margin-right: 15px;" title="Undo"><i class="fa fa-undo" aria-hidden="true"></i></a>
-  <a href="javascript:redo();" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></a>
-    </div> -->      </div>
-        </ul>
+</div></div>
+</ul>
    </div>
  <!--  </div> -->
   </div>
 
-  
-  <div class="col-sm-12 col-md-12" id="images" style="height: 10%; margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 5px 1px black;
-    border: 5px solid transparent;background-color: #F2F2F6;">
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/1.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/2.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px;"><img style="height: 8vh;" draggable="true" src="map_images/3.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/4.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/5.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-1 col-md-1" style="margin-right: 5px; "><img style="height: 8vh;" draggable="true" src="map_images/6.png"   crossOrigin="Anonymous"></img></div>
-    <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="">Save as Image</button></div>
- <!--     <div class="col-sm-2 col-md-2" style="float: right;padding: 10px;"><button onclick=" $('#imgupload').trigger('click');" class=" btn btn-info" id="b2" type="button" style="background-color:#5bc0de !important;outline: none;border: none;">Upload Map</button></div>
-     <input type="file" id="imgupload" style="display:none"/> -->
-
-<!-- Large modal -->
-
-<button class="btn btn-primary button_cls" data-toggle="modal" data-target=".bd-example">Large modal</button>
 
 
 <div class="modal fade bd-example" id="upload_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -234,7 +310,7 @@ if($map === NULL) {$map='1' ;}
 </div>
 
  <div class="col-sm-12 col-md-12" id="margin_set" style="margin-bottom: 5px;padding-left: 0px; padding-right: 0px; width: 104%;margin-left: -15px;"> 
- <? include("Checklist_visit_footer/footer_new.php"); ?></div></div></div>
+ <?// include("Checklist_visit_footer/footer_new.php"); ?></div></div></div>
 </body>
 
 <script>
@@ -299,10 +375,11 @@ function update_map_info()
           data: {name:val_map_sel}, 
           
             success: function(response){
-            alert("Uploaded"); 
+            alert(response); 
 
              image_name=response;
-            // flag=2;
+             // canvas.clear();
+            canvas_background_change(image_name);
           }     
         });
 }
@@ -345,9 +422,10 @@ function update_map_info()
   {
     if(flag==1)
     {
+
       update_map_info();
       reset_modal();
-      canvas_background_change(image_name);
+      
     }
 
     else if(flag==2)
@@ -388,7 +466,6 @@ function update_map_info()
 
 function canvas_background_change(name)
 {
-
    canvas.setBackgroundImage('API/Uploads/'+name, canvas.renderAll.bind(canvas), {
     backgroundImageOpacity: 0.5,
     backgroundImageStretch: false
@@ -699,9 +776,8 @@ $("#b").click(function(){
     saveAs(blob, "image/myIMG.png");
     savetoserver();
     canvas.clear();
-
-    canvas_background_change(image_name);
-    console.log(image_name);
+     canvas_background_change(image_name);
+    console.log(blob);
   });
 });
 
@@ -728,8 +804,8 @@ $.ajax({
   data: { image: dataURL,imagename: imagename,project_id: project_id}
           
 }).done(function( respond ) {
- // alert("Saved filename: "+respond);
- // console.log(respond);
+ alert("Saved filename: "+respond);
+ console.log(respond);
 });
 
 
@@ -893,6 +969,36 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
 <!-- end -->
 <style>
+.no-padding{
+  padding: 0px !important;
+}
+
+.image_outerleftdiv{
+  background-color: #F2F2F6 !important;
+  box-shadow: 0 0 5px 1px black  !important;
+  text-align-last: center  !important;
+  border: 5px solid transparent  !important;
+ /* height: 100%  !important;*/
+   margin-left: 10px  !important;
+   margin-right: 25px !important;
+    /*overflow-y: scroll;*/
+  z-index: 111  !important;
+}
+.image_outerrightdiv{
+  background-color: #F2F2F6  !important;
+  box-shadow: 0 0 5px 1px black  !important;
+  text-align-last: center  !important;
+  border: 5px solid transparent  !important;
+  height: 100%  !important;
+  margin-left: 25px !important;
+  margin-right: 10px;
+  overflow-y: scroll;
+  z-index: 111;
+}
+.image_canvas{
+  height: 8vh;
+  margin-bottom: 5px;
+}
 /*@font-face {
   font-family: 'Helvetica_Nue';
    src: url('fonts/helvetica-neue-5923ee0f5f95b.ttf');
@@ -1225,7 +1331,14 @@ margin-top: 3vh;
      background-size: 365px 187px;
     
 }
-
+.image_outerrightdiv{
+  margin-left: 15px !important;
+    margin-right: 5px !important;
+}
+.image_outerleftdiv{
+  margin-left: 5px !important;
+  margin-right: 15px !important;
+}
 
 }
 
@@ -1390,21 +1503,49 @@ padding: 5px;
     background: #E3E1E3;
 }
 
-@media screen and (min-width: 768px)
-{
-.carousel-indicators {
-    bottom: 0px;
-}
+.thin {
+    max-width:150px;    
 }
 
-.carousel-inner>.item>img
-{
-  width: 100%;
-  height: 20vh;
-  /*width: auto;
-  height: 26vh;
-  max-height: 26vh;*/
+.carousel > .window {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
 }
+
+/*
+    This is the item wrapper,
+    it will be animated.
+*/
+.carousel ul {
+    list-style: none;
+    height: 10000px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0px;
+}
+
+/*
+    These are the items
+*/
+.carousel li {
+    margin: 3px 0 0;
+}
+.prev, .next {
+    font-size: 30px;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    margin-left: -15px;
+}
+.carousel li:first-child {
+    margin: 0;
+}
+
+
+
+
 </style>
 
 </html>
@@ -1594,5 +1735,547 @@ window.onclick = function(event) {
 
 
 </script>
+
+<script type="text/javascript">
+  
+
+  !function ($) {
+
+    var is,
+    transition;
+
+  // from valentine
+  is = {
+    fun: function (f) {
+      return typeof f === 'function';
+    },
+    arr: function (ar) {
+      return ar instanceof Array;
+    },
+    obj: function (o) {
+      return o instanceof Object && !is.fun(o) && !is.arr(o);
+    }
+  };
+
+  /*
+    Based on Bootstrap
+    Mozilla and Webkit support only
+  */
+  transition = (function () {
+    var st = document.createElement('div').style,
+      transitionEnd = 'TransitionEnd',
+      transitionProp = 'Transition',
+      support = st.transition !== undefined ||
+        st.WebkitTransition !== undefined ||
+        st.MozTransition !== undefined;
+
+    return support && {
+      prop: (function () {
+        if (st.WebkitTransition !== undefined) {
+          transitionProp = 'WebkitTransition';
+        } else if (st.MozTransition !== undefined) {
+          transitionProp = 'MozTransition';
+        }
+        return transitionProp;
+      }()),
+      end: (function () {
+        if (st.WebkitTransition !== undefined) {
+          transitionEnd = 'webkitTransitionEnd';
+        } else if (st.MozTransition !== undefined) {
+          transitionEnd = 'transitionend';
+        }
+        return transitionEnd;
+      }())
+    };
+  }());
+
+  function extend() {
+    // based on jQuery deep merge
+    var options, name, src, copy, clone,
+      target = arguments[0], i = 1, length = arguments.length;
+
+    for (; i < length; i += 1) {
+      if ((options = arguments[i]) !== null) {
+        // Extend the base object
+        for (name in options) {
+          src = target[name];
+          copy = options[name];
+          if (target === copy) {
+            continue;
+          }
+          if (copy && (is.obj(copy))) {
+            clone = src && is.obj(src) ? src : {};
+            target[name] = extend(clone, copy);
+          } else if (copy !== undefined) {
+            target[name] = copy;
+          }
+        }
+      }
+    }
+    return target;
+  }
+
+  function clone(obj) {
+    if (null === obj || 'object' !== typeof obj) {
+      return obj;
+    }
+    var copy = obj.constructor(),
+      attr;
+    for (attr in obj) {
+      if (obj.hasOwnProperty(attr)) {
+        copy[attr] = obj[attr];
+      }
+    }
+    return copy;
+  }
+
+  // from jquery
+  function proxy(fn, context) {
+    var slice = Array.prototype.slice,
+      args = slice.call(arguments, 2);
+    return function () {
+      return fn.apply(context, args.concat(slice.call(arguments)));
+    };
+  }
+
+  function animate(options) {
+    var el = options.el,
+      complete = options.complete ? options.complete : function () {},
+      animation,
+      dummy;
+
+    // no animation obj OR animation is not available,
+    // fallback to css and call the callback
+    if (! options.animation ||
+      ! (el.animate || (options.css3transition && transition))) {
+      el.css(options.fallbackCss);
+      complete();
+      return;
+    }
+
+    // we will animate, apply start CSS
+    if (options.animStartCss) {
+      if (options.animStartCss.opacity === 0) {
+        options.animStartCss.opacity = 0.01; // ie quirk
+      }
+      el.css(options.animStartCss);
+    }
+    animation = options.animation;
+
+    // css3 setted, if available apply the css
+    if (options.css3transition && transition) {
+      dummy = el[0].offsetWidth; // force reflow; source: bootstrap
+      el[0].style[transition.prop] = 'all ' + animation.duration + 'ms';
+
+      // takaritas
+      delete animation.duration;
+      delete animation.easing;
+
+      el.css(animation);
+      //el.unbind(transition.end);
+      el.on(transition.end, function () {
+        // delete transition properties and events
+        el.off(transition.end);
+        el[0].style[transition.prop] = 'none';
+        complete();
+      });
+    } else if (window.ender) {
+      // use morpheus
+      el.animate(extend(animation, {'complete': complete}));
+    } else {
+      // use animate from jquery
+      el.animate(animation, animation.duration, animation.easing, complete);
+    }
+  }
+
+  /*
+    Carousel Constructor
+  */
+  function Carousel(el, options) {
+    this.init(el, options);
+
+    // only return the API
+    // instead of this
+    return {
+      getPageSize: proxy(this.getPageSize, this),
+      getCursor: proxy(this.getCursor, this),
+      nextPage: proxy(this.nextPage, this),
+      prevPage: proxy(this.prevPage, this),
+      isVisibleItem: proxy(this.isVisibleItem, this),
+      scrollToItem: proxy(this.scrollToItem, this),
+      getOptions: proxy(this.getOptions, this),
+      setOptions: proxy(this.setOptions, this)
+    };
+  }
+
+  Carousel.prototype = {
+    init: function (el, options) {
+      var opt;
+
+      this.options = {
+        window: '.window',
+        items: 'li',
+        pager: null,
+        nextPager: 'a.next',
+        prevPager: 'a.prev',
+        activeClass: null,
+        disabledClass: 'disabled',
+        duration: 400,
+        vertical: false,
+        keyboard: false,
+        css3transition: false,
+        extraOffset: 0
+      };
+      this.setOptions(options);
+      opt = this.options;
+
+      if (opt.css3transition && ! transition) {
+        opt.css3transition = false;
+      }
+
+      this.$el = $(el);
+      this.$window = this.$el.find(
+        opt.window
+      );
+      this.$itemWrapper = this.$window.children().first();
+      this.$items = this.$el.find(
+        opt.items
+      );
+      this.$nextPager = this.$el.find(
+        opt.nextPager
+      );
+      this.$prevPager = this.$el.find(
+        opt.prevPager
+      );
+
+      this.setDimensions();
+
+      if (opt.pager) {
+        this.$pager = this.$el.find(
+          opt.pager
+        );
+
+        this.createPager();
+
+        this.$pagerItems = this.$pager.find('li');
+      }
+
+      if (this.$items.length <= this.pageSize) {
+        this.hidePrevPager();
+        this.hideNextPager();
+        return;
+      }
+
+      this.cursor = this.getActiveIndex();
+
+      if (this.cursor < 0) {
+        if (this.options.activeClass) {
+          for (var i = 0; i < this.pageSize; i += 1) {
+            $(this.$items.get(i)).addClass('active');
+          }
+        }
+
+        this.cursor = 0;
+      }
+
+      if (this.cursor > this.lastPosition) {
+        this.cursor = this.lastPosition;
+      }
+
+      if (this.cursor > 0) {
+        this.scrollToItem(this.cursor, true);
+      }
+
+      if (this.cursor === 0) {
+        this.hidePrevPager();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        this.hideNextPager();
+      }
+
+      this.$nextPager.on('click', proxy(this.nextPage, this));
+      this.$prevPager.on('click', proxy(this.prevPage, this));
+
+      if (opt.keyboard) {
+        $(document).on('keyup', proxy(this.onKeyUp, this));
+      }
+
+      this.$el.addClass('carousel-inited');
+    },
+
+    setDimensions: function () {
+      var $secondItem,
+        alignedDimension = 'width',
+        marginType = ['margin-left', 'margin-right'];
+
+      if (this.options.vertical) {
+        alignedDimension = 'height';
+        marginType = ['margin-top', 'margin-bottom'];
+      }
+
+      $secondItem = this.$items.first().next();
+      this.itemMargin = parseInt($secondItem.css(marginType[0]), 10) +
+        parseInt($secondItem.css(marginType[1]), 10);
+      this.itemDimension = $secondItem[alignedDimension]() + this.itemMargin;
+
+      this.windowDimension = this.$window[alignedDimension]();
+      this.pageSize = Math.floor(
+        (this.windowDimension + this.itemMargin) / this.itemDimension
+      );
+      this.pageDimension = this.pageSize * this.itemDimension;
+      this.lastPosition = this.$items.length - this.pageSize;
+
+    },
+
+    createPager: function () {
+      var itemsLen = this.$items.length,
+        pagerItemsFrag = document.createDocumentFragment(),
+        pagerItem,
+        i;
+
+      for (i = 0; i < itemsLen; i += 1) {
+        pagerItem = document.createElement('li');
+        $pagerItem = $(pagerItem);
+
+        $pagerItem.on('click', proxy(this.usePager, this, i, itemsLen));
+
+        if (i < this.pageSize) {
+          $pagerItem.addClass('active');
+        }
+
+        pagerItemsFrag.appendChild(pagerItem);
+      }
+
+      this.$pager.empty().get(0).appendChild(pagerItemsFrag);
+    },
+
+    usePager: function (pos, len) {
+      if (pos > (len - this.pageSize)) {
+        this.scrollToItem(len - this.pageSize);
+      } else {
+        this.scrollToItem(pos);
+      }
+    },
+
+    nextPage: function (e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        return;
+      }
+
+      var itemIdx = this.cursor + this.pageSize;
+      if (itemIdx > this.lastPosition) {
+        itemIdx = this.lastPosition;
+      }
+
+      this.scrollToItem(itemIdx);
+    },
+
+    prevPage: function (e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      if (this.cursor === 0) {
+        return;
+      }
+
+      var itemIdx = this.cursor - this.pageSize;
+      if (itemIdx < 0) {
+        itemIdx = 0;
+      }
+
+      this.scrollToItem(itemIdx);
+    },
+
+    nextItem: function () {
+      if (this.cursor >= this.lastPosition) {
+        return;
+      }
+
+      this.scrollToItem(this.cursor + 1);
+    },
+
+    prevItem: function () {
+      if (this.cursor === 0) {
+        return;
+      }
+      this.scrollToItem(this.cursor - 1);
+    },
+
+    scrollToItem: function (idx, doNotAnimate) {
+      var animateTo,
+        scrollTo,
+        direction = this.options.vertical ? 'top' : 'left',
+        animObj = {},
+        activeClassName = this.options.activeClass || 'active',
+        itemsLen = this.$items.length,
+        i;
+
+      this.cursorPrevious = this.cursor;
+      this.cursor = idx;
+
+      if (this.cursor === 0) {
+        this.hidePrevPager();
+      } else {
+        this.showPrevPager();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        this.hideNextPager();
+      } else {
+        this.showNextPager();
+      }
+
+      scrollTo = this.cursor * this.itemDimension;
+      if (this.cursor === this.lastPosition) {
+        scrollTo = scrollTo -
+          (this.windowDimension - this.pageDimension + this.itemMargin) +
+          this.options.extraOffset;
+      }
+
+      scrollTo *= -1;
+      animObj[direction] = scrollTo;
+
+      if (! doNotAnimate) {
+        animObj.duration = this.options.duration;
+      }
+
+      if (this.options.activeClass) {
+        activeClass = this.options.activeClass;
+
+        if (this.getPageSize() === 1) {
+          $(this.$items.get(this.cursorPrevious)).removeClass(activeClass);
+          $(this.$items.get(idx)).addClass(activeClass);
+        } else {
+          itemslen = this.$items.length;
+          this.$items.removeClass(activeClass);
+
+          for (i = 0; i < itemslen; i += 1) {
+            if (this.isVisibleItem(i)) {
+              $(this.$items.get(i)).addClass(activeClass);
+            }
+          }
+        }
+      }
+
+      if (this.options.pager) {
+        if (this.getPageSize() === 1) {
+          $(this.$pagerItems.get(this.cursorPrevious)).removeClass(activeClassName);
+          $(this.$pagerItems.get(this.cursor)).addClass(activeClassName);
+        } else {
+          this.$pagerItems.removeClass(activeClassName);
+
+          for (i = 0; i < itemsLen; i += 1) {
+            if (this.isVisibleItem(i)) {
+              $(this.$pagerItems.get(i)).addClass(activeClassName);
+            }
+          }
+        }
+      }
+
+      animate({
+        el: this.$itemWrapper,
+        animation: doNotAnimate ? false : animObj,
+        fallbackCss: animObj,
+        css3transition: this.options.css3transition
+      });
+    },
+
+    onKeyUp: function (e) {
+      if (e.keyCode === 39) {
+        this.nextPage();
+      } else if (e.keyCode === 37) {
+        this.prevPage();
+      }
+    },
+
+    getActiveIndex: function () {
+      var i = 0,
+        il = this.$items.length;
+
+      for (; i < il; i += 1) {
+        if ($(this.$items.get(i)).hasClass('active')) {
+          return i;
+        }
+      }
+
+      return -1;
+    },
+
+    hideNextPager: function () {
+      this.$nextPager.addClass(
+        this.options.disabledClass
+      );
+    },
+
+    hidePrevPager: function () {
+      this.$prevPager.addClass(
+        this.options.disabledClass
+      );
+    },
+
+    showNextPager: function () {
+      this.$nextPager.removeClass(
+        this.options.disabledClass
+      );
+    },
+
+    showPrevPager: function () {
+      this.$prevPager.removeClass(
+        this.options.disabledClass
+      );
+    },
+
+    getPageSize: function () {
+      return this.pageSize;
+    },
+
+    getCursor: function () {
+      return this.cursor;
+    },
+
+    isVisibleItem: function (idx) {
+      if (this.cursor + this.pageSize <= idx || this.cursor > idx) {
+        return false;
+      }
+      return true;
+    },
+
+    getOptions: function () {
+      return this.options;
+    },
+
+    setOptions: function (options) {
+      extend(this.options, options || {});
+    }
+  };
+
+  $.fn.carousel = function (options) {
+    return new Carousel(this.first(), options);
+  };
+}(window.ender || window.jQuery || window.Zepto);
+
+
+$(document).ready(function () {
+    $("#c_test").carousel({
+        vertical: true
+    });
+
+
+     $("#c_test2").carousel({
+        vertical: true
+    });
+
+
+});
+
+
+</script>
+
 
 

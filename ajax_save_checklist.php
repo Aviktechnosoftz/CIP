@@ -23,11 +23,4 @@
 			$payload = file_get_contents($url);
 		}
 		
-	// 	echo "1";
-		
-	// }
-	// else
-	// {
-	// 	echo "0";
-	// }
 ?>
