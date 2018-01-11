@@ -29,7 +29,7 @@ $Map_ID=$conn->query("select MAX(id)+1 as map_id from tbl_safety_layout_map wher
 
 $map=$Map_ID->map_id;
 
-if($map === NULL) {$map=1;}
+if($map === NULL) {$map='1' ;}
 
 
 
@@ -78,8 +78,8 @@ if($map === NULL) {$map=1;}
 
 <div class="nav_wrap" style=" background-color:#DF5430;">
 
-<? include('header.php'); ?>
-  <? //include('test_side_new.php');?>
+<? include('header.php'); include('test_side_new.php');?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
 </div>
  <div class="" style="padding-left: 0 !important;">
    
@@ -90,21 +90,60 @@ if($map === NULL) {$map=1;}
     position: absolute;
     top: 16vh;
     background-color: #F2F2F6;"> 
-<div class=" col-md-12 col-sm-12 canvasbackground" style="padding-right: 0px; padding-left: 0px">
+<div class=" col-md-12 col-sm-12 " style="padding-right: 0px; padding-left: 0px">
+<center id="title_canvas">Site Layout and Evacuation Plan</center>
+<div class="canvasbackground">
 <div class="container-fluid" id="canvas-container" style="padding-left: 0 !important;background-color: #F2F2F6;padding: 0px;">
 <!-- <div class="col-md-12 col-sm-12 col-xs-12" > -->  
-  <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerleftdiv"  id="images">
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/safety_helmet.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding" ><img class="image_canvas" draggable="true" src="map_images/safety_footwear.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/danger.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/flash_light.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/pedestrains.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/caution_vehicle.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/give_way.png"   crossOrigin="Anonymous"></div>
-</div> 
+ 
+    <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerleftdiv" id="images">
+            <div class="carousel thin"  id="carousel_1" style="    height: 100%;top: 3%">
+                <a class="prev"><span class="glyphicon glyphicon-chevron-up" style="color: #797878"></span></a>
+                <div class="window">
+                     <ul class="clr">     
+                        <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/site_safety.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/safety_helmet.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/safety_footwear.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/cloths.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/danger.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/flash_light.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/pedestrains.png"   crossOrigin="Anonymous">
+                        </li>
+                          <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/caution_vehicle.png"   crossOrigin="Anonymous">
+                        </li>                    
+                        
+
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/report_site_office.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/give_way.png"   crossOrigin="Anonymous">
+                        </li>
+                    </ul>
+                </div> <!-- .window -->
+                <a class="next"><span class="glyphicon glyphicon-chevron-down"  style="color: #797878"></span></a>
+            </div> <!-- .carousel -->
+        </div>
+
   <div class="col-xs-9 col-md-9 col-lg-9 col-sm-9" style="background-color: #F2F2F6; height: 100%;padding: 0px;">
 <!-- <iframe id="iframe_a" src="https://docs.google.com/gview?url=http://cipropertyapp.com/API/Uploads/Internal_plan.pdf&embedded=true" style="height: 81vh;
     width: 75%;" frameborder="0"></iframe> -->
@@ -114,38 +153,108 @@ if($map === NULL) {$map=1;}
       
     </canvas>  
    </div>
-   <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerrightdiv"  id="images" >
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/emergency.png" crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/ambulance.png" crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/6.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/1.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding" ><img class="image_canvas" draggable="true" src="map_images/2.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/3.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/4.png"   crossOrigin="Anonymous"></div>
-    <div class="col-sm-12 col-md-12 no-padding"><img class="image_canvas" draggable="true" src="map_images/5.png"   crossOrigin="Anonymous"></div>
+    <div class="col-xs-1 col-md-1 col-lg-1 col-sm-1 no-padding image_outerrightdiv"  id="images" >
+    <div class="carousel thin" id="carousel_2" style="    height: 100%;top: 3%">
+                <a class="prev"><span class="glyphicon glyphicon-chevron-up" style="color: #797878"></span></a>
+                <div class="window">
+                                        <ul class="clr">     
+                        <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/rectangle_yellow.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/rectangle_blue.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/rectangle_red.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/emergency.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/ambulance.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/6.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/speed_limit.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/4.png"   crossOrigin="Anonymous">
+                        </li>
+
+                             <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/3.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/2.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/1.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/site_office.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/meeting_room.png"   crossOrigin="Anonymous">
+                        </li>
+                         <li class="item">
+                          <img class="image_canvas" draggable="true" src="map_images/induction_room.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/lunch_room.png"   crossOrigin="Anonymous">
+                        </li>
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/change_room.png"   crossOrigin="Anonymous">
+                        </li>
+                        
+                        <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/gents.png"   crossOrigin="Anonymous">
+                        </li>
+                          <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/ladies.png"   crossOrigin="Anonymous">
+                        </li>
+                              <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/water_bubbler.png"   crossOrigin="Anonymous">
+                        </li>
+                          <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/storage_area.png"   crossOrigin="Anonymous">
+                        </li>
+
+                          <li class="item">
+                            <img class="image_canvas" draggable="true" src="map_images/here.png"   crossOrigin="Anonymous">
+                        </li>
+                    </ul>
+                </div> <!-- .window -->
+                <a class="next"><span class="glyphicon glyphicon-chevron-down" style="color: #797878"></span></a>
+            </div>
 </div>
   
   </div>
-<div class="col-sm-12 col-md-12" id="images" style="height: 21%; margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 5px 1px black;
-    border: 5px solid transparent;background-color: #F2F2F6;">
-    <div class="col-xs-8 col-md-8 col-lg-8 col-sm-8" style="background-color: #F2F2F6;padding:0px;">
-    <ul class="list-unstyled" style="margin-top:10px;padding:0px;">
-      <div class="col-md-12 col-sm-12" style="">
+<div class="col-sm-12 col-md-12 drawing_tools" id="" style=" margin-top: 8px;margin-bottom: 8px;box-shadow: 0 0 8px 2px black;border: 5px solid transparent;background-color: #F2F2F6;padding-left: 0px;">
+    <div class=" col-md-2 col-lg-2 col-sm-3" style="background-color: #F2F2F6;padding:0px;float:left;">
+    <ul class="list-unstyled" style="padding:0px;">
+      
      
-      <div class="col-md-3 col-sm-3" style="">
-          <button id="drawing-mode" class="btn btn-info drawing_btn ">Free Draw</button>&nbsp;
+      <div class="col-md-12 col-sm-12" style="padding-bottom: 10px;">
+          <button id="drawing-mode" class="btn btn-info drawing_btn btn-small"><i class="fa fa-paint-brush" aria-hidden="true"> Free</i></button>
       </div>
-      <div class="col-md-3 col-sm-3">
-           <button id="other_btn" class="btn btn-info" >Lines Draw</button>
+      <div class="col-md-12 col-sm-12">
+           <button id="other_btn" class="btn btn-info btn-small" ><i class="fa fa-pencil" aria-hidden="true"></i> Lines</button>
       </div>
-<div class="col-md-3 col-sm-3">
-         <button class="btn btn-primary button_cls" data-toggle="modal" data-target=".bd-example">Large modal</button>
-</div>
-<div class="col-sm-3 col-md-3" style="float: right;"><button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="">Save as Image</button></div>
-</div>
 
-          <div class="col-md-8" style="display: none;float: left;" id="drawing-mode-options">
-            <label for="drawing-mode-selector" style="padding: 0px;">Mode:</label>
+
+
+          
+</ul>
+   </div>
+   <div class=" col-md-8 col-lg-8 col-sm-7" style="background-color: #F2F2F6;padding:0px;">
+     <div class="col-md-12" style="display: none;float: left;" id="drawing-mode-options">
+         <div class="col-sm-7 col-md-6" style="padding-right: 0px;padding-left: 0px;">
+            <label for="drawing-mode-selector" style="padding: 0px;color:#DF5430">Mode:</label>
             <select id="drawing-mode-selector" style="color: rgb(0, 0, 0);background-color: rgb(228, 228, 228);margin-left: 10px;width: 70%;border-radius: 2vh;outline: none; text-align-last: center;">
               <option>Pencil</option>
               <option>Circle</option>
@@ -156,41 +265,59 @@ if($map === NULL) {$map=1;}
               <option>vline</option>
               <option>square</option>
               <option>diamond</option>
-              <option>texture</option>
+             <!--  <option>texture</option> -->
             </select><br>
-            <label for="drawing-line-width" style="padding: 0px;">Line width:</label><input type="range" value="30" min="0" max="150" id="drawing-line-width">
-            <br>
-            <label for="drawing-color" style="padding: 0px;">Line color:</label>
+            <label for="drawing-line-width" style="padding: 0px;color:#DF5430">Line width:</label><input type="range" value="30" min="0" max="150" id="drawing-line-width">
+           </div>
+            <div class="col-sm-5 col-md-6" style="padding-right: 0px;">
+            <label for="drawing-color" style="padding: 0px;color:#DF5430">Line color:</label>
             <input type="color" value="#005E7A" id="drawing-color"><br>
-            <label for="drawing-shadow-width" style="padding: 0px;">Line shadow width:</label>
-            <input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+            <label for="drawing-shadow-width" style="padding: 0px;color:#DF5430">Line shadow width:</label>
+            <input type="range" value="0" min="0" max="50" id="drawing-shadow-width">
             
 
- 
+          </div>
           </div>
           <div id="other" style="display: none;">
-           <div class="col-md-8 col-sm-8" style=" margin-top:5%;padding: 0px;">  
+           <div class="col-md-12 col-sm-12" style="padding: 0px;">  
   
-  <div class="col-md-12 col-sm-12" style="padding-bottom: 10px"> 
-  <label for="" style="padding: 0px;">Line Type:</label>         
+  <div class="col-md-6 col-sm-7" style="padding-bottom: 10px"> 
+  <label for="" style="padding: 0px;color:#DF5430">Line Type:</label>         
   <select name="" id="linetype" style="color: rgb(0, 0, 0); background-color: rgb(228, 228, 228); width: 100%; border-radius: 2vh; outline: none;
     text-align-last: center;">
-  <option value="dashed">Dashed</option>
-  <option value="straight">Straight</option>
+  <option value="dashed">- - - - - - - Dashed - - - - - - -</option>
+  <option value="straight">_______ Straight _______</option>
 </select></div>
 
-<div class="col-md-12 col-sm-12" style="">
-  <label for="" style="padding: 0px;">Line Color:</label>
+<div class="col-md-6 col-sm-5" style="">
+  <label for="" style="padding: 0px;color:#DF5430">Line Color:</label>
 <select name="" id="linecolor" style="color: rgb(0, 0, 0); background-color: rgb(228, 228, 228); width: 100%; border-radius: 2vh; outline: none;
-    text-align-last: center;">
-  <option value="red" style="color: red">Red</option>
-  <option value="blue" style="color: blue">Blue</option>
-   <option value="black" style="color: black">Black</option>
-  <option value="yellow" style="color: #DFDF36;">Yellow</option>
-  <option value="green" style="color: green">Green</option>
+    text-align: center;padding-left: 45%">
+  <option value="red" style="">Red</option>
+  <option value="blue" style="">Blue</option>
+   <option value="black" style="">Black</option>
+  <option value="yellow" style="">Yellow</option>
+  <option value="green" style="">Green</option>
 </select></div>
 </div></div>
-</ul>
+
+   </div>
+   <div class=" col-md-2 col-lg-2 col-sm-2" style="background-color: #F2F2F6;padding:0px;float: right;text-align: right;">
+    <div class=" col-md-6 col-sm-6" style="font-size: 20px;text-align-last: center;padding-left: 0px;padding-right: 0px; ">
+      <div class="col-sm-12 col-md-12" style="padding: 0px;">
+             <a href="javascript:undo();"  title="Undo" class="btn btn-info drawing_btn btn-small"><i class="fa fa-undo " aria-hidden="true"  style="color: black;font-size: 14px"></i></a>
+      </div>
+<!--        <a href="javascript:undo();"  title="Undo"><i class="fa fa-undo" aria-hidden="true" style="color: #ED341E"></i></a> -->
+         <div class="col-sm-12 col-md-12" style="padding: 0px;">
+         <a href="javascript:redo();" title="Redo" class="btn btn-info drawing_btn btn-small"><i class="fa fa-repeat" aria-hidden="true"  style="color: black;font-size: 14px"></i></a></div>
+    </div>
+     <div class="col-md-6 col-sm-6" style="padding: 0px;">
+      <div class="col-sm-12 col-md-12" style="padding: 0px;padding-bottom: 10px;">
+         <button title="Upload Image" class="btn btn-info btn-small button_cls"  data-toggle="modal" data-target=".bd-example" style=""><i class="fa fa-upload" aria-hidden="true" ></i></button></div>
+         <div class="col-sm-12 col-md-12" style="padding: 0px;">
+         <button class=" btn btn-info btn-small" id="b" type="button" style="" title="Save as Image" onclick=""><i class="fa fa-download" aria-hidden="true"></i></button></div>
+</div>
+<!-- <div class="col-sm-12 col-md-12" style="padding: 0px;"></div> -->
    </div>
  <!--  </div> -->
   </div>
@@ -202,42 +329,52 @@ if($map === NULL) {$map=1;}
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" id="close_modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Upload New Map</h4>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-10 col-md-10" > <input type='file' id= "file_input" onchange="readURL(this);" /> </div>
-          <div class="col-sm-2 col-md-2" ><div id="remove"></div></div>
-          <div class="col-sm-6 col-md-6">   
+          <!-- <div class="col-sm-10 col-md-10" > <input type='file' id= "file_input" onchange="readURL(this);" /> </div> -->
+          
+          <div class="col-sm-5 col-md-5" style="border-right: 1px solid #ddd;text-align: center;">
+          <div  id="remove" style="float: right;"></div>   
             <img id="blah" src="image/image_upload2.png" style="padding: 20px 0 20px 0" />
           </div>
-          <div class="col-sm-1 col-md-1 selec_or">
-            <h4 class="modal-title">OR</h4>
-          </div> 
-          <div class="col-sm-4 col-md-4 selec">
-            <select class="selec" id="uploaded_select" onchange="update_map()">
+         <!--  <div class="col-sm-1 col-md-1 selec_or">
+            
+          </div>  -->
+       <div class="col-sm-5 col-md-5 selec">
+            <div class="form-control"><label class="btn btn-default brows">
+            Browse <input type="file" id= "file_input" onchange="readURL(this);" hidden>
+          </label></div>
+            <center class="modal-title" style="padding: 10px;">OR</center>
+          </div>
+            <div class="col-sm-5 col-md-5 selec_cross">
+            <select class="form-control" id="uploaded_select" onchange="update_map()">
               <option value="">Please Select Maps</option>
               <? while($row_main_map=$get_main_maps->fetch_object()){?>
               <option value="<?=$row_main_map->id?>"><?=$row_main_map->map_name?></option>
               <? } ?>
             </select>
-          </div>
-          <div class="col-sm-1 col-md-1" id="remove2" style="display: none;" onclick="remove_selected_map()"><span class="glyphicon glyphicon-remove" id="remove_icon2" style="margin-top: 97px;"> </span></div>
+            </div>
+             <div class="col-sm-1 col-md-1 selec_cross" id="remove2" style="display: none;" onclick="remove_selected_map()"><span class="glyphicon glyphicon-remove" id="remove_icon2" style="padding: 10px 0 10px 0;"> </span></div>
         </div>
       </div>
       <div class="modal-footer">
-        <center>
-          <button class=" btn btn-info" id="b" type="button" style="background-color:#5bc0de !important;outline: none;border: none;" onclick="map();">Save as Image</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </center>
+        <div>
+          <button class=" btn btn-success" id="b" type="button" style="outline: none;border: none;" onclick="map();">Save Map</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div> 
   </div>
-</div>
+  </div>
+
+  </div>
+<div class="col-sm-12 col-md-12"> 
+ <? include("canvas_footer.php"); ?></div>
 </div>
 
- <div class="col-sm-12 col-md-12" id="margin_set" style="margin-bottom: 5px;padding-left: 0px; padding-right: 0px; width: 104%;margin-left: -15px;"> 
- <?// include("Checklist_visit_footer/footer_new.php"); ?></div></div></div>
+ </div></div>
 </body>
 
 <script>
@@ -261,6 +398,9 @@ var image_name='<?=$get_main_maps_baclground->map_name ?>';
 
     else
     {
+      var img_prev=$('#uploaded_select option:selected').text();
+       $("#blah").attr("src", "API/Uploads/"+img_prev);
+        $("#blah").css({'height':'215px','width':'175px'});
       flag=1;
       $('#remove2').show();$('#file_input').hide();
     }
@@ -302,10 +442,9 @@ function update_map_info()
           data: {name:val_map_sel}, 
           
             success: function(response){
-            alert(response); 
+            $.notify("Success !! You have updated Map", "success", { position:"top-right" });
 
              image_name=response;
-             // canvas.clear();
             canvas_background_change(image_name);
           }     
         });
@@ -337,7 +476,7 @@ function update_map_info()
           processData:false,
           async: false,
             success: function(response){
-              alert('uploaded');
+               $.notify("Success !! You have updated Map", "success", { position:"top-right" });
             image_name=response;
             
           }     
@@ -349,10 +488,9 @@ function update_map_info()
   {
     if(flag==1)
     {
-
       update_map_info();
       reset_modal();
-      
+      canvas_background_change(image_name);
     }
 
     else if(flag==2)
@@ -394,7 +532,7 @@ function update_map_info()
 function canvas_background_change(name)
 {
    canvas.setBackgroundImage('API/Uploads/'+name, canvas.renderAll.bind(canvas), {
-    backgroundImageOpacity: 0.5,
+    backgroundImageOpacity: 1,
     backgroundImageStretch: false
 });
 
@@ -415,7 +553,7 @@ canvas.setHeight(360);
 canvas.setWidth(700);
 
 canvas.setBackgroundImage('API/Uploads/'+'<?=$get_main_maps_baclground->map_name ?>', canvas.renderAll.bind(canvas), {
-    backgroundImageOpacity: 0.5,
+    backgroundImageOpacity: 1,
    backgroundImageStretch: false
 });
 /* 
@@ -537,12 +675,17 @@ var drawingModeEl = document.getElementById('drawing-mode'),
     canvas.isDrawingMode = !canvas.isDrawingMode;
     if (canvas.isDrawingMode) {
       $('#other_btn').attr('disabled',true);
-      drawingModeEl.innerHTML = 'Cancel';
+      drawingModeEl.classList.remove("btn-info");
+      drawingModeEl.classList.add("btn-danger");
+       drawingModeEl.innerHTML = '<i class="fa fa-remove" aria-hidden="true"></i>';
       drawingOptionsEl.style.display = '';
     }
     else {
       $('#other_btn').attr('disabled',false);
-      drawingModeEl.innerHTML = 'Free Draw';
+      // drawingModeEl.innerHTML = '<i class="fa fa-paint-brush" aria-hidden="true"></i> Free Draw';
+      drawingModeEl.classList.remove("btn-danger");
+      drawingModeEl.classList.add("btn-info");
+      drawingModeEl.innerHTML = '<i class="fa fa-paint-brush" aria-hidden="true"> Free</i>';
       drawingOptionsEl.style.display = 'none';
     }
   };
@@ -731,7 +874,7 @@ $.ajax({
   data: { image: dataURL,imagename: imagename,project_id: project_id}
           
 }).done(function( respond ) {
- alert("Saved filename: "+respond);
+$.notify("Success !! Saved Your Map", "success", { position:"top-right" });
  console.log(respond);
 });
 
@@ -741,6 +884,9 @@ $.ajax({
 function doOdd() {
     // first click, third click, fifth click, etc
 $('#other_btn').text("Cancel");
+
+$('#other_btn').removeClass("btn-info");
+$('#other_btn').addClass("btn-danger");
     $(".drawing_btn").attr("disabled", true);
         $('#other').show();
         var line, isDown;
@@ -793,8 +939,14 @@ function doEven() {
   $(".drawing_btn").attr("disabled", false);
 
 canvas.__eventListeners["mouse:down"] = [];
+    $('#other_btn').text(' Free Draw');
     $('#other').hide();
-    $('#other_btn').text("Lines Draw");
+    $('#other_btn').html('<i class="fa fa-pencil" aria-hidden="true"> Lines</i>');
+    $('#other_btn').removeClass("btn-danger");
+    $('#other_btn').addClass("btn-info");
+
+   $('#other_btn').addClass("btn-info");
+     
 
   
 }
@@ -836,9 +988,15 @@ $("#remove").on('click', function() {
 
 <style type="text/css">
 .selec{
-  top: 95px!important;
+  top: 25px!important;
+   max-height: 50px!important;
 }
 
+.selec_cross{
+  top: 45px!important;
+   max-height: 50px!important;
+
+}
 .selec_or{
   top: 92px!important;
 }
@@ -896,6 +1054,56 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
 
 <!-- end -->
 <style>
+
+.thin {
+    max-width:150px;    
+}
+
+.carousel > .window {
+    overflow: hidden;
+    position: relative;
+   left: 10%;
+    height:82%;
+}
+
+/*
+    This is the item wrapper,
+    it will be animated.
+*/
+.carousel ul {
+    list-style: none;
+    top: 0;
+    left: 4px;
+    position: absolute;
+    padding: 0px;
+}
+
+/*
+    These are the items
+*/
+.carousel li {
+    margin: 3px 0 0;
+}
+.prev, .next {
+    font-size: 18px;
+    width: 100%;
+    position: relative;
+    left: 13%;
+    margin-left: -15px;
+}
+.carousel li:first-child {
+    margin: 0;
+}
+
+
+
+
+
+.btn-small{
+  padding: 2px 8px !important;
+  font-size: 12px !important;
+  outline: none!important;
+}
 .no-padding{
   padding: 0px !important;
 }
@@ -908,7 +1116,7 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
   height: 100%  !important;
    margin-left: 10px  !important;
    margin-right: 25px !important;
-    overflow-y: scroll;
+   
   z-index: 111  !important;
 }
 .image_outerrightdiv{
@@ -919,11 +1127,14 @@ Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/
   height: 100%  !important;
   margin-left: 25px !important;
   margin-right: 10px;
-  overflow-y: scroll;
+ 
   z-index: 111;
 }
 .image_canvas{
   height: 8vh;
+  width: 4vw;
+  border: 2px solid lightgrey;
+  margin-left: -2px;
   margin-bottom: 5px;
 }
 /*@font-face {
@@ -1235,12 +1446,40 @@ margin-top: 3vh;
     background-repeat: no-repeat;
  
 }
-
-
-
+@media (max-width:1024px){
+  .drawing_tools{
+        font-size: 10px;
+            margin-top: 5px !important;
+  }
+   .canvasbackground {
+    top: 4.5vh;
+  }
+  .image_canvas {
+    height: 8vh;
+    width: 4vw;
+   border: 2px solid lightgrey;
+    margin-left: 3px;
+    margin-bottom: 5px;
+}
+}
 
 @media (min-width: 768px) and (max-width: 1200px)
 {
+.image_canvas {
+    height: 6vh;
+    width: 4vw;
+    border: 2px solid lightgrey;
+    margin-left: -4px;
+    margin-bottom: 5px;
+}
+.prev, .next {
+    font-size: 18px;
+    width: 100%;
+    position: relative;
+    left: 24%;
+    margin-left: -15px;
+}
+
 #content  {
     width: 40%;
         background-size: 257px 565px;
@@ -1369,16 +1608,7 @@ height: 26vh;
 }
 
 /* Modal Content */
-.modal-content {
-        background-color: #fefefe;
-    margin: auto;
-    padding: 5px 10px;
-    border: 1px solid #888;
-    /*width: 400px;*/
-    top: 25%;
-    left: 20%;
-    /*height: 300px;*/
-}
+
 .modal-header {
   padding: 5px;
 }
@@ -1429,13 +1659,20 @@ padding: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
     background: #E3E1E3;
 }
+@media screen and (max-width: 768px)
+{
+   .tablogo{
+    width: 20vw !important;
+  }
 
+  }
 @media screen and (min-width: 768px)
 {
 .carousel-indicators {
     bottom: 0px;
 }
 }
+
 
 .carousel-inner>.item>img
 {
@@ -1444,6 +1681,86 @@ padding: 5px;
   /*width: auto;
   height: 26vh;
   max-height: 26vh;*/
+}
+
+.btn-info
+{
+  background-color: #ED821E !important;
+  border-color: #333;
+  color: black;
+} 
+
+.btn-danger
+{
+  color: black !important;
+}
+
+
+#title_canvas
+{
+  color: #144068;
+  font-size: 19px;
+  
+ text-shadow: 0px 0px 0px #144068; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+
+#linecolor option[value="red"] { /* value not val */
+  
+   color: white;
+    background: #E71A1A;
+}
+
+#linecolor option[value="blue"] { /* value not val */
+    color: white;
+    background: #1770EA;
+}
+
+
+#linecolor option[value="black"] { /* value not val */
+    color: white;
+    background: black;
+}
+
+#linecolor option[value="yellow"] { /* value not val */
+    color: black;
+    background: #EDF40E;
+}
+
+
+#linecolor option[value="green"] { /* value not val */
+    color: black;
+    background: #5CEA19;
+}
+
+select > option:hover {
+   background-color:  #FF0000 !important;
+ }
+
+ .brows
+{
+  width: 14vw;
+  background:#8080802e;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+#uploaded_select{
+    border-radius: 5px !important;
+     
+    }
+
+    
+.fa {
+    display: inline-block;
+    position: relative;
+   }
+
+   ::-webkit-scrollbar {
+    width: 7px;
+    background: #333 !important;
 }
 </style>
 
@@ -1635,4 +1952,561 @@ window.onclick = function(event) {
 
 </script>
 
+<script type="text/javascript">
+  
+
+  !function ($) {
+    var is,
+      transition;
+      // from valentine
+      is = {
+        fun: function (f) {
+          return typeof f === 'function';
+        },
+        arr: function (ar) {
+          return ar instanceof Array;
+        },
+        obj: function (o) {
+          return o instanceof Object && !is.fun(o) && !is.arr(o);
+        }
+      };
+      /*
+        Based on Bootstrap
+        Mozilla and Webkit support only
+      */
+      transition = (function () {
+        var st = document.createElement('div').style,
+        transitionEnd = 'TransitionEnd',
+        transitionProp = 'Transition',
+        support = st.transition !== undefined ||
+          st.WebkitTransition !== undefined ||
+          st.MozTransition !== undefined;
+
+        return support && {
+          prop: (function () {
+            if (st.WebkitTransition !== undefined) 
+            {
+              transitionProp = 'WebkitTransition';
+            }
+            else if (st.MozTransition !== undefined) 
+            {
+              transitionProp = 'MozTransition';
+            }
+            return transitionProp;
+          }()),
+          end: (function () {
+            if (st.WebkitTransition !== undefined) 
+            {
+              transitionEnd = 'webkitTransitionEnd';
+            }
+            else if (st.MozTransition !== undefined) 
+            {
+              transitionEnd = 'transitionend';
+            }
+            return transitionEnd;
+          }())
+        };
+      }());
+
+      function extend() 
+      {
+        // based on jQuery deep merge
+        var options, name, src, copy, clone,
+        target = arguments[0], i = 1, length = arguments.length;
+
+        for (; i < length; i += 1) 
+        {
+          if ((options = arguments[i]) !== null) 
+          {
+            // Extend the base object
+            for (name in options) 
+            {
+              src = target[name];
+              copy = options[name];
+              if (target === copy) 
+              {
+                continue;
+              }
+              if (copy && (is.obj(copy))) 
+              {
+                clone = src && is.obj(src) ? src : {};
+                target[name] = extend(clone, copy);
+              }
+              else if (copy !== undefined) 
+              {
+                target[name] = copy;
+              }
+            }
+          }
+        }
+        return target;
+      }
+
+      function clone(obj) 
+      {
+        if (null === obj || 'object' !== typeof obj) 
+        {
+          return obj;
+        }
+        var copy = obj.constructor(),
+        attr;
+        for (attr in obj) 
+        {
+          if (obj.hasOwnProperty(attr)) 
+          {
+            copy[attr] = obj[attr];
+          }
+        }
+        return copy;
+      }
+
+      // from jquery
+      function proxy(fn, context) 
+      {
+        var slice = Array.prototype.slice,
+          args = slice.call(arguments, 2);
+        return function () {
+          return fn.apply(context, args.concat(slice.call(arguments)));
+        };
+      }
+
+      function animate(options) 
+      {
+        var el = options.el,
+        complete = options.complete ? options.complete : function () {},
+        animation,
+        dummy;
+
+        // no animation obj OR animation is not available,
+        // fallback to css and call the callback
+        if (! options.animation || ! (el.animate || (options.css3transition && transition))) 
+        {
+          el.css(options.fallbackCss);
+          complete();
+          return;
+        }
+
+        // we will animate, apply start CSS
+        if (options.animStartCss) 
+        {
+          if (options.animStartCss.opacity === 0) 
+          {
+            options.animStartCss.opacity = 0.01; // ie quirk
+          }
+          el.css(options.animStartCss);
+        }
+        animation = options.animation;
+
+        // css3 setted, if available apply the css
+        if (options.css3transition && transition) 
+        {
+          dummy = el[0].offsetWidth; // force reflow; source: bootstrap
+          el[0].style[transition.prop] = 'all ' + animation.duration + 'ms';
+          // takaritas
+          delete animation.duration;
+          delete animation.easing;
+
+          el.css(animation);
+          //el.unbind(transition.end);
+          el.on(transition.end, function () {
+          // delete transition properties and events
+            el.off(transition.end);
+            el[0].style[transition.prop] = 'none';
+            complete();
+          });
+        }
+        else if (window.ender) 
+        {
+          // use morpheus
+          el.animate(extend(animation, {'complete': complete}));
+        }
+        else 
+        {
+          // use animate from jquery
+          el.animate(animation, animation.duration, animation.easing, complete);
+        }
+      }
+
+      /*  Carousel Constructor */
+      function Carousel(el, options) 
+      {
+        this.init(el, options);
+        // only return the API
+        // instead of this
+        return {
+          getPageSize: proxy(this.getPageSize, this),
+          getCursor: proxy(this.getCursor, this),
+          nextPage: proxy(this.nextPage, this),
+          prevPage: proxy(this.prevPage, this),
+          isVisibleItem: proxy(this.isVisibleItem, this),
+          scrollToItem: proxy(this.scrollToItem, this),
+          getOptions: proxy(this.getOptions, this),
+          setOptions: proxy(this.setOptions, this)
+        };
+      }
+
+      Carousel.prototype = {
+        init: function (el, options) {
+          var opt;
+          this.options = {
+            window: '.window',
+            items: 'li',
+            pager: null,
+            nextPager: 'a.next',
+            prevPager: 'a.prev',
+            activeClass: null,
+            disabledClass: 'disabled',
+            duration: 400,
+            vertical: false,
+            keyboard: false,
+            css3transition: false,
+            extraOffset: 0
+          };
+          this.setOptions(options);
+          opt = this.options;
+
+          if (opt.css3transition && ! transition) 
+          {
+            opt.css3transition = false;
+          }
+
+          this.$el = $(el);
+          this.$window = this.$el.find(
+            opt.window
+          );
+          this.$itemWrapper = this.$window.children().first();
+          this.$items = this.$el.find(
+            opt.items
+          );
+          this.$nextPager = this.$el.find(
+            opt.nextPager
+          );
+          this.$prevPager = this.$el.find(
+            opt.prevPager
+          );
+
+          this.setDimensions();
+
+          if (opt.pager) 
+          {
+            this.$pager = this.$el.find(
+              opt.pager
+            );
+            this.createPager();
+            this.$pagerItems = this.$pager.find('li');
+          }
+          if (this.$items.length <= this.pageSize) 
+          {
+            this.hidePrevPager();
+            this.hideNextPager();
+            return;
+          }
+          this.cursor = this.getActiveIndex();
+          if (this.cursor < 0) 
+          {
+            if (this.options.activeClass) 
+            {
+              for (var i = 0; i < this.pageSize; i += 1) 
+              {
+                $(this.$items.get(i)).addClass('active');
+              }
+            }
+            this.cursor = 0;
+          }
+
+      if (this.cursor > this.lastPosition) {
+        this.cursor = this.lastPosition;
+      }
+
+      if (this.cursor > 0) {
+        this.scrollToItem(this.cursor, true);
+      }
+
+      if (this.cursor === 0) {
+        this.hidePrevPager();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        this.hideNextPager();
+      }
+
+      this.$nextPager.on('click', proxy(this.nextPage, this));
+      this.$prevPager.on('click', proxy(this.prevPage, this));
+
+      if (opt.keyboard) {
+        $(document).on('keyup', proxy(this.onKeyUp, this));
+      }
+
+      this.$el.addClass('carousel-inited');
+    },
+
+    setDimensions: function () {
+      var $secondItem,
+        alignedDimension = 'width',
+        marginType = ['margin-left', 'margin-right'];
+
+      if (this.options.vertical) {
+        alignedDimension = 'height';
+        marginType = ['margin-top', 'margin-bottom'];
+      }
+
+      $secondItem = this.$items.first().next();
+      this.itemMargin = parseInt($secondItem.css(marginType[0]), 10) +
+        parseInt($secondItem.css(marginType[1]), 10);
+      this.itemDimension = $secondItem[alignedDimension]() + this.itemMargin;
+
+      this.windowDimension = this.$window[alignedDimension]();
+      this.pageSize = Math.floor(
+        (this.windowDimension + this.itemMargin) / this.itemDimension
+      );
+      this.pageDimension = this.pageSize * this.itemDimension;
+      this.lastPosition = this.$items.length - this.pageSize;
+
+    },
+
+    createPager: function () {
+      var itemsLen = this.$items.length,
+        pagerItemsFrag = document.createDocumentFragment(),
+        pagerItem,
+        i;
+
+      for (i = 0; i < itemsLen; i += 1) {
+        pagerItem = document.createElement('li');
+        $pagerItem = $(pagerItem);
+
+        $pagerItem.on('click', proxy(this.usePager, this, i, itemsLen));
+
+        if (i < this.pageSize) {
+          $pagerItem.addClass('active');
+        }
+
+        pagerItemsFrag.appendChild(pagerItem);
+      }
+
+      this.$pager.empty().get(0).appendChild(pagerItemsFrag);
+    },
+
+    usePager: function (pos, len) {
+      if (pos > (len - this.pageSize)) {
+        this.scrollToItem(len - this.pageSize);
+      } else {
+        this.scrollToItem(pos);
+      }
+    },
+
+    nextPage: function (e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        return;
+      }
+
+      var itemIdx = this.cursor + this.pageSize;
+      if (itemIdx > this.lastPosition) {
+        itemIdx = this.lastPosition;
+      }
+
+      this.scrollToItem(itemIdx);
+    },
+
+    prevPage: function (e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      if (this.cursor === 0) {
+        return;
+      }
+
+      var itemIdx = this.cursor - this.pageSize;
+      if (itemIdx < 0) {
+        itemIdx = 0;
+      }
+
+      this.scrollToItem(itemIdx);
+    },
+
+    nextItem: function () {
+      if (this.cursor >= this.lastPosition) {
+        return;
+      }
+
+      this.scrollToItem(this.cursor + 1);
+    },
+
+    prevItem: function () {
+      if (this.cursor === 0) {
+        return;
+      }
+      this.scrollToItem(this.cursor - 1);
+    },
+
+    scrollToItem: function (idx, doNotAnimate) {
+      var animateTo,
+        scrollTo,
+        direction = this.options.vertical ? 'top' : 'left',
+        animObj = {},
+        activeClassName = this.options.activeClass || 'active',
+        itemsLen = this.$items.length,
+        i;
+
+      this.cursorPrevious = this.cursor;
+      this.cursor = idx;
+
+      if (this.cursor === 0) {
+        this.hidePrevPager();
+      } else {
+        this.showPrevPager();
+      }
+
+      if (this.cursor >= this.lastPosition) {
+        this.hideNextPager();
+      } else {
+        this.showNextPager();
+      }
+
+      scrollTo = this.cursor * this.itemDimension;
+      if (this.cursor === this.lastPosition) {
+        scrollTo = scrollTo -
+          (this.windowDimension - this.pageDimension + this.itemMargin) +
+          this.options.extraOffset;
+      }
+
+      scrollTo *= -1;
+      animObj[direction] = scrollTo;
+
+      if (! doNotAnimate) {
+        animObj.duration = this.options.duration;
+      }
+
+      if (this.options.activeClass) {
+        activeClass = this.options.activeClass;
+
+        if (this.getPageSize() === 1) {
+          $(this.$items.get(this.cursorPrevious)).removeClass(activeClass);
+          $(this.$items.get(idx)).addClass(activeClass);
+        } else {
+          itemslen = this.$items.length;
+          this.$items.removeClass(activeClass);
+
+          for (i = 0; i < itemslen; i += 1) {
+            if (this.isVisibleItem(i)) {
+              $(this.$items.get(i)).addClass(activeClass);
+            }
+          }
+        }
+      }
+
+      if (this.options.pager) {
+        if (this.getPageSize() === 1) {
+          $(this.$pagerItems.get(this.cursorPrevious)).removeClass(activeClassName);
+          $(this.$pagerItems.get(this.cursor)).addClass(activeClassName);
+        } else {
+          this.$pagerItems.removeClass(activeClassName);
+
+          for (i = 0; i < itemsLen; i += 1) {
+            if (this.isVisibleItem(i)) {
+              $(this.$pagerItems.get(i)).addClass(activeClassName);
+            }
+          }
+        }
+      }
+
+      animate({
+        el: this.$itemWrapper,
+        animation: doNotAnimate ? false : animObj,
+        fallbackCss: animObj,
+        css3transition: this.options.css3transition
+      });
+    },
+
+    onKeyUp: function (e) {
+      if (e.keyCode === 39) {
+        this.nextPage();
+      } else if (e.keyCode === 37) {
+        this.prevPage();
+      }
+    },
+
+    getActiveIndex: function () {
+      var i = 0,
+        il = this.$items.length;
+
+      for (; i < il; i += 1) {
+        if ($(this.$items.get(i)).hasClass('active')) {
+          return i;
+        }
+      }
+
+      return -1;
+    },
+
+    hideNextPager: function () {
+      this.$nextPager.addClass(
+        this.options.disabledClass
+      );
+    },
+
+    hidePrevPager: function () {
+      this.$prevPager.addClass(
+        this.options.disabledClass
+      );
+    },
+
+    showNextPager: function () {
+      this.$nextPager.removeClass(
+        this.options.disabledClass
+      );
+    },
+
+    showPrevPager: function () {
+      this.$prevPager.removeClass(
+        this.options.disabledClass
+      );
+    },
+
+    getPageSize: function () {
+      return this.pageSize;
+    },
+
+    getCursor: function () {
+      return this.cursor;
+    },
+
+    isVisibleItem: function (idx) {
+      if (this.cursor + this.pageSize <= idx || this.cursor > idx) {
+        return false;
+      }
+      return true;
+    },
+
+    getOptions: function () {
+      return this.options;
+    },
+
+    setOptions: function (options) {
+      extend(this.options, options || {});
+    }
+  };
+
+  $.fn.carousel = function (options) {
+    return new Carousel(this.first(), options);
+  };
+}(window.ender || window.jQuery || window.Zepto);
+
+
+$(document).ready(function () {
+    $("#carousel_1").carousel({
+        vertical: true
+    });
+
+    $("#carousel_2").carousel({
+        vertical: true
+    });
+});
+
+
+</script>
 
